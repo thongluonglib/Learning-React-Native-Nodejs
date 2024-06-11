@@ -1,12 +1,12 @@
 import express from 'express'
 const app = express();
 import admin from 'firebase-admin'
-import serviceAccount from './privatekey' assert { type: "json" };
+import serviceAccount from './privatekey.json' assert { type: "json" };
 
 app.use(express.json())
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: ""
+    databaseURL: "https://petnotification-df71b-default-rtdb.asia-southeast1.firebasedatabase.app"
 });
 
 
