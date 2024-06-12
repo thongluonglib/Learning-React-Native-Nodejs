@@ -1,5 +1,5 @@
 import messaging from '@react-native-firebase/messaging';
-import notifee from '@notifee/react-native';
+import notifee, { AndroidImportance, AndroidVisibility, EventType } from '@notifee/react-native';
 
 export async function onAppBootstrap() {
     // Register the device with FCM
@@ -10,17 +10,24 @@ export async function onAppBootstrap() {
     const FCMtoken = await messaging().getToken();
     console.log('FCMtoken', JSON.stringify(FCMtoken, null, 2))
     await onMessage();
+    await onBackgroundMessage();
     // Save the token
 }
 
 export async function onMessage() {
     messaging().onMessage(async (remoteMessage) => {
-        console.log('remoteMessage', JSON.stringify(remoteMessage, null, 2))
+        console.log('remoteMessage', remoteMessage)
         const data: any = remoteMessage.data;
         onDisplayNotification(data?.notifee)
     })
 }
-
+export async function onBackgroundMessage() {
+    messaging().setBackgroundMessageHandler(async (remoteMessage) => {
+        console.log('background remoteMessage', remoteMessage)
+        const data: any = remoteMessage.data;
+        onDisplayNotification(data?.notifee)
+    })
+}
 async function onDisplayNotification(display: any) {
     // Request permissions (required for iOS)
     await notifee.requestPermission()
@@ -30,6 +37,10 @@ async function onDisplayNotification(display: any) {
     const channelId = await notifee.createChannel({
         id: 'default',
         name: 'Default Channel',
+        bypassDnd: true,
+        sound: "voyager",
+        importance: AndroidImportance.HIGH,
+        visibility: AndroidVisibility.PUBLIC,
     });
     try {
         var data = JSON.parse(display)
