@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" name="uploadfile" multiple id="uploadfile">
+    <script>
+        const uploadFileNode = document.getElementById('uploadfile');
+        uploadFileNode.addEventListener("change", async (ev) => {
+            console.dir(ev.target)
+            const formData = new FormData();
+            // Add multi file to formData
+            for (const file of ev.target.files) {
+                formData.append('photos', file)
+            }
+            const uploadResponse = fetch("upload-image", {
+                method: 'POST',
+                body: formData
+            })
+            console.log('uploadResponse', JSON.stringify(uploadResponse, null, 2))
+        })
+    </script>
+</body>
+
+</html>
