@@ -1,6 +1,7 @@
 # Learning-React-Native-Nodejs
 
-Nodejs: 
+1. Start server: node index.mjs
+2. go to postman and send notification to client 
 -- POST localhost:3000/send-notification
 {
     "fcmTokens": [

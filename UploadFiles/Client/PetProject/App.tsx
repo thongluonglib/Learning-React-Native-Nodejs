@@ -22,33 +22,34 @@ import {
   pick,
   types,
 } from 'react-native-document-picker'
+import { launchImageLibrary } from 'react-native-image-picker';
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
 
 async function onUploadFile() {
 
-  const result = await pick({
-    type: [types.allFiles],
-    mode: 'open',
-    allowMultiSelection: true
-  })
-  console.log('result', result)
+  const result = await launchImageLibrary({
+    selectionLimit: 0,
+    mediaType: 'photo',
+    includeBase64: false,
+  });
+  console.log('result', JSON.stringify(result, null, 2))
   const formData = new FormData();
-  for (const file of result) {
+  for (const file of result.assets) {
     formData.append('photos', {
       uri: Platform.select({
         ios: file.uri?.replace('file://', ''),
         android: file.uri
       }),
-      name: file.name,
-      fileName: file.name,
-      size: file.size,
+      name: file.fileName,
+      fileName: file.fileName,
+      size: file.fileSize,
       type: file.type
     })
   }
   console.log(formData)
-  const response = await axios.post('http://10.0.2.2:3000/upload-image',
+  const response = await axios.post('http://localhost:3000/upload-image',
     formData,
     {
       headers: {

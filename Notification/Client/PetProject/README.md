@@ -2,33 +2,6 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
-Postman: 
-POST: localhost:3000/send-notification
-{
-    "fcmTokens": [
-        "eEt4XYTnRRex06...."
-    ],
-    "display": {
-        "title": "Notification Title",
-        "body": "Main body content of the notification",
-        "android": {
-            "channelId": "default",
-            "pressAction": {
-                "id": "default",
-                "launchActivity": "com.petproject.MainActivity"
-            }
-        },
-        "ios": {
-            "foregroundPresentationOptions": {
-                "badge": true,
-                "sound": true,
-                "banner": true,
-                "list": true
-            }
-        }
-    }
-}
-
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
