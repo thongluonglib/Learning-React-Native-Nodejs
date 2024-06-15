@@ -2,6 +2,7 @@ import { Button, Text, View } from "react-native";
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import DeepLinkConfig from "./src/DeepLinkConfig";
 function HomeScreen({ navigation }) {
 	return (
 		<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -25,7 +26,7 @@ const ProfileScreen = ({ route, navigation }) => {
 	} = route;
 	return (
 		<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-			{id != 1 && <Text style={styles.attributeTitle}>Deeplink id = {id}</Text>}
+			{id != 1 && <Text style={{ }}>Deeplink id = {id}</Text>}
 			<Button title="Go to Notifications" onPress={() => navigation.navigate("Notifications")} />
 			<Button title="Go back" onPress={() => navigation.goBack()} />
 		</View>
@@ -55,7 +56,7 @@ function MyStack() {
 }
 export default function App() {
 	return (
-		<NavigationContainer>
+		<NavigationContainer linking={DeepLinkConfig} fallback={<Text>Loading...</Text>}>
 			<MyStack />
 		</NavigationContainer>
 	);

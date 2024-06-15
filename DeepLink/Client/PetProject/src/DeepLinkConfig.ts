@@ -15,7 +15,7 @@ const config = {
 };
 
 const DeepLinkConfig = {
-    prefixes: ["demo://app"],
+    prefixes: ["uripetproject://"],
     config,
 };
 
