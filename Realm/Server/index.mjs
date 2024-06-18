@@ -1,11 +1,11 @@
 import express from 'express'
 import { User, realm } from './utils/Realm.mjs';
+import bcrypt from 'bcrypt'
 const app = express();
 app.use(express.json())
 
 app.get('/get-all-user', (req, res) => {
     const users = realm.objects(User);
-    console.log('users', JSON.stringify(users, null, 2))
     return res.send(users)
 })
 
@@ -17,18 +17,17 @@ app.get('/get-user-by-id', (req, res) => {
 
     // Way2: get user by id 
     const user = realm.objectForPrimaryKey(User, Realm.BSON.ObjectId(userId))
-    console.log('user', JSON.stringify(user, null, 2))
     return res.send(user)
 })
 
-app.post('/create-user', (req, res) => {
+app.post('/create-user', async (req, res) => {
     const { userName, password, dayofBirth, status } = req.body
     let user;
-    console.log('req.body', JSON.stringify(req.body, null, 2))
+    const passwordEncode = await bcrypt.hash(password, 8)
     realm.write(() => {
         user = realm.create(User, {
             userName,
-            password,
+            password: passwordEncode,
             dayofBirth,
             status,
         })
@@ -38,7 +37,7 @@ app.post('/create-user', (req, res) => {
 
 app.put('/update-user-by-id', (req, res) => {
     let user
-    const { userName, password, dayofBirth, status } = req.body
+    const { userName, dayofBirth, status } = req.body
     realm.write(() => {
         const { userId = '6671740b70bc6c7776e27c8a' } = req.query
         user = realm.objectForPrimaryKey(User, Realm.BSON.ObjectId(userId))
