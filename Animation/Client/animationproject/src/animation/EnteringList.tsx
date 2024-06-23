@@ -27,7 +27,6 @@ const EnteringList = () => {
                     setData([...newData])
                 }}
             >
-
             </ButtonAnimation>
         )
     }
@@ -41,7 +40,6 @@ const EnteringList = () => {
                 columnWrapperStyle={{
                     justifyContent: 'space-evenly'
                 }}
-
             />
         </View>
     )
