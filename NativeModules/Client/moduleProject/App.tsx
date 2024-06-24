@@ -5,8 +5,8 @@
  * @format
  */
 
-import React, { useEffect } from 'react';
-import type { PropsWithChildren } from 'react';
+import React from 'react';
+import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -25,25 +25,11 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import * as Sentry from "@sentry/react-native";
-
-Sentry.init({
-  dsn: "https://6deb257eb923eafc07d49d4fdbc12668@o4507478481567744.ingest.us.sentry.io/4507478997925888",
-  // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
-  // We recommend adjusting this value in production.
-  tracesSampleRate: 1.0,
-  _experiments: {
-    // profilesSampleRate is relative to tracesSampleRate.
-    // Here, we'll capture profiles for 100% of transactions.
-    profilesSampleRate: 1.0,
-  },
-});
-
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-function Section({ children, title }: SectionProps): React.JSX.Element {
+function Section({children, title}: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -75,13 +61,7 @@ function App(): React.JSX.Element {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-  useEffect(() => {
-   
-  })
-  testa()
-  const testa = () => {
 
-  }
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -135,4 +115,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Sentry.wrap(App);
+export default App;
