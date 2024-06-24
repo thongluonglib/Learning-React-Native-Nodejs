@@ -7214,6 +7214,8 @@ __metadata:
     react: 18.2.0
     react-native: 0.74.2
     react-test-renderer: 18.2.0
+    rtn-calculator: ../RTNCalculator
+    rtn-helloworld: ../RTNHelloWorld
     typescript: 5.0.4
   languageName: unknown
   linkType: soft
@@ -8328,6 +8330,26 @@ __metadata:
   bin:
     rimraf: ./bin.js
   checksum: 3ea587b981a19016297edb96d1ffe48af7e6af69660e3b371dbfc73722a73a0b0e9be5c88089fbeeb866c389c1098e07f64929c7414290504b855f54f901ab10
+  languageName: node
+  linkType: hard
+
+"rtn-calculator@file:../RTNCalculator::locator=moduleProject%40workspace%3A.":
+  version: 0.0.1
+  resolution: "rtn-calculator@file:../RTNCalculator#../RTNCalculator::hash=aafd66&locator=moduleProject%40workspace%3A."
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 3f9dbd48894e084f207eadc47a1e0de94be6217994ee6caea32a91220d094d75d5b3e855bbdc4a8c7737596c2a809bd72d8e88b3423537b164e96ca70e86b6f0
+  languageName: node
+  linkType: hard
+
+"rtn-helloworld@file:../RTNHelloWorld::locator=moduleProject%40workspace%3A.":
+  version: 0.0.1
+  resolution: "rtn-helloworld@file:../RTNHelloWorld#../RTNHelloWorld::hash=f4be5a&locator=moduleProject%40workspace%3A."
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 0650fea81b7afb94a1298ea3b564c40d10ed61b2c1d5fdff3e5548de252529ae6a41c61b0bfa4f0a4d00b5f9b2c6d019c275990bc5d30b0534d6ea6970c15781
   languageName: node
   linkType: hard
 
