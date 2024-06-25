@@ -1,4 +1,21 @@
 [../README.md#Guides](../README.md#guides)
+Code fast update: 
+# IOS
+<details>
+  <summary>IOS</summary>
+```
+yarn add ../RTNHelloWorld && cd ios && bundle install && RCT_NEW_ARCH_ENABLED=1 bundle exec pod install && cd .. && yarn ios --simulator="iPhone 14"
+```
+</details>
+<details>
+  <summary>Android</summary>
+```
+yarn add ../RTNHelloWorld && cd android && ./gradlew generateCodegenArtifactsFromSchema && cd .. && yarn android
+```
+</details>
+
+# Android
+
 ### Final structure
 
 The final structure should look like this:
