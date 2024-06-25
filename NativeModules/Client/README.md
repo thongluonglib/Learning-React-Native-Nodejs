@@ -1,4 +1,23 @@
 [../README.md#Guides](../README.md#guides)
+# Turbo Native Modules
+
+If you've worked with React Native, you may be familiar with the concept of [Native Modules](https://reactnative.dev/docs/native-modules-intro), which allow JavaScript and platform-native code to communicate over the React Native "bridge", which handles cross-platform serialization via JSON.
+
+Turbo Native Modules are the next iteration on Native Modules that provide a few extra [benefits](https://reactnative.dev/docs/the-new-architecture/landing-page):
+
+- Strongly typed interfaces that are consistent across platforms
+- The ability to write your code in C++, either exclusively or integrated with another native platform language, reducing the need to duplicate implementations across platforms
+- Lazy loading of modules, allowing for faster app startup
+- The use of JSI, a JavaScript interface for native code, allows for more efficient communication between native and JavaScript code than the bridge
+
+At a high-level the steps for writing a Turbo Module are:
+
+1. Define a JavaScript specification using Flow or TypeScript.
+1. Configure the dependencies management system to generate code from the provided spec.
+1. Implement the Native code.
+1. Integrate the code in the app.
+
+This guide will show you how to create a basic Turbo Native Module compatible with the latest version of React Native.
 ### Final structure
 
 The final structure should look like this:
@@ -25,28 +44,8 @@ TurboModulesGuide
     ├── package.json
     └── rtn-calculator.podspec
 ```
-# Turbo Native Modules
 
-If you've worked with React Native, you may be familiar with the concept of [Native Modules](https://reactnative.dev/docs/native-modules-intro), which allow JavaScript and platform-native code to communicate over the React Native "bridge", which handles cross-platform serialization via JSON.
-
-Turbo Native Modules are the next iteration on Native Modules that provide a few extra [benefits](https://reactnative.dev/docs/the-new-architecture/landing-page):
-
-- Strongly typed interfaces that are consistent across platforms
-- The ability to write your code in C++, either exclusively or integrated with another native platform language, reducing the need to duplicate implementations across platforms
-- Lazy loading of modules, allowing for faster app startup
-- The use of JSI, a JavaScript interface for native code, allows for more efficient communication between native and JavaScript code than the bridge
-
-At a high-level the steps for writing a Turbo Module are:
-
-1. Define a JavaScript specification using Flow or TypeScript.
-1. Configure the dependencies management system to generate code from the provided spec.
-1. Implement the Native code.
-1. Integrate the code in the app.
-
-This guide will show you how to create a basic Turbo Native Module compatible with the latest version of React Native.
-
-> [!Note]
-> You can also setup local library containing Turbo Native Module with one command. Read the guide to [Local libraries setup](https://reactnative.dev/docs/next/local-library-setup) for more details.
+## Let's Start
 
 ## How to Create a Turbo Native Module
 
