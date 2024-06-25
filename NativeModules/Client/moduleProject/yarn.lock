@@ -2405,7 +2405,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native/codegen@npm:0.74.84":
+"@react-native/codegen@npm:0.74.84, @react-native/codegen@npm:^0.74.84":
   version: 0.74.84
   resolution: "@react-native/codegen@npm:0.74.84"
   dependencies:
@@ -7202,6 +7202,7 @@ __metadata:
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
     "@react-native/babel-preset": 0.74.84
+    "@react-native/codegen": ^0.74.84
     "@react-native/eslint-config": 0.74.84
     "@react-native/metro-config": 0.74.84
     "@react-native/typescript-config": 0.74.84
@@ -8335,21 +8336,21 @@ __metadata:
 
 "rtn-calculator@file:../RTNCalculator::locator=moduleProject%40workspace%3A.":
   version: 0.0.1
-  resolution: "rtn-calculator@file:../RTNCalculator#../RTNCalculator::hash=aafd66&locator=moduleProject%40workspace%3A."
+  resolution: "rtn-calculator@file:../RTNCalculator#../RTNCalculator::hash=a2c575&locator=moduleProject%40workspace%3A."
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 3f9dbd48894e084f207eadc47a1e0de94be6217994ee6caea32a91220d094d75d5b3e855bbdc4a8c7737596c2a809bd72d8e88b3423537b164e96ca70e86b6f0
+  checksum: ccb030d3eaa72f457e5f7bff7a0af3b717cad525b0e76d250a5d247be2c8c7cc3e38a142dbd573a19a4213158fda6b74e78c0c08724361add3697885d904c6f1
   languageName: node
   linkType: hard
 
 "rtn-helloworld@file:../RTNHelloWorld::locator=moduleProject%40workspace%3A.":
   version: 0.0.1
-  resolution: "rtn-helloworld@file:../RTNHelloWorld#../RTNHelloWorld::hash=f4be5a&locator=moduleProject%40workspace%3A."
+  resolution: "rtn-helloworld@file:../RTNHelloWorld#../RTNHelloWorld::hash=bccb55&locator=moduleProject%40workspace%3A."
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 0650fea81b7afb94a1298ea3b564c40d10ed61b2c1d5fdff3e5548de252529ae6a41c61b0bfa4f0a4d00b5f9b2c6d019c275990bc5d30b0534d6ea6970c15781
+  checksum: faa9064f3c37c940f1f51ea2254b8e606515d9dda5e6a3abea62a6dcc86f8b501ffbb8b9a2d78d05322b43dc9c7c1a472da5e5a00e05bbb5ff1f516ce995429d
   languageName: node
   linkType: hard
 

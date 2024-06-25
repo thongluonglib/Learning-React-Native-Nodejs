@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { SafeAreaView, StatusBar, Text, Button } from "react-native";
 import RTNCalculator from "rtn-calculator/js/NativeCalculator";
-import RTNHelloWorld from 'rtn-helloworld/js/NativeHelloWorld'
+// import RTNHelloWorld from 'rtn-helloworld/js/NativeHelloWorld'
 const App: () => JSX.Element = () => {
   const [result, setResult] = useState<number | null>(null);
   return (
@@ -25,13 +25,13 @@ const App: () => JSX.Element = () => {
           setResult(value ?? null);
         }}
       />
-      <Button
+      {/* <Button
         title="HelloWorld"
         onPress={async () => {
           const value = await RTNHelloWorld?.getHelloWorld();
           console.log('value', JSON.stringify(value, null, 2))
         }}
-      />
+      /> */}
     </SafeAreaView>
   );
 };

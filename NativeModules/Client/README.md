@@ -412,6 +412,8 @@ cd ..
 node MyApp/node_modules/react-native/scripts/generate-codegen-artifacts.js \
   --path MyApp/ \
   --outputPath RTNCalculator/generated/
+
+or at MyApp run: npx react-native codegen --platform ios 
 ```
 
 This script first adds the `RTNCalculator` module to the app with `yarn add`. Then, it invokes Codegen via the `generate-codegen-artifacts.js` script.
