@@ -1,4 +1,7 @@
 [../README.md#Guides](../README.md#guides)
+
+Docs: https://github.com/reactwg/react-native-new-architecture/blob/main/docs/turbo-modules.md
+
 Code fast update: 
 # Fast update module
 ```sh title="IOS"
