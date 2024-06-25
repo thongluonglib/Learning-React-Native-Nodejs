@@ -1,23 +1,4 @@
 [../README.md#Guides](../README.md#guides)
-# Turbo Native Modules
-
-If you've worked with React Native, you may be familiar with the concept of [Native Modules](https://reactnative.dev/docs/native-modules-intro), which allow JavaScript and platform-native code to communicate over the React Native "bridge", which handles cross-platform serialization via JSON.
-
-Turbo Native Modules are the next iteration on Native Modules that provide a few extra [benefits](https://reactnative.dev/docs/the-new-architecture/landing-page):
-
-- Strongly typed interfaces that are consistent across platforms
-- The ability to write your code in C++, either exclusively or integrated with another native platform language, reducing the need to duplicate implementations across platforms
-- Lazy loading of modules, allowing for faster app startup
-- The use of JSI, a JavaScript interface for native code, allows for more efficient communication between native and JavaScript code than the bridge
-
-At a high-level the steps for writing a Turbo Module are:
-
-1. Define a JavaScript specification using Flow or TypeScript.
-1. Configure the dependencies management system to generate code from the provided spec.
-1. Implement the Native code.
-1. Integrate the code in the app.
-
-This guide will show you how to create a basic Turbo Native Module compatible with the latest version of React Native.
 ### Final structure
 
 The final structure should look like this:
@@ -56,15 +37,6 @@ To create a Turbo Native Module, we need to:
 3. Write the native code to finish implementing the module.
 
 ## 1. Folder Setup
-
-In order to keep the module decoupled from the app, it's a good idea to define the module separately from the app and then add it as a dependency to your app later. This is also what you'll do for writing Turbo Native Modules that can be released as open-source libraries later.
-
-Next to your application, create a folder called `RTNCalculator`. **RTN** stands for "**R**eac**t** **N**ative", and is a recommended prefix for React Native modules.
-
-Within `RTNCalculator`, create three subfolders: `js`, `ios`, and `android`.
-
-The final result should look like this:
-
 ```sh
 TurboModulesGuide
 ├── MyApp
@@ -74,12 +46,7 @@ TurboModulesGuide
     └── js
 ```
 
-## 2. JavaScript Specification
-
-The **New Architecture** requires interfaces specified in a typed dialect of JavaScript (either [Flow](https://flow.org/) or [TypeScript](https://www.typescriptlang.org/)). **Codegen** will use these specifications to generate code in strongly-typed languages, including C++, Objective-C++, and Java.
-
-There are two requirements the file containing this specification must meet:
-
+## 2. JavaScript Specification add code for js folder
 1. The file **must** be named `Native<MODULE_NAME>`, with a `.js` or `.jsx` extension when using Flow, or a `.ts`, or `.tsx` extension when using TypeScript. Codegen will only look for files matching this pattern.
 2. The file must export a `TurboModuleRegistrySpec` object.
 
@@ -116,25 +83,7 @@ export default TurboModuleRegistry.get<Spec>("RTNCalculator") as Spec | null;
 
 </details>
 
-At the beginning of the spec files are the imports:
-
-- The `TurboModule` type, which defines the base interface for all Turbo Native Modules
-- The `TurboModuleRegistry` JavaScript module, which contains functions for loading Turbo Native Modules
-
-The second section of the file contains the interface specification for the Turbo Native Module. In this case, the interface defines the `add` function, which takes two numbers and returns a promise that resolves to a number. This interface type **must** be named `Spec` for a Turbo Native Module.
-
-Finally, we invoke `TurboModuleRegistry.get`, passing the module's name, which will load the Turbo Native Module if it's available.
-
-> [!Warning]
-> We are writing JavaScript files importing types from libraries, without setting up a proper node module and installing its dependencies. Your IDE will not be able to resolve the import statements and you may see errors and warnings. This is expected and will not cause problems when you add the module to your app.
-
-## 3. Module Configuration
-
-Next, you need to add some configuration for [**Codegen**](./codegen.md) and auto-linking.
-
-Some configuration files are shared between iOS and Android, while the others are platform-specific.
-
-### Shared
+## 3. Module Configuration add package.json
 
 The shared configuration is a `package.json` file used by yarn when installing your module. Create the `package.json` file in the root of the `RTNCalculator` directory.
 
@@ -180,21 +129,31 @@ The shared configuration is a `package.json` file used by yarn when installing y
 }
 ```
 
-The upper part of the file contains some descriptive information like the name of the component, its version, and its source files. Make sure to update the various placeholders which are wrapped in `<>`: replace all the occurrences of the `<your_github_handle>`, `<Your Name>`, and `<your_email@your_provider.com>` tokens.
-
-Then there are the dependencies for this package. For this guide, you need `react` and `react-native`.
-
-Finally, the **Codegen** configuration is specified by the `codegenConfig` field. It contains an object that defines the module through four fields:
-
-- `name`: The name of the library. By convention, you should add the `Spec` suffix.
-- `type`: The type of module contained by this package. In this case, it is a Turbo Native Module; thus, the value to use is `modules`.
-- `jsSrcsDir`: the relative path to access the `js` specification that is parsed by **Codegen**.
-- `android.javaPackageName`: the package to use in the Java files generated by **Codegen**.
-
 ### iOS: Create the `podspec` file
 
 For iOS, you'll need to create a `rtn-calculator.podspec` file, which will define the module as a dependency for your app. It will stay in the root of `RTNCalculator`, alongside the `ios` folder.
-
+```sh
+TurboModulesGuide
+├── MyApp
+└── RTNCalculator
+    ├── android
+    │   ├── build.gradle
+    │   └── src
+    │       └── main
+    │           └── java
+    │               └── com
+    │                   └── rtncalculator
+    │                       ├── CalculatorPackage.java
+    │                       └── CalculatorModule.java
+    ├── generated
+    ├── ios
+    │   ├── RTNCalculator.h
+    │   └── RTNCalculator.mm
+    ├── js
+    │   └── NativeCalculator.ts
+    ├── package.json
+    └── rtn-calculator.podspec
+```
 The file will look like this:
 
 ```ruby title="rtn-calculator.podspec"
@@ -220,10 +179,6 @@ end
 ```
 
 The `.podspec` file has to be a sibling of the `package.json` file, and its name is the one we set in the `package.json`'s `name` property: `rtn-calculator`.
-
-The first part of the file prepares some variables that we use throughout the file. Then, there is a section that contains some information used to configure the pod, like its name, version, and description.
-
-All the requirements for the New Architecture have been encapsulated in the [`install_modules_dependencies`](https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L198). It takes care of installing the proper dependencies based on which architecture is currently enabled. It also automatically installs the `React-Core` dependency in the old architecture.
 
 ### Android: `build.gradle` and `ReactPackage` class
 
@@ -507,14 +462,6 @@ RCT_EXPORT_MODULE()
 @end
 ```
 
-The most important call is to the `RCT_EXPORT_MODULE`, which is required to export the module so that React Native can load the Turbo Native Module.
-
-Then the `add` method, whose signature must match the one specified by the Codegen in the `RTNCalculatorSpec.h`.
-
-Finally, the `getTurboModule` method gets an instance of the Turbo Native Module so that the JavaScript side can invoke its methods. The function is defined in (and requested by) the `RTNCalculatorSpec.h` file that was generated earlier by Codegen.
-
-> [!Tip]
-> There are other macros that can be used to export modules and methods. You view the code that specifies them [here](https://github.com/facebook/react-native/blob/main/packages/react-native/React/Base/RCTBridgeModule.h).
 
 ### Android
 
@@ -530,8 +477,6 @@ yarn add ../RTNCalculator
 cd android
 ./gradlew generateCodegenArtifactsFromSchema
 ```
-
-This script first adds the package to the app, in the same way iOS does. Then, after moving to the `android` folder, it invokes a Gradle task to create the generated code.
 
 > [!Tip]
 > To run **Codegen**, you need to enable the **New Architecture** in the Android app. This can be done by opening the `gradle.properties` files and by switching the `newArchEnabled` property from `false` to `true`.
@@ -664,46 +609,45 @@ package com.rtncalculator;
 import androidx.annotation.Nullable;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
-+ import com.facebook.react.module.model.ReactModuleInfo;
+import com.facebook.react.module.model.ReactModuleInfo;
 import com.facebook.react.module.model.ReactModuleInfoProvider;
 import com.facebook.react.TurboReactPackage;
 
 import java.util.Collections;
 import java.util.List;
-+ import java.util.HashMap;
-+ import java.util.Map;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CalculatorPackage extends TurboReactPackage {
 
   @Nullable
   @Override
   public NativeModule getModule(String name, ReactApplicationContext reactContext) {
-+      if (name.equals(CalculatorModule.NAME)) {
-+          return new CalculatorModule(reactContext);
-+      } else {
+      if (name.equals(CalculatorModule.NAME)) {
+          return new CalculatorModule(reactContext);
+      } else {
           return null;
-+      }
+      }
   }
 
 
   @Override
   public ReactModuleInfoProvider getReactModuleInfoProvider() {
--      return null;
-+      return () -> {
-+          final Map<String, ReactModuleInfo> moduleInfos = new HashMap<>();
-+          moduleInfos.put(
-+                  CalculatorModule.NAME,
-+                  new ReactModuleInfo(
-+                          CalculatorModule.NAME,
-+                          CalculatorModule.NAME,
-+                          false, // canOverrideExistingModule
-+                          false, // needsEagerInit
-+                          true, // hasConstants
-+                          false, // isCxxModule
-+                          true // isTurboModule
-+          ));
-+          return moduleInfos;
-+      };
+      return () -> {
+          final Map<String, ReactModuleInfo> moduleInfos = new HashMap<>();
+          moduleInfos.put(
+                  CalculatorModule.NAME,
+                  new ReactModuleInfo(
+                          CalculatorModule.NAME,
+                          CalculatorModule.NAME,
+                          false, // canOverrideExistingModule
+                          false, // needsEagerInit
+                          true, // hasConstants
+                          false, // isCxxModule
+                          true // isTurboModule
+          ));
+          return moduleInfos;
+      };
   }
 }
 ```
@@ -719,32 +663,30 @@ package com.rtncalculator;
 import com.facebook.react.TurboReactPackage
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
-+import com.facebook.react.module.model.ReactModuleInfo
+import com.facebook.react.module.model.ReactModuleInfo
 import com.facebook.react.module.model.ReactModuleInfoProvider
 
 class CalculatorPackage : TurboReactPackage() {
-- override fun getModule(name: String?, reactContext: ReactApplicationContext): NativeModule? = null
-+ override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? =
-+   if (name == CalculatorModule.NAME) {
-+     CalculatorModule(reactContext)
-+   } else {
-+     null
-+   }
+ override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? =
+   if (name == CalculatorModule.NAME) {
+     CalculatorModule(reactContext)
+   } else {
+     null
+   }
 
-- override fun getReactModuleInfoProvider() = ReactModuleInfoProvider? = null
-+ override fun getReactModuleInfoProvider() = ReactModuleInfoProvider {
-+   mapOf(
-+     CalculatorModule.NAME to ReactModuleInfo(
-+       CalculatorModule.NAME,
-+       CalculatorModule.NAME,
-+       false, // canOverrideExistingModule
-+       false, // needsEagerInit
-+       true, // hasConstants
-+       false, // isCxxModule
-+       true // isTurboModule
-+     )
-+   )
-+ }
+ override fun getReactModuleInfoProvider() = ReactModuleInfoProvider {
+   mapOf(
+     CalculatorModule.NAME to ReactModuleInfo(
+       CalculatorModule.NAME,
+       CalculatorModule.NAME,
+       false, // canOverrideExistingModule
+       false, // needsEagerInit
+       true, // hasConstants
+       false, // isCxxModule
+       true // isTurboModule
+     )
+   )
+ }
 }
 ```
 
@@ -881,5 +823,3 @@ Try this out to see your Turbo Native Module in action!
 > [!IMPORTANT]
 > This documentation is still experimental and details are subject to changes as we iterate.
 > Feel free to share your feedback on this [discussion](https://github.com/reactwg/react-native-new-architecture/discussions/8).
->
-> Moreover, it contains **several manual steps**. Please note that this won't be representative of the final developer experience once the New Architecture is stable. We're working on tools, templates and libraries to help you get started fast on the New Architecture, without having to go through the whole setup.
