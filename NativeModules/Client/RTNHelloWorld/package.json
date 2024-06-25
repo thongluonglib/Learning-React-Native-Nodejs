@@ -18,6 +18,8 @@
     "keywords": ["react-native", "ios", "android"],
     "license": "MIT",
     "devDependencies": {},
+    "author": "test",
+    "homepage": "test",
     "peerDependencies": {
       "react": "*",
       "react-native": "*"

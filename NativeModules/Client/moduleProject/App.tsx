@@ -2,7 +2,22 @@ import React from "react";
 import { useState } from "react";
 import { SafeAreaView, StatusBar, Text, Button } from "react-native";
 import RTNCalculator from "rtn-calculator/js/NativeCalculator";
-// import RTNHelloWorld from 'rtn-helloworld/js/NativeHelloWorld'
+import RTNHelloWorld from 'rtn-helloworld/js/NativeHelloWorld'
+import * as Sentry from "@sentry/react-native";
+
+Sentry.init({
+  dsn: "DNS_SentryHere",
+  // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
+  // We recommend adjusting this value in production.
+  tracesSampleRate: 1.0,
+  _experiments: {
+    // profilesSampleRate is relative to tracesSampleRate.
+    // Here, we'll capture profiles for 100% of transactions.
+    profilesSampleRate: 1.0,
+  },
+});
+
+
 const App: () => JSX.Element = () => {
   const [result, setResult] = useState<number | null>(null);
   return (
@@ -25,14 +40,14 @@ const App: () => JSX.Element = () => {
           setResult(value ?? null);
         }}
       />
-      {/* <Button
+      <Button
         title="HelloWorld"
         onPress={async () => {
-          const value = await RTNHelloWorld?.getHelloWorld();
+          const value = await RTNHelloWorld?.getHelloWorld("10");
           console.log('value', JSON.stringify(value, null, 2))
         }}
-      /> */}
+      />
     </SafeAreaView>
   );
 };
-export default App;
+export default Sentry.wrap(App);

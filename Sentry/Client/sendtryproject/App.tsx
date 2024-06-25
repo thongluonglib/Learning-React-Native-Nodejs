@@ -28,7 +28,7 @@ import {
 import * as Sentry from "@sentry/react-native";
 
 Sentry.init({
-  dsn: "https://6deb257eb923eafc07d49d4fdbc12668@o4507478481567744.ingest.us.sentry.io/4507478997925888",
+  dsn: "DNS_SentryHere", //Goto setting project in sentry dashboard to get it
   // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
   // We recommend adjusting this value in production.
   tracesSampleRate: 1.0,

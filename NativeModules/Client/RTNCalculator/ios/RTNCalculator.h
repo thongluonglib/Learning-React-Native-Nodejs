@@ -1,8 +1,8 @@
-#import <RTNHelloWorldSpec/RTNHelloWorldSpec.h>
+#import <RTNCalculatorSpec/RTNCalculatorSpec.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RTNHelloWorld : NSObject <NativeCalculatorSpec>
+@interface RTNCalculator : NSObject <NativeCalculatorSpec>
 
 @end
 
