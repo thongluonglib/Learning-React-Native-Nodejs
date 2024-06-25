@@ -1,5 +1,30 @@
 [../README.md#Guides](../README.md#guides)
+### Final structure
 
+The final structure should look like this:
+
+```sh
+TurboModulesGuide
+├── MyApp
+└── RTNCalculator
+    ├── android
+    │   ├── build.gradle
+    │   └── src
+    │       └── main
+    │           └── java
+    │               └── com
+    │                   └── rtncalculator
+    │                       ├── CalculatorPackage.java
+    │                       └── CalculatorModule.java
+    ├── generated
+    ├── ios
+    │   ├── RTNCalculator.h
+    │   └── RTNCalculator.mm
+    ├── js
+    │   └── NativeCalculator.ts
+    ├── package.json
+    └── rtn-calculator.podspec
+```
 # Turbo Native Modules
 
 If you've worked with React Native, you may be familiar with the concept of [Native Modules](https://reactnative.dev/docs/native-modules-intro), which allow JavaScript and platform-native code to communicate over the React Native "bridge", which handles cross-platform serialization via JSON.
@@ -726,32 +751,7 @@ class CalculatorPackage : TurboReactPackage() {
 
 This is the last piece of Native Code for Android. It defines the `TurboReactPackage` object that will be used by the app to load the module.
 
-### Final structure
 
-The final structure should look like this:
-
-```sh
-TurboModulesGuide
-├── MyApp
-└── RTNCalculator
-    ├── android
-    │   ├── build.gradle
-    │   └── src
-    │       └── main
-    │           └── java
-    │               └── com
-    │                   └── rtncalculator
-    │                       ├── CalculatorPackage.java
-    │                       └── CalculatorModule.java
-    ├── generated
-    ├── ios
-    │   ├── RTNCalculator.h
-    │   └── RTNCalculator.mm
-    ├── js
-    │   └── NativeCalculator.ts
-    ├── package.json
-    └── rtn-calculator.podspec
-```
 
 ## 5. Adding the Turbo Native Module to your App
 
