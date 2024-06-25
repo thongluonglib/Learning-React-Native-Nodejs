@@ -4,11 +4,16 @@ Docs: https://github.com/reactwg/react-native-new-architecture/blob/main/docs/tu
 
 Code fast update: 
 # Fast update module
+```sh title="Update Codegen"
+cd .. && node MyApp/node_modules/react-native/scripts/generate-codegen-artifacts.js \
+  --path MyApp/ \
+  --outputPath RTNCalculator/generated/ -t ios && cd MyApp
+```
 ```sh title="IOS"
-yarn add ../RTNHelloWorld && cd ios && bundle install && RCT_NEW_ARCH_ENABLED=1 bundle exec pod install && cd .. && yarn ios --simulator="iPhone 14"
+yarn add ../RTNCalculator && cd ios && bundle install && RCT_NEW_ARCH_ENABLED=1 bundle exec pod install && cd .. && yarn ios --simulator="iPhone 14"
 ```
 ```sh title="Android"
-yarn add ../RTNHelloWorld && cd android && ./gradlew generateCodegenArtifactsFromSchema && cd .. && yarn android
+yarn add ../RTNCalculator && cd android && ./gradlew generateCodegenArtifactsFromSchema && cd .. && yarn android
 ```
 
 # Android
@@ -379,9 +384,7 @@ yarn add ../RTNCalculator
 cd ..
 node MyApp/node_modules/react-native/scripts/generate-codegen-artifacts.js \
   --path MyApp/ \
-  --outputPath RTNCalculator/generated/
-
-or at MyApp run: npx react-native codegen --platform ios 
+  --outputPath RTNCalculator/generated/ -t ios
 ```
 
 This script first adds the `RTNCalculator` module to the app with `yarn add`. Then, it invokes Codegen via the `generate-codegen-artifacts.js` script.
