@@ -1,18 +1,12 @@
 [../README.md#Guides](../README.md#guides)
 Code fast update: 
-# IOS
-<details>
-  <summary>IOS</summary>
-```sh
+# Fast update module
+```sh title="IOS"
 yarn add ../RTNHelloWorld && cd ios && bundle install && RCT_NEW_ARCH_ENABLED=1 bundle exec pod install && cd .. && yarn ios --simulator="iPhone 14"
 ```
-</details>
-<details>
-  <summary>Android</summary>
-```sh
+```sh title="Android"
 yarn add ../RTNHelloWorld && cd android && ./gradlew generateCodegenArtifactsFromSchema && cd .. && yarn android
 ```
-</details>
 
 # Android
 
