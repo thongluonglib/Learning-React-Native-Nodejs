@@ -5,6 +5,7 @@ import RTNCalculator from "rtn-calculator/js/NativeCalculator";
 import RTNHelloWorld from 'rtn-helloworld/js/NativeHelloWorld'
 import * as Sentry from "@sentry/react-native";
 import Config from "react-native-config";
+import RTNCenteredText from "rtn-centered-text/js/CenteredTextNativeComponent";
 Sentry.init({
   dsn: Config.DNS_SENTRY,
   // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
@@ -45,6 +46,10 @@ const App: () => JSX.Element = () => {
         onPress={async () => {
           const value = await RTNHelloWorld?.getHelloWorld("Hello World");
         }}
+      />
+      <RTNCenteredText
+        text="Hello World!"
+        style={{ width: "100%", height: 30 }}
       />
     </SafeAreaView>
   );

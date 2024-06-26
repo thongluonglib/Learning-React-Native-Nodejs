@@ -1199,6 +1199,27 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - rtn-centered-text (0.0.1):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Codegen
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - rtn-helloworld (0.0.1):
     - DoubleConversion
     - glog
@@ -1283,6 +1304,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - rtn-calculator (from `../node_modules/rtn-calculator`)
+  - rtn-centered-text (from `../node_modules/rtn-centered-text`)
   - rtn-helloworld (from `../node_modules/rtn-helloworld`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -1405,6 +1427,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@sentry/react-native"
   rtn-calculator:
     :path: "../node_modules/rtn-calculator"
+  rtn-centered-text:
+    :path: "../node_modules/rtn-centered-text"
   rtn-helloworld:
     :path: "../node_modules/rtn-helloworld"
   Yoga:
@@ -1467,6 +1491,7 @@ SPEC CHECKSUMS:
   ReactCommon: ecad995f26e0d1e24061f60f4e5d74782f003f12
   RNSentry: 84e8c1e6842db2c9b88b7486cebef425563ff026
   rtn-calculator: 982bc447be6a2881993c71a9aa6356a3399da816
+  rtn-centered-text: 6ac2acdf0e0f6968414b2612eedb3bb7012da5ac
   rtn-helloworld: c693b6a3672f3cb31501e2e9107f01660c677635
   Sentry: c446963245407030e17f1b926a83c6337dc99f4e
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d

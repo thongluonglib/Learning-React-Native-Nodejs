@@ -7508,6 +7508,7 @@ __metadata:
     react-native-config: ^1.5.2
     react-test-renderer: 18.2.0
     rtn-calculator: ../RTNCalculator
+    rtn-centered-text: ../RTNCenteredText
     rtn-helloworld: ../RTNHelloWorld
     typescript: 5.0.4
   languageName: unknown
@@ -8659,6 +8660,16 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: ede6f2ede6cbea8ae9dbb8dd644b3a3304c9b07686fa181677f343b95b345ad79d3d2d2826e8724e822952dcfe0d2a1ceae153a9493bdfee576f152846ec560d
+  languageName: node
+  linkType: hard
+
+"rtn-centered-text@file:../RTNCenteredText::locator=moduleProject%40workspace%3A.":
+  version: 0.0.1
+  resolution: "rtn-centered-text@file:../RTNCenteredText#../RTNCenteredText::hash=9f9fa3&locator=moduleProject%40workspace%3A."
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: ffa1495be78d2e4932df5b78ef6edecbfab3499ab77daafa9c3cfec17715acfca5574b4c91cb4cdb28a1e5336b9a74b3caa35b368b490095f2d9d54ece8ba6bb
   languageName: node
   linkType: hard
 

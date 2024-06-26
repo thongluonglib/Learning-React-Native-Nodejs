@@ -16,6 +16,7 @@
     "react-native": "0.74.2",
     "react-native-config": "^1.5.2",
     "rtn-calculator": "../RTNCalculator",
+    "rtn-centered-text": "../RTNCenteredText",
     "rtn-helloworld": "../RTNHelloWorld"
   },
   "devDependencies": {
