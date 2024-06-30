@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+
+    <style>
+        body {
+            padding-left: 20%;
+            padding-right: 20%;
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Audio</h1>
+    <br>
+
+    <audio controls>
+
+    </audio>
+    <br> <br> <br>
+    <input type="file" name="choosefile" id="choosefile" multiple>
+    <br> <br>
+    <div id="filelist">
+
+    </div>
+    <script>
+        let currentAudioIndex = 0;
+        const fileNode = document.getElementById('choosefile')
+        const audioNode = document.getElementsByTagName("audio")
+        const fileListNode = document.getElementById("filelist")
+        let listAudioData = []
+        try {
+            onLoadData()
+            console.log('listAudioData', JSON.parse(window.localStorage.getItem("listAudioData")))
+        } catch (error) {
+
+        }
+        function onChangeStyleAudio() {
+            const buttonNodes = document.querySelectorAll('#filelist button')
+            for (const iterator of buttonNodes) {
+                iterator.removeAttribute("style")
+            }
+            buttonNodes[currentAudioIndex].setAttribute("style", "background-color: aqua")
+        }
+        function onLoadData() {
+            currentAudioIndex = parseInt(window.localStorage.getItem("currentAudioIndex")) || 0
+            console.log('currentAudioIndex', currentAudioIndex)
+            listAudioData = [...JSON.parse(window.localStorage.getItem("listAudioData"))]
+            for (let i = 0; i < listAudioData.length; i++) {
+                const file = listAudioData[i];
+                fileListNode.innerHTML += `
+                        <button onclick='onClickAudio(${i})'>
+                            <h3>${file.id}. ${file.name}</h3>
+                            <br>
+                        </button>
+                        <br> 
+                    `
+            }
+            onChangeStyleAudio()
+        }
+
+        function onClickAudio(index) {
+            currentAudioIndex = index;
+            window.localStorage.setItem("currentAudioIndex", currentAudioIndex)
+            audioNode.item(0).src = listAudioData[currentAudioIndex].url;
+            audioNode.item(0).play()
+            onChangeStyleAudio()
+        }
+        audioNode.item(0).onended = function (ev) {
+            currentAudioIndex += 1;
+            audioNode.item(0).src = listAudioData[currentAudioIndex].url
+            audioNode.item(0).play()
+            onChangeStyleAudio()
+        }
+
+        fileNode.onchange = function (ev) {
+            listAudioData = []
+            fileListNode.innerHTML = ''
+            for (let i = 0; i < fileNode.files.length; i++) {
+                const file = fileNode.files[i];
+                const audioURL = URL.createObjectURL(fileNode.files[i])
+                listAudioData.push({
+                    url: audioURL,
+                    name: file.name,
+                })
+
+            }
+            listAudioData.sort((a, b) => a.name > b.name ? 1 : -1)
+            listAudioData?.forEach((file, i) => {
+                listAudioData[i].id = i + 1
+                fileListNode.innerHTML += `
+                        <button onclick='onClickAudio(${i})'>
+                            <h3>${i + 1}. ${file.name}</h3>
+                            <br>
+                        </button>
+                        <br> 
+                    `
+            })
+            window.localStorage.setItem("listAudioData", JSON.stringify(listAudioData))
+            
+            // audioNode.item(0).srcObject = fileNode.files[currentAudioIndex]
+            // window.ReactNativeWebView.postMessage("hello")
+        }
+    </script>
+</body>
+
+</html>
