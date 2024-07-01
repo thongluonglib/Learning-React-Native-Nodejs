@@ -5,10 +5,11 @@
  * @format
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { PropsWithChildren } from 'react';
 import {
   Button,
+  FlatList,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -24,14 +25,16 @@ import {
 import useApiHook from './src/hooks/useApiHook'
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-  const { loading, data, callApi } = useApiHook()
+  const { loading, data, callApi, loadMorePage } = useApiHook('/get-books', { limit: 20 })
   console.log('loading', loading)
-  console.log('data', data)
+  console.log('data', JSON.stringify(data, null, 2))
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-  
+  useEffect(() => {
+    callApi().then(() => { });
+  }, [])
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -41,10 +44,25 @@ function App(): React.JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-          <Button title='Click here' onPress={() => {
-            callApi();
-          }} />
+        <Button title='Click here' onPress={async () => {
+          await callApi();
+        }} />
+        <Button title='Load More' onPress={async () => {
+          await loadMorePage();
+        }} />
+
       </ScrollView>
+      <FlatList
+        style={{ height: '100%' }}
+        data={data}
+        renderItem={({ item, index }) => {
+          return (
+            <Text key={index.toString()} style={{ padding: 20 }}>{item.sBookName}</Text>
+          )
+        }}
+        onEndReachedThreshold={0.5}
+        onEndReached={() => loadMorePage()}
+      />
     </SafeAreaView>
   );
 }
