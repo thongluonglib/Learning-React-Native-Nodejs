@@ -1,0 +1,1082 @@
+[
+  {
+    "id": 1,
+    "sName": "abide by /ə'baid/",
+    "sExplain": "to accept and act according to a law, an agreement",
+    "sType": "(v): tôn trọng, tuân theo, giữ (lời)",
+    "sExample": "The two parties agreed to abide by the judge's decision",
+    "sTranslate": "Hai bên đã đồng ý tuân theo quyết định của tòa án.",
+    "create_date": null
+  },
+  {
+    "id": 2,
+    "sName": "agreement /ə'gri:mənt/",
+    "sExplain": "an arrangement, a promise or a contract made with somebody",
+    "sType": "(n): hợp đồng, giao kèo, sự đồng ý/thỏa thuận với nhau",
+    "sExample": "According to the agreement, the caterer will also supply the flowers for the event",
+    "sTranslate": "Theo như thỏa thuận, nhà cung cấp lương thực thực phẩm cũng sẽ cung cấp hoa cho sự kiện",
+    "create_date": null
+  },
+  {
+    "id": 3,
+    "sName": "assurance /ə'ʃuərəns/",
+    "sExplain": "a statement that something will certainly be true or will certainly happen",
+    "sType": "(n): sự cam đoan, bảo đảm, chắc chắn; sự tin chắc, tự tin",
+    "sExample": "The sales associate gave his assurance that the missing keyboard would be replaced the next day.",
+    "sTranslate": "Đối tác bán hàng cam đoan rằng ngày mai bàn phím lỗi sẽ được thay.",
+    "create_date": null
+  },
+  {
+    "id": 4,
+    "sName": "cancellation /,kænse'leiʃn/",
+    "sExplain": "a decision to stop something that has already been arranged from happening",
+    "sType": "(n): sự bãi bỏ, hủy bỏ",
+    "sExample": "The cancelation of her flight caused her problems for the rest of the week",
+    "sTranslate": "Việc hủy chuyến bay đã gây cho cô ấy nhiều vấn đề trong những ngày còn lại của tuần.",
+    "create_date": null
+  },
+  {
+    "id": 5,
+    "sName": "determine /di'tə:min/",
+    "sExplain": "to discover the facts about something",
+    "sType": "(v): quyết định, xác định, định rõ; quyết tâm, kiên quyết",
+    "sExample": "After reading the contract, I was still unable to detemine if our company was liable for back wages.",
+    "sTranslate": "Sau khi đọc hợp đồng, tôi vẫn không thể biết được liệu rằng công ty của chúng tôi có phải chịu trách nhiệm hoàn trả lại lương không",
+    "create_date": null
+  },
+  {
+    "id": 6,
+    "sName": "engage /in'geidʤ/",
+    "sExplain": "to become involved in, to participate",
+    "sType": "(v): (v)Tham gia, cam kết, (n)sự hứa hẹn, hứa hôn",
+    "sExample": "He engaged us in a fascinating discussion about current business law",
+    "sTranslate": "Anh ấy cùng chúng tôi thảo luận sôi nổi về luật kinh doanh hiện hành",
+    "create_date": null
+  },
+  {
+    "id": 7,
+    "sName": "establish /is'tæbliʃ/",
+    "sExplain": "to start or create an organization, a system",
+    "sType": "(v): thiết lập, thành lập; xác minh, chứng minh, củng cố",
+    "sExample": "The merger of the two company established a powerful new corporation",
+    "sTranslate": "Sự liên kết giữa 2 công ty tạo nên một tập đoàn kinh tế hùng mạnh.",
+    "create_date": null
+  },
+  {
+    "id": 8,
+    "sName": "obligate /'ɔbligeit/",
+    "sExplain": "to bind legally or morally",
+    "sType": "(v): bắt buộc, ép buộc",
+    "sExample": "The contractor was obligated by the contract to work 40 hours a week.",
+    "sTranslate": "Nhà thầu buộc phải làm việc 40 tiếng mỗi tuần.",
+    "create_date": null
+  },
+  {
+    "id": 9,
+    "sName": "party /'pɑ:ti/",
+    "sExplain": "one of the people or groups of people involved in a legal agreement",
+    "sType": "(n): đảng, phái, đội, nhóm; người tham dự/tham gia; buổi liên hoan, buổi tiệc",
+    "sExample": "The parties agreed to settlement in their contract dispute.",
+    "sTranslate": "Các bên đã nhất trí đi đến một thỏa thuận trong hợp đồng gây tranh cãi của họ.",
+    "create_date": null
+  },
+  {
+    "id": 10,
+    "sName": "provision /provision/",
+    "sExplain": "a condition or an arrangement in a legal document",
+    "sType": "(n): sự dự liệu, dự trữ, dự phòng, cung cấp; điều khoản",
+    "sExample": "The father made provision for his children through his will.",
+    "sTranslate": "Người cha đã truyền lại di chúc cho những đứa con của mình.",
+    "create_date": null
+  },
+  {
+    "id": 11,
+    "sName": "resolve /ri'zɔlv/",
+    "sExplain": "to find an acceptable solution to a problem",
+    "sType": "(v, n): (v) giải quyết, (n) sự kiên quyết / sự tin chắc",
+    "sExample": "The manager resolved to clean out all the files at the end of the week.",
+    "sTranslate": "Cuối tuần, người quản lý đã quyết định xóa sạch tất cả các dữ liệu",
+    "create_date": null
+  },
+  {
+    "id": 12,
+    "sName": "specific /spi'sifik/",
+    "sExplain": "detailed abd exact",
+    "sType": "(adj): riêng biệt, cụ thể, đặc trưng; rõ ràng, rành mạch",
+    "sExample": "The customer's specific complaint was not addressed in his e-mail.",
+    "sTranslate": "Khiếu nại cụ thể của khách hàng đã không được giải quyết trong Email gửi anh ấy.",
+    "create_date": null
+  },
+  {
+    "id": 13,
+    "sName": "attract /ə'trækt/",
+    "sExplain": "to draw by appeal",
+    "sType": "(v): hấp dẫn, lôi cuốn, thu hút",
+    "sExample": "The display attracted a number of people at the convention",
+    "sTranslate": "Việc trưng bày đã thu hút được một số người tại hội nghị",
+    "create_date": null
+  },
+  {
+    "id": 14,
+    "sName": "compare /kəm'peə/",
+    "sExplain": "to examine people or things to see how they are similar and how they are different",
+    "sType": "(v): so sánh, đối chiếu",
+    "sExample": "Once the customer compared the two products, her choice was easy.",
+    "sTranslate": "Khi mà người khách hàng được so sánh 2 sản phẩm, sự lựa chọn của cô ta sẽ dễ dàng hơn.",
+    "create_date": null
+  },
+  {
+    "id": 15,
+    "sName": "competition /,kɔmpi'tiʃn/",
+    "sExplain": "a situation in which people or organizations compete with each other for something that not everyone can have",
+    "sType": "(v): ‹sự/cuộc› cạnh tranh, tranh giành, thi đấu",
+    "sExample": "In the competition for afternoon dinners, Hector's has come out on top",
+    "sTranslate": "Trong cuộc thi của các quán ăn chiều, của hàng Hector đã được xếp hạng nhất.",
+    "create_date": null
+  },
+  {
+    "id": 16,
+    "sName": "consume /kən'sju:m/",
+    "sExplain": "to use something, especially fuel, engery or time",
+    "sType": "(v): tiêu thụ, tiêu dùng",
+    "sExample": "The printer consumes more toner than the downstairs printer",
+    "sTranslate": "Cái máy in ngốn nhiều ống mực hơn là cái máy in ở dưới nhà",
+    "create_date": null
+  },
+  {
+    "id": 17,
+    "sName": "convince /kən'vins/",
+    "sExplain": "to make somebody / yourselft believe that something is true",
+    "sType": "(v): Thuyết phục",
+    "sExample": "He convinced me that he was right.",
+    "sTranslate": "Anh ấy đã thuyết phục tôi rằng anh ấy đã đúng.",
+    "create_date": null
+  },
+  {
+    "id": 18,
+    "sName": "currently /ˈkʌrəntli/",
+    "sExplain": "at the present time",
+    "sType": "(adv): hiện thời, hiện nay, lúc này",
+    "sExample": "Currently, customers are demanding big discounts for bulk orders",
+    "sTranslate": "Hiện nay, khách hàng đang đòi hỏi những khoản giảm giá nhiều cho những đơn hàng lớn",
+    "create_date": null
+  },
+  {
+    "id": 19,
+    "sName": "fad /fæd/",
+    "sExplain": "something that people are interested in for only a short period of time.",
+    "sType": "(n): mốt nhất thời, sự thích thú tạm thời; dở hơi, gàn dở",
+    "sExample": "The mini dress was a fad once thought to be finished, but now it is making a comeback",
+    "sTranslate": "Váy ngắn là mốt tạm thời mỗi khi ý tưởng bị hết, nhưng hiện giờ nó đang quay trở lại",
+    "create_date": null
+  },
+  {
+    "id": 20,
+    "sName": "inspiration /,inspə'reiʃn/",
+    "sExplain": "a thing or person that arouses a feeling",
+    "sType": "(n): ‹sự/người/vật› truyền cảm hứng, gây cảm hứng",
+    "sExample": "His work is an inspiration to the marketing department.",
+    "sTranslate": "Công việc của anh ta là một nguồn cảm hứng cho bộ phận tiếp thị",
+    "create_date": null
+  },
+  {
+    "id": 21,
+    "sName": "market /'mɑ:kit/",
+    "sExplain": "to advertise and offer a product for sale",
+    "sType": "(v): thị trường, chợ, nơi mua bán sản phẩm...",
+    "sExample": "The market for brightly colored clothing was brisk last year, but it's moving sluggishly this year",
+    "sTranslate": "The market for brightly colored clothing was brisk last year, but it's moving sluggishly this year",
+    "create_date": null
+  },
+  {
+    "id": 22,
+    "sName": "persuasion /pə'sweiʤn/",
+    "sExplain": " the power to influence, a deep conviction or belief.",
+    "sType": "(n): ‹sự› thuyết phục, làm cho tin (chú ý: persuade > convince)",
+    "sExample": " The seminar teaches techniques of persuasion to increase sales.",
+    "sTranslate": "Hội thảo giảng dạy những kỹ thuật thuyết phục để gia tăng doanh số",
+    "create_date": null
+  },
+  {
+    "id": 23,
+    "sName": "productive /prəˈdʌktɪv/",
+    "sExplain": "making goods or growing crops.",
+    "sType": "(adj): sản xuất, sinh sản; sinh lợi nhiều, có hiệu quả",
+    "sExample": "The unproductive sales meeting brought many staff complaints",
+    "sTranslate": "Hội nghị kinh doanh phi lợi nhuận đã làm cho nhiều nhân viên phàn nàn",
+    "create_date": null
+  },
+  {
+    "id": 24,
+    "sName": "satisfaction /,sætis'fækʃn/",
+    "sExplain": "the good feeling that you have when you have achieved something",
+    "sType": "(n): sự làm thỏa mãn, sự hài lòng",
+    "sExample": "Your satisfaction is guaranteed or you'll get your money back.",
+    "sTranslate": "Sự hài lòng của bạn được bảo đảm, hoặc là bạn sẽ được nhận lại tiền của mình",
+    "create_date": null
+  },
+  {
+    "id": 25,
+    "sName": "characteristic /,kæriktə'ristik/",
+    "sExplain": "very typical of something or of somebody's character.",
+    "sType": "(adj, n): (adj) đặc thù, (n) đặc trưng, đặc điểm, đặc thù, cá biệt",
+    "sExample": "One characteristic of the store is that it is slow in mailing refund checks.",
+    "sTranslate": "Một đặc điểm của cửa hàng là nó chậm chạp trong việc gửi hóa đơn hoàn trả",
+    "create_date": null
+  },
+  {
+    "id": 26,
+    "sName": "consequence /'kɔnsikwəns/",
+    "sExplain": "a result of something that has happened",
+    "sType": "(n): kết quả, hậu quả, hệ quả; tầm quan trọng, tính trọng đại",
+    "sExample": "As a consequence of not having seen a dentist for several years, Lydia had several cavities.",
+    "sTranslate": "Là hậu quả của việc không đi khám nha sĩ trong vài năm, Lydia đã bị vài răng sâu rỗng",
+    "create_date": null
+  },
+  {
+    "id": 27,
+    "sName": "consider /kən'sidə/",
+    "sExplain": "to think about something carefully",
+    "sType": "(v): cân nhắc, suy xét, suy nghĩ (một cách cẩn thận); lưu ý, quan tâm",
+    "sExample": " After considering all the options, Della decided to buy a used car",
+    "sTranslate": "Sau khi cân nhắc tất cả sự chọn lựa, Della đã quyết định mua chiếc xe cũ",
+    "create_date": null
+  },
+  {
+    "id": 28,
+    "sName": "cover /'kʌvə/",
+    "sExplain": "to include something; to deal with something",
+    "sType": "(v): che, phủ, trùm, bọc; bao gồm",
+    "sExample": "Will my medical insurance cover this surgery?",
+    "sTranslate": "Hợp đồng bảo hiểm y tế của tôi liệu có bao gồm cho ca phẫu thuật này không?",
+    "create_date": null
+  },
+  {
+    "id": 29,
+    "sName": "expiration /,ekspaiə'reiʃn/",
+    "sExplain": "an ending of the period of time when an official document can be used",
+    "sType": "(n): sự mãn hạn, sự hết hạn, sự kết thúc",
+    "sExample": "Have you checked the expriration date on this yogurt?",
+    "sTranslate": "Anh đã kiểm tra hạn sử dụng của món sữa chua này chưa?",
+    "create_date": null
+  },
+  {
+    "id": 30,
+    "sName": "frequently /ˈfriːkwəntli/",
+    "sExplain": "often",
+    "sType": "(adv): thường xuyên, một cách thường xuyên",
+    "sExample": "Appliances frequently come with a one-year warranty",
+    "sTranslate": "Trang thiết bị thường có bảo hành một năm",
+    "create_date": null
+  },
+  {
+    "id": 31,
+    "sName": "imply /im'plai/",
+    "sExplain": "to suggest that something is true without saying so directly",
+    "sType": "(v): ngụ ý, hàm ý, ẩn ý, ý nói",
+    "sExample": "The guarantee on the Walkman implied that all damages were covered under warranty for one year",
+    "sTranslate": "Giấy bảo đảm theo máy nghe nhạc Walkman đã ngụ ý rằng mọi hư hỏng đều được bao gồm trong thời hạn bảo hành là 1 năm",
+    "create_date": null
+  },
+  {
+    "id": 32,
+    "sName": "promise /promise/",
+    "sExplain": "to tell somebody that you will definitely do or not do something",
+    "sType": "(v): (n) hứa hẹn, cam đoan, bảo đảm; (v) hứa",
+    "sExample": "The sales associate promised that our new mattress would arrive by noon on Saturday",
+    "sTranslate": "Người cộng tác kinh doanh hứa rằng tấm nệm mới của chúng ta sẽ đến trước trưa thứ Bảy",
+    "create_date": null
+  },
+  {
+    "id": 33,
+    "sName": "protect /protect/",
+    "sExplain": "to make sure that somebody / something is not harmed, injured",
+    "sType": "(v): bảo vệ, bảo hộ, che chở",
+    "sExample": "Consumer laws are designed to protect the public against unscrupulous vendors",
+    "sTranslate": "Luật tiêu dùng được thiết kế để bảo vệ công chúng trước những kẻ bán hàng vô lương tâm",
+    "create_date": null
+  },
+  {
+    "id": 34,
+    "sName": "reputation /,repju:'teiʃn/",
+    "sExplain": "the opinion that people have about what s.b/s.th is like, based on what has happened in the past",
+    "sType": "(n): danh tiếng, thanh danh, tiếng (tốt của nhân vật)",
+    "sExample": "The company knew that the reputation of its products was the most important asset it had",
+    "sTranslate": "Công ty biết rằng tiếng tăm sản phẩm của họ là thứ tài sản quan trọng nhất mà họ có",
+    "create_date": null
+  },
+  {
+    "id": 35,
+    "sName": "require /ri'kwaiə/",
+    "sExplain": "to need something; to depend on s.b / s.th",
+    "sType": "(v): đòi hỏi, yêu cầu, cần phải",
+    "sExample": "The law requires that each item clearly display the warranty information",
+    "sTranslate": "Luật pháp yêu cầu mỗi món hàng trình bày rõ ràng thông tin về bảo hành",
+    "create_date": null
+  },
+  {
+    "id": 36,
+    "sName": "variety /və'raiəti/",
+    "sExplain": "different sorts of the same thing",
+    "sType": "(n): đa dạng, nhiều thứ/loại/vẻ khác nhau",
+    "sExample": "There's a variety of standard terms that you'll find in warranties",
+    "sTranslate": "Có nhiều điều khoản tiêu chuẩn mà bạn sẽ thấy ở trong các phiếu bảo hành",
+    "create_date": null
+  },
+  {
+    "id": 37,
+    "sName": "address /ə'dres/",
+    "sExplain": "a formal speech that is made in front of an audience",
+    "sType": "(n,v): (n) địa chỉ, diễn văn, bài nói chuyện, tác phong nói chuyện, sự khôn khéo; (v) trình bày",
+    "sExample": "Marco's business plan addresses the needs of small business owners",
+    "sTranslate": "Kế hoạch kinh doanh của Marco nhằm vào nhu cầu của những chủ doanh nghiệp nhỏ",
+    "create_date": null
+  },
+  {
+    "id": 38,
+    "sName": "avoid /ə'vɔid/",
+    "sExplain": "to prevent something bad from happening",
+    "sType": "(v): tránh, tránh khỏi; hủy bỏ, bác bỏ",
+    "sExample": "To avoid going out of business, owners should prepare a proper business plan",
+    "sTranslate": "Nhằm tránh lụn bại việc làm ăn, những người chủ nên chuẩn bị một kế hoạch KD phù hợp",
+    "create_date": null
+  },
+  {
+    "id": 39,
+    "sName": "demonstrate /'demənstreit/",
+    "sExplain": "to show something clearly by giving proof or evidence",
+    "sType": "(v): bày tỏ, biểu lộ, cho thấy; chứng minh, giải thích",
+    "sExample": "The professor demonstrated through a case study that a business plan can impress a lender",
+    "sTranslate": "Vị giáo sư đã chứng minh thông qua bài học tình huống là một kế hoạch kinh doanh có thể gây ấn tượng với một người cho vay",
+    "create_date": null
+  },
+  {
+    "id": 40,
+    "sName": "develop /di'veləp/",
+    "sExplain": "to gradually grow or become bigger, more advanced",
+    "sType": "(v): phát triển, tiến triển, triển khai, mở rộng",
+    "sExample": "Lily developed her ideas into a business plan by taking a class at the community college",
+    "sTranslate": "Lily đã phát triển ý tưởng của cô ta vào kế hoạch kinh doanh bằng cách tham dự một lớp học tại trường cao đẳng cộng đồng",
+    "create_date": null
+  },
+  {
+    "id": 41,
+    "sName": "evaluate /i'væljueit/",
+    "sExplain": "to form an opinion of amount, value or quality of something",
+    "sType": "(v): đánh giá, định giá; ước lượng",
+    "sExample": "It's important to evaluate your competition when making a business plan",
+    "sTranslate": "Đánh giá sức cạnh tranh của bạn là việc quan trọng khi lập một kế hoạch kinh doanh",
+    "create_date": null
+  },
+  {
+    "id": 42,
+    "sName": "gather /'gæðə/",
+    "sExplain": "to come together, or bring people together",
+    "sType": "(v): tập hợp, tụ thập, thu thập; kết luận, suy ra",
+    "sExample": "We gathered information for our plan from many sources",
+    "sTranslate": "Chúng tôi thu thập thông tin cho bản kế hoạch của mình từ nhiều nguồn",
+    "create_date": null
+  },
+  {
+    "id": 43,
+    "sName": "offer /'ɔfə/",
+    "sExplain": "to say that you are willing to do something for somebody",
+    "sType": "(n,v): (n) đề xuất, đề nghị, chào mời, chào hàng, dạm, hỏi, ướm; (v) đề nghị",
+    "sExample": "Devon accepted our offer to write the business plan",
+    "sTranslate": "Devon đã chuấp thuận đề nghị của chúng tôi để viết một bản kế hoạch kinh doanh",
+    "create_date": null
+  },
+  {
+    "id": 44,
+    "sName": "primarily /'praimərili/",
+    "sExplain": "mainly",
+    "sType": "(adv): trước hết, đầu tiên; chính, chủ yếu, quan trọng nhất",
+    "sExample": "The developers are thinking primarily of how to enter the South American market",
+    "sTranslate": "Những nhà phát triển quan tâm nhất đến việc làm sao để xâm nhập thị trường Nam Mỹ",
+    "create_date": null
+  },
+  {
+    "id": 45,
+    "sName": "risk /rɪsk/",
+    "sExplain": "the possibility of something bad happening at some time in the future",
+    "sType": "(n): nguy cơ, sự nguy hiểm, sự rủi ro",
+    "sExample": "The primary risk for most start-up businesses is insufficient capital",
+    "sTranslate": "Nguy cơ lớn nhất đối với hầu hết các cuộc khởi nghiệp là thiếu vốn",
+    "create_date": null
+  },
+  {
+    "id": 46,
+    "sName": "strategy /ˈstrætədʒi/",
+    "sExplain": "a plan that is intended to achieve a particular purpose",
+    "sType": "(n): chiến lược, sự vạch kế hoạch hành động",
+    "sExample": "A business plan is a strategy for running a business and avoiding problems",
+    "sTranslate": "Một kế hoạch kinh doanh là một chiến lược để vận hành công việc và tránh các rắc rối",
+    "create_date": null
+  },
+  {
+    "id": 47,
+    "sName": "strong /strɔɳ/",
+    "sExplain": "having a lot of physical power",
+    "sType": "(adj): khỏe, mạnh, tốt, bền, kiên cố; đanh thép, kiên quyết; sôi nổi, nhiệt tình...",
+    "sExample": "The professor made a strong argument for the value of a good business plan",
+    "sTranslate": "Vị giáo sư đã gây ra một cuộc tranh luận sôi nổi về giá trị của một kế hoạch KD tốt",
+    "create_date": null
+  },
+  {
+    "id": 48,
+    "sName": "substitution /,sʌbsti'tju:ʃn/",
+    "sExplain": "to take the place of somebody / something else",
+    "sType": "(n): sự đổi, sự thay thế",
+    "sExample": "Your substitution of fake names for real ones makes the document seem insincere",
+    "sTranslate": "Việc anh lấy tên giả thay cho tên thật khiến cho tài liệu có vẻ như không thành thật",
+    "create_date": null
+  },
+  {
+    "id": 49,
+    "sName": "accommodate /ə'kɔmədeit/",
+    "sExplain": "to provide somebody with a room or place to sleep, live or sit",
+    "sType": "(v): điều tiết, điều chỉnh, thu xếp, làm cho phù hợp",
+    "sExample": "The meeting room was large enough to accommodate the various needs of the groups using it",
+    "sTranslate": "Phòng họp đủ lớn để phù hợp với nhiều nhu cầu khác nhau của các nhóm sử dụng nó",
+    "create_date": null
+  },
+  {
+    "id": 50,
+    "sName": "arrangement /ə'reindʤmənt/",
+    "sExplain": "a plan or preparation that you make so that something",
+    "sType": "(n): ‹sự› thu xếp, dàn xếp, sắp xếp, sắp đặt",
+    "sExample": "The travel arrangements were taken care of by Sara, Mr. Billing's capable assistant",
+    "sTranslate": "Việc thu xếp chuyến đi được chịu trách nhiệm bởi Sara, trợ lý có năng lực của ông Billing",
+    "create_date": null
+  },
+  {
+    "id": 51,
+    "sName": "association /ə,sousi'eiʃn/",
+    "sExplain": "an officcial group of people who have joined together for a particular purpose",
+    "sType": "(n): hội, hội liên hiệp, đoàn thể; ‹sự› kết hợp, liên kết, liên hợp",
+    "sExample": "Local telephone companies formed an association to serve common goals, meet their common needs, and improve efficiency",
+    "sTranslate": "Các công ty điện thoại địa phương thành lập một hội liên hiệp để phục vụ các mục đích chung, đáp ứng các nhu cầu chung của họ và",
+    "create_date": null
+  },
+  {
+    "id": 52,
+    "sName": "attend /ə'tend/",
+    "sExplain": "to be present at an even",
+    "sType": "(v): tham dự, có mặt; chăm sóc, phục vụ; đi theo, đi kèm, hộ tống",
+    "sExample": "We expect more than 100 members to attend the annual meeting",
+    "sTranslate": "Chúng tôi hy vọng hơn 100 thành viên đến tham dự cuộc họp thường niên",
+    "create_date": null
+  },
+  {
+    "id": 53,
+    "sName": "get in touch N/A",
+    "sExplain": "to communicate / contact with somebody",
+    "sType": "(v): liên lạc với, tiếp xúc với, giữ quan hệ với, có dính líu đến",
+    "sExample": "As soon as we arrive at the hotel, we will get in touch with the manager about the unexpected guests",
+    "sTranslate": "Ngay khi chúng tôi đến khách sạn, chúng tôi sẽ liên hệ với giám đốc về những vị khách không mời mà đến",
+    "create_date": null
+  },
+  {
+    "id": 54,
+    "sName": "hold /hould/",
+    "sExplain": "to have a meeting",
+    "sType": "(v): cầm, nắm, giữ; chứa, đựng; tổ chức, tiến hành",
+    "sExample": "This meeting room holds at least 80 people comfortably",
+    "sTranslate": "Phòng họp này chứa được thoải mái ít nhất 80 người",
+    "create_date": null
+  },
+  {
+    "id": 55,
+    "sName": "location /lou'keiʃn/",
+    "sExplain": "a place where something happens or exists",
+    "sType": "(n): vị trí, khu đất, hiện trường",
+    "sExample": "The location of the meeting was changed from the Red Room to the Green Room",
+    "sTranslate": "Vị trí họp đã được thay đổi từ phòng Đỏ sang phòng Xanh",
+    "create_date": null
+  },
+  {
+    "id": 56,
+    "sName": "overcrowded /əʊvəˈkraʊdɪd/",
+    "sExplain": "with too many people or things",
+    "sType": "(adj): chật ních, đông nghịt",
+    "sExample": "Too many poor people are living in overcrowded conditions",
+    "sTranslate": "Có quá nhiều người nghèo đang sống trong điều kiện chật chội",
+    "create_date": null
+  },
+  {
+    "id": 57,
+    "sName": "register /'redʤistə/",
+    "sExplain": "to record your/ / somebody / something name on an official list",
+    "sType": "(n, v): (n) danh sách, sổ, sổ sách; (v) đăng ký",
+    "sExample": "According to the register, more than 250 people attended the afternoon seminar",
+    "sTranslate": "Theo sổ đăng ký, đã có hơn 250 người tham dự buổi hội thảo chiều",
+    "create_date": null
+  },
+  {
+    "id": 58,
+    "sName": "select /si'lekt/",
+    "sExplain": "to choose somebody / something from a group",
+    "sType": "(v): chọn lựa, chọn lọc, tuyển chọn",
+    "sExample": "The winners were a select group",
+    "sTranslate": "Những người chiến thắng là một nhóm có chọn lọc (nhóm dành riêng)",
+    "create_date": null
+  },
+  {
+    "id": 59,
+    "sName": "session /'seʃn/",
+    "sExplain": "a period of time that is spent doing a particular activity",
+    "sType": "(n): phiên, kỳ, buổi (họp, học)",
+    "sExample": "The morning sessions tend to fill up first, so sign up early",
+    "sTranslate": "Các phiên họp sáng có khuynh hướng kín chỗ trước hết, vì vậy hãy đăng ký sớm",
+    "create_date": null
+  },
+  {
+    "id": 60,
+    "sName": "take part in N/A",
+    "sExplain": " to be involved in something",
+    "sType": "(v): tham dự, tham gia",
+    "sExample": "We could not get enough people to take part in the meeting, so we canceled it",
+    "sTranslate": "Chúng tôi không có đủ người tham dự cuộc họp, vì vậy chúng tôi hủy bỏ nó",
+    "create_date": null
+  },
+  {
+    "id": 61,
+    "sName": "access /ˈækses/",
+    "sExplain": "the opportunity or right to use something",
+    "sType": "(n, v): (n) lối vào, đường vào, sự/quyền truy cập; (v) truy cập",
+    "sExample": "You can't gain access to the files unless you know the password",
+    "sTranslate": "Anh không có được quyền truy cập file trừ phi anh biết mật khẩu",
+    "create_date": null
+  },
+  {
+    "id": 62,
+    "sName": "allocate /ˈæləkeɪt/",
+    "sExplain": "to give something officially to somebody / something for a particular purpose",
+    "sType": "(v): cấp cho, phân phối, phân phát, chia phần; chỉ định, định rõ vị trí",
+    "sExample": "The office manager did not allocate enough money to purchase software",
+    "sTranslate": "Người quản lý văn phòng không cấp đủ tiền để mua sắm phần mềm",
+    "create_date": null
+  },
+  {
+    "id": 63,
+    "sName": "compatible /kəm'pætəbl/",
+    "sExplain": "able to be used together",
+    "sType": "(adj): tương thích, tương hợp, hợp nhau, có thể dùng được với nhau",
+    "sExample": "This operating system is not compatible with this model computer",
+    "sTranslate": "Hệ điều hành không tương thích với kiểu máy tính này",
+    "create_date": null
+  },
+  {
+    "id": 64,
+    "sName": "delete /di'li:t/",
+    "sExplain": "to remove something that has been written or printed",
+    "sType": "(v): xóa đi, bỏ đi, gạch đi (to remove, to erase)",
+    "sExample": "The technicians deleted all the data on the disk accidentally",
+    "sTranslate": "Kỹ thuật viên đã vô tình xóa mọi dữ liệu trên đĩa",
+    "create_date": null
+  },
+  {
+    "id": 65,
+    "sName": "display /dis'plei/",
+    "sExplain": "to put something in a place where people can see it easily",
+    "sType": "(v, n): (v) hiển thị, biểu lộ, phô bày, trình bày, trưng bày; (n) sự trưng bày",
+    "sExample": "The accounting program displays a current balance when opened.",
+    "sTranslate": "Chương trình kế toán hiển thị một con số cân bằng thu chi khi mở (chương trình đó) ra",
+    "create_date": null
+  },
+  {
+    "id": 66,
+    "sName": "duplicate /'dju:plikit/",
+    "sExplain": "to make an extract copy of something",
+    "sType": "(v): sao lại, làm thành 2 bản, gấp đôi, nhân đôi",
+    "sExample": "I think the new word processing program will duplicate the success of the one introduced last year",
+    "sTranslate": "Tôi nghĩ rằng chương trình xử lý văn bản mới sẽ thành công gấp đôi so với chương trình được giới thiệu hồi năm ngoái",
+    "create_date": null
+  },
+  {
+    "id": 67,
+    "sName": "failure /'feiljə/",
+    "sExplain": "lack of success in doing or achieving something",
+    "sType": "(n): hỏng, thiếu, yếu, trượt, thất bại, bất thành",
+    "sExample": "Your failure to inform us about the changed password cost the company a day's work",
+    "sTranslate": "Anh không thông báo cho chúng tôi về mật khẩu bị đổi đã làm tốn công ty 1 ngày làm việc",
+    "create_date": null
+  },
+  {
+    "id": 68,
+    "sName": "figure out /ˈfɪɡə/ /aʊt/",
+    "sExplain": "to calculate an amount or the cost",
+    "sType": "(v): tìm hiểu, đoán ra, tính toán ra, giải ra",
+    "sExample": " By examining all of the errors, the technicians figured out how to fix the problem",
+    "sTranslate": "Bằng cách xem xét mọi lỗi, các kỹ thuật viên đã tìm ra các để sửa chữa các sự cố",
+    "create_date": null
+  },
+  {
+    "id": 69,
+    "sName": "ignore /ig'nɔ:/",
+    "sExplain": "to pay no attention to something",
+    "sType": "(v): bỏ qua, phớt lờ, không để ý tới",
+    "sExample": "He ignored all the 'No Smoking' signs and lit up a cigarette",
+    "sTranslate": "Anh ấy phớt lờ bảng cấm hút thuốc để hút 1 điểu thuốc",
+    "create_date": null
+  },
+  {
+    "id": 70,
+    "sName": "search /sə:tʃ/",
+    "sExplain": "an attemp to find somebody / something, especially by looking acrefully for them /it",
+    "sType": "n, v): (n) tìm kiếm, tìm hiểu; điều tra, thăm dò; (v) tìm",
+    "sExample": "Our search of the database produced very little information",
+    "sTranslate": "Việc tìm kiếm trong cơ sở dữ liệu của chúng tôi đã đem lại rất ít thông tin",
+    "create_date": null
+  },
+  {
+    "id": 71,
+    "sName": "shut down /ʃʌt/ /daʊn/",
+    "sExplain": "it stops being often for bussiness",
+    "sType": "(v): đóng lại, ngừng lại; tắt máy, ngừng hoạt động, chấm dứt",
+    "sExample": "Please shut down the computer before you leave",
+    "sTranslate": "Vui lòng tắt máy trước khi bạn ngừng làm việc",
+    "create_date": null
+  },
+  {
+    "id": 72,
+    "sName": "warning /'wɔ:niɳ/",
+    "sExplain": "a statement, an event, etc. telling somebody that something bad or unpleasant",
+    "sType": "(n): ‹sự/lời› cảnh báo, báo trước (có nguy hiểm hoặc gặp vấn đề rắc rối)",
+    "sExample": "The red flashing light gives a warning to users that the battery is low",
+    "sTranslate": "Ánh sáng nhấp nháy màu đỏ đưa ra sự cảnh báo với người dùng rằng pin bị cạn",
+    "create_date": null
+  },
+  {
+    "id": 73,
+    "sName": "affordable /əˈfɔːd/",
+    "sExplain": "cheap enough for most people to buy",
+    "sType": "(adj): có đủ khả năng, có đủ điều kiện (sức lực/thời gian/tiền bạc)",
+    "sExample": "The company's first priority was to find an affordable phone system",
+    "sTranslate": "Ưu tiên trước hết của công ty là tìm một hệ thống điện thoại có đủ khả năng (hoạt động)",
+    "create_date": null
+  },
+  {
+    "id": 74,
+    "sName": "as needed N/A",
+    "sExplain": "In need",
+    "sType": "(adv): khi cần, lúc cần, cần thiết",
+    "sExample": "The service contract states that repairs will be made on an as-needed basis",
+    "sTranslate": "Hợp đồng dịch vụ nói rằng việc sửa chữa sẽ được thực hiện dựa trên cơ sở mỗi khi cần",
+    "create_date": null
+  },
+  {
+    "id": 75,
+    "sName": "be in charge of N/A",
+    "sExplain": "be responsible for",
+    "sType": "(v): chịu trách nhiệm về; đang điều khiển, đang chỉ huy",
+    "sExample": "He appointed someone to be in charge of maintaining a supply of paper in the fax machine",
+    "sTranslate": "Ông ấy chọn người nào đó chịu trách nhiệm duy trì việc cung cấp giấy cho máy fax",
+    "create_date": null
+  },
+  {
+    "id": 76,
+    "sName": "capacity /kə'pæsiti/",
+    "sExplain": "the number of things or people that a container or space can hold",
+    "sType": "(n): sức chứa, dung tích, khả năng chứa đựng; khả năng, năng lực",
+    "sExample": "The new conference room is much larger and has a capacity of one hundred people",
+    "sTranslate": "Phòng họp mới thì lớn hơn nhiều (phòng cũ) và có khả năng chứa được một trăm người",
+    "create_date": null
+  },
+  {
+    "id": 77,
+    "sName": "durable /ˈdjʊərəbl/",
+    "sExplain": "likely to last for a long time",
+    "sType": "(adj): bền, lâu, lâu bền",
+    "sExample": "These chairs are more durable than the first ones we looked at",
+    "sTranslate": "Những cái ghế này bền hơn nhiều những cái ghế đầu tiên mà chúng ta đã thấy",
+    "create_date": null
+  },
+  {
+    "id": 78,
+    "sName": "initiative /i'niʃiətiv/",
+    "sExplain": "the ability to decide and act on your own without waiting for somebody to tell you what to do",
+    "sType": "(n): bắt đầu, khởi đầu, khởi xướng",
+    "sExample": "Employees are encouraged to take the initiative and share their ideas with management.",
+    "sTranslate": "Nhân viên được khuyến khích đi đầu và chia sẻ ý tưởng của họ với ban quản lý",
+    "create_date": null
+  },
+  {
+    "id": 79,
+    "sName": "physically /ˈfɪzɪkli /",
+    "sExplain": "in a way that is connected with a person's body rather than their mind",
+    "sType": "(adv): về thân thể/cơ thể/thể chất; theo quy luật tự nhiên, một cách vật lý",
+    "sExample": "The computer screen is making her physically sick.",
+    "sTranslate": "Màn hình máy tính khiến cho cô ta khó chịu về mặt thể chất",
+    "create_date": null
+  },
+  {
+    "id": 80,
+    "sName": "provider /provider/",
+    "sExplain": "a person or an organization that supplies somebody with something they need",
+    "sType": "(n): người cung cấp, nhà cung cấp (supplier)",
+    "sExample": "The deparment was extremely pleased with the service they received from the phone provide.",
+    "sTranslate": "Bộ phận hết sức hài lòng với dịch vụ mà họ nhận được từ nhà cung cấp dịch vụ điện thoại",
+    "create_date": null
+  },
+  {
+    "id": 81,
+    "sName": "recur /ri'kə:/",
+    "sExplain": "to happen again",
+    "sType": " (v): lặp lại, diễn lại, tái diễn, tái phát; lặp đi lặp lại",
+    "sExample": "The managers did not want that particular error to recur",
+    "sTranslate": "Các trưởng phòng không muốn những lỗi cá biệt đó lại tái diễn",
+    "create_date": null
+  },
+  {
+    "id": 82,
+    "sName": "reduction /ri'dʌkʃn/",
+    "sExplain": "an act of making something less or smaller",
+    "sType": "(n): ‹sự› giảm, hạ, thu nhỏ, hạ thấp (lessening, decrease)",
+    "sExample": "The outlet store gave a 20 percent reduction in the price of the shelves and bookcases",
+    "sTranslate": "Cửa hàng tiêu thụ đã giảm giá 20% với các kệ sách và tủ sách",
+    "create_date": null
+  },
+  {
+    "id": 83,
+    "sName": "stay on top of N/A",
+    "sExplain": "Have the newest informatiion",
+    "sType": "(v): nắm bắt tình hình (đang xảy ra), hiểu biết thông tin mới nhất",
+    "sExample": "In this industry, you must stay on top of current developments",
+    "sTranslate": "Trong ngành công nghiệp này, anh phải nắm bắt được tình hình về các diễn biến hiện tại",
+    "create_date": null
+  },
+  {
+    "id": 84,
+    "sName": "stock /stɒk/",
+    "sExplain": "a supply of goods that is available for sale",
+    "sType": "(v, n): kho/hàng dự trữ; vốn, cổ phần",
+    "sExample": "The employees stocked the shelves on a weekly basis",
+    "sTranslate": "Các nhân viên trữ hàng lên kệ căn cứ theo mỗi tuần",
+    "create_date": null
+  },
+  {
+    "id": 1037,
+    "sName": "appreciation /ə,pri:ʃi'eiʃn/",
+    "sExplain": "pleasure that you have when you recognize good qualities",
+    "sType": "(n): ‹sự› đánh giá, nhận thức (đúng/cao/sâu sắc); sự cảm kích",
+    "sExample": "In appreciation of your hard work on the Castcon project, the department will hold a casual lunch party on November third",
+    "sTranslate": "Để đánh giá cao sự làm việc chăm chỉ của các bạn trong dự án Castcon, bộ phận sẽ tổ chức một bữa liên hoan trưa đột xuất vào n",
+    "create_date": null
+  },
+  {
+    "id": 1038,
+    "sName": "be made of N/A",
+    "sExplain": "be produced of",
+    "sType": "(v): làm bằng (cái gì), gồm có (cái gì)",
+    "sExample": "This job will really test what you are made of",
+    "sTranslate": "Công việc này sẽ thật sự kiểm tra xem anh là người thế nào",
+    "create_date": null
+  },
+  {
+    "id": 1039,
+    "sName": "bring in N/A",
+    "sExplain": "to hire or recruit",
+    "sType": "(v): Thuê, mướn, tuyển dụng, dẫn tới, mang tới",
+    "sExample": "The company brought in new team of project planners",
+    "sTranslate": "Công ty đã thuê một đội mới cho các nhà hoạch định dự án",
+    "create_date": null
+  },
+  {
+    "id": 1040,
+    "sName": "casually /ˈkæʒuəli/",
+    "sExplain": " not showing much care or throught",
+    "sType": "(adv): bình thường, tự nhiên, không trịnh trọng, thân mật (informally)",
+    "sExample": "On Fridays, most employees dress casually",
+    "sTranslate": "Vào các thứ Sáu, phần lớn nhân viên ăn mặc tùy ý (không mặc đồng phục)",
+    "create_date": null
+  },
+  {
+    "id": 1041,
+    "sName": "code /koud/",
+    "sExplain": "a set moral principles or rules of behaviour",
+    "sType": "(n): quy định, quy tắc, luật lệ, đạo lý",
+    "sExample": "Even the most traditional companies are changing their dress code to something less formal",
+    "sTranslate": "Thậm chí hầu hết các công ty theo lối cổ cũng đang thay đổi quy tắc ăn mặc của họ sao cho bớt trịnh trọng đi",
+    "create_date": null
+  },
+  {
+    "id": 1042,
+    "sName": "expose /iks'pouz/",
+    "sExplain": "to show something that is usually hidden",
+    "sType": "(v): phơi bày, bộc lộ, phô ra, trưng bày",
+    "sExample": "He did not want to expose his fears and insecurity to anyone.",
+    "sTranslate": "Anh ấy không muốn để lộ sự sợ hãi và bất an của mình cho bất cứ ai.",
+    "create_date": null
+  },
+  {
+    "id": 1043,
+    "sName": "glimpse /glimps/",
+    "sExplain": " a look at somebody / something for a very short time",
+    "sType": "(n): nhìn lướt qua, thoáng qua",
+    "sExample": "The secretary caught a glimpse of her new boss as she was leaving the office.",
+    "sTranslate": "Cô thư ký bắt gặp ánh mắt lướt qua của người chủ mới khi cô ấy rời khỏi văn phòng",
+    "create_date": null
+  },
+  {
+    "id": 1044,
+    "sName": "out of N/A",
+    "sExplain": "no longer having",
+    "sType": "(adj): hết, mất, không còn",
+    "sExample": "The presenter ran out of time before he reached his conclusion",
+    "sTranslate": "Người dẫn chương trình đã hết thời gian trước khi anh ta đi đến kết luận",
+    "create_date": null
+  },
+  {
+    "id": 1045,
+    "sName": "outdated /aut'deitid/",
+    "sExplain": "not currently in use",
+    "sType": "(adj): hết hạn; lỗi thời, lạc hậu, cổ, hiện nay không còn dùng (obsolete)",
+    "sExample": "Before you do a mailing, make sure that none of the addresses is outdated.",
+    "sTranslate": "Trước khi anh gửi thư, hãy bảo đảm rằng không có địa chỉ nào hiện không còn sử dụng",
+    "create_date": null
+  },
+  {
+    "id": 1046,
+    "sName": "practice /'præktis/",
+    "sExplain": "action rather than ideas",
+    "sType": "(n, v): (n) sự thực hành; (v) thực hành, rèn luyện, tập luyện; thói quen, thủ tục",
+    "sExample": "Bill practiced answering the telephone until he was satisfied",
+    "sTranslate": "Bill thực tập trả lời điện thoại cho đến khi anh ta cảm thấy hài lòng",
+    "create_date": null
+  },
+  {
+    "id": 1047,
+    "sName": "reinforce /,ri:in'fɔ:s/",
+    "sExplain": "to make a feeling, an idea, etc. stronger",
+    "sType": "(v): tăng cường, củng cố, gia cố",
+    "sExample": "Employees reinforced their learning with practice in the workplace",
+    "sTranslate": "Các nhân viên củng cố kiến thức của mình bằng việc thực hành ở nơi làm việc",
+    "create_date": null
+  },
+  {
+    "id": 1048,
+    "sName": "verbally /'və:bəli/",
+    "sExplain": "in spoken words and not in writing or actions",
+    "sType": "(adv): bằng miệng, bằng lời nói",
+    "sExample": "The guarantee was made only verbally",
+    "sTranslate": "Sự bảo đảm được cam kết chỉ bằng lời",
+    "create_date": null
+  },
+  {
+    "id": 1049,
+    "sName": "disk /disk/",
+    "sExplain": "a device for storing information on a computer",
+    "sType": "(n): đĩa (vi tính, thể thao, đĩa hát...)",
+    "sExample": "Rewritable compact disks are more expensive than read-only CDs",
+    "sTranslate": "Đĩa quang có khả năng ghi thì đắt hơn nhiều đĩa CD chỉ đọc",
+    "create_date": null
+  },
+  {
+    "id": 1050,
+    "sName": "facilitate /fə'siliteit/",
+    "sExplain": "to make an action possible or easier",
+    "sType": "(v): làm cho dễ dàng, làm cho thuận tiện",
+    "sExample": "The computer program facilitated the scheduling of appointments",
+    "sTranslate": "Chương trình máy tính làm cho việc lập lịch các buổi hẹn được thuận tiện",
+    "create_date": null
+  },
+  {
+    "id": 1051,
+    "sName": "network /'netwə:k/",
+    "sExplain": "a number of computers and other devices that are connected together",
+    "sType": "(v, n): (v) kết nối, liên kết; (n) mạng lưới, hệ thống",
+    "sExample": "We set up a new network in my office to share files",
+    "sTranslate": "Chúng tôi thiết lập một mạng (máy tính) mới trong văn phòng để chia sẻ tập tin",
+    "create_date": null
+  },
+  {
+    "id": 1052,
+    "sName": "popularity /,pɔpju'læriti/",
+    "sExplain": "the state of being liked by a large number of people",
+    "sType": "(n): ‹tính/sự› đại chúng, phổ biến, nổi tiếng, được yêu mến",
+    "sExample": "This brand of computers is extremely popular among college students",
+    "sTranslate": "Thương hiệu máy tính này hết sức nổi tiếng trong các sinh viên đại học cao đẳng",
+    "create_date": null
+  },
+  {
+    "id": 1053,
+    "sName": "process /ˈprəʊses/",
+    "sExplain": "a series of something that are done in order to achieve a particular result",
+    "sType": "(v, n): (v) xử lý; (n) quá trình, sự tiến triển, sự tiến hành; phương pháp, cách thức, quy trình",
+    "sExample": "There is a process for determining why your computer is malfunctioning",
+    "sTranslate": "Có một cách thức để xác định xem tại sao máy tính của anh bị trục trặc",
+    "create_date": null
+  },
+  {
+    "id": 1054,
+    "sName": "replace /ri'pleis/",
+    "sExplain": "to be used instead of something / somebody else",
+    "sType": "(v): thay thế; đặt vào lại chỗ cũ",
+    "sExample": "I've replaced the hard drive that was malfunctioning",
+    "sTranslate": "Tôi đã thay thế cái đĩa cứng bị trục trặc",
+    "create_date": null
+  },
+  {
+    "id": 1055,
+    "sName": "revolution /,revə'lu:ʃn/",
+    "sExplain": "a great change in conditions, ways of working, beliefs, etc. ..that affects large numbers of people",
+    "sType": "(n): vòng, tua, sự xoay vòng; cuộc cách mạng",
+    "sExample": "We see a revolution in the computer field almost every day",
+    "sTranslate": "Chúng ta thấy một cuộc cách mạng trong lãnh vực máy tính hầu như mỗi ngày",
+    "create_date": null
+  },
+  {
+    "id": 1056,
+    "sName": "sharp /ʃɑ:p/",
+    "sExplain": "sudden and rapid, especially of a change in something",
+    "sType": "(adj): sắc, bén, rõ rệt, sắc nét; thông minh, láu lỉnh; thình lình, đột ngột",
+    "sExample": "The new employee proved how sharp she was when she mastered the new program in a few days",
+    "sTranslate": "Nhân viên mới đã chứng tỏ được cô ấy thông minh đến thế nào khi mà cô đã làm chủ được chương trình mới trong vài ngày",
+    "create_date": null
+  },
+  {
+    "id": 1057,
+    "sName": "skill /skil/",
+    "sExplain": "the ability to do something well",
+    "sType": "(n): kỹ năng, kỹ xảo; sự khéo léo, sự tinh xảo",
+    "sExample": "The software developer has excellent technical skills and would be an asset to our software programming team",
+    "sTranslate": "Người phát triển phần mềm có những kỹ năng chuyên môn xuất săc và là một vốn quý đối với đội ngũ lập trình phần mềm của chúng tôi",
+    "create_date": null
+  },
+  {
+    "id": 1058,
+    "sName": "software /ˈsɒftweə(r)/",
+    "sExplain": " the programs, etc....used to operate a computer",
+    "sType": "n): phần mềm, chương trình máy tính",
+    "sExample": "Many computers come pre-loaded with software",
+    "sTranslate": "Nhiều máy tính đã có sẵn phần mềm",
+    "create_date": null
+  },
+  {
+    "id": 1059,
+    "sName": "store /stɔ:/",
+    "sExplain": "to keep",
+    "sType": "(v): cửa hàng, cửa hiệu, kho hàng",
+    "sExample": "You can store more data on a zip drive",
+    "sTranslate": "Anh có thể lưu trữ dữ liệu nhiều hơn trên ổ đĩa nén",
+    "create_date": null
+  },
+  {
+    "id": 1060,
+    "sName": "technically /ˈteknɪkli/",
+    "sExplain": "in a way that is connected with the skills needed for a particular job",
+    "sType": "(adv): nói đến/nói về mặt kỹ thuật; một cách chuyên môn/nghiêm túc",
+    "sExample": "Technically speaking, the virus infected only script files",
+    "sTranslate": "Nói về mặt kỹ thuật thì virus chỉ tác động lên các tập tin script (tập tin kịch bản thi hành)",
+    "create_date": null
+  },
+  {
+    "id": 1061,
+    "sName": "assemble /ə'sembl/",
+    "sExplain": "to bring people or things together as a group",
+    "sType": "(v): thu thập, lắp ráp, tập hợp",
+    "sExample": "All the students were asked to assemble in the main hall",
+    "sTranslate": "Tất cả các sinh viên được yêu cầu tập hợp ở hội trường chính.",
+    "create_date": null
+  },
+  {
+    "id": 1062,
+    "sName": "beforehand /bi'fɔ:hænd/",
+    "sExplain": "earlier; before something else happens",
+    "sType": "(adv): sẵn, có sẵn, trước, sớm",
+    "sExample": "To speed up the mailing, we should prepare the labels beforehand",
+    "sTranslate": "Để tăng tốc gửi thư, chúng ta nên chuẩn bị nhãn trước.",
+    "create_date": null
+  },
+  {
+    "id": 1063,
+    "sName": "complication /ˌkɑːmplɪˈkeɪʃn/",
+    "sExplain": "a complex combination of elements or things.",
+    "sType": "(n): sự phức tạp, sự rắc rối",
+    "sExample": "She will have to spend two more days in the hospital due to complications during the surgery.",
+    "sTranslate": "Cô sẽ phải mất hai ngày nữa trong bệnh viện do biến chứng trong khi phẫu thuật.",
+    "create_date": null
+  },
+  {
+    "id": 1064,
+    "sName": "courier /'kuriə/",
+    "sExplain": "a person or company whose job is to take packages or papers somewhere",
+    "sType": "(n): người đưa tin, người đưa thư, người chuyển phát",
+    "sExample": "We hired a courier to deliver the package",
+    "sTranslate": "Chúng tôi đã thuê một người đưa thư để phân phát các kiện hàng.",
+    "create_date": null
+  },
+  {
+    "id": 1065,
+    "sName": "express /iks'pres/",
+    "sExplain": "fast and direct",
+    "sType": "(adj): nhanh, hỏa tốc, tốc hành.",
+    "sExample": "It's important that this document be there tomorrow, so please send it express mail.",
+    "sTranslate": "Việc tài liệu này phải có ở chổ ngày mai vì nó rất quan trọng, do đó nên hãy gửi thư chuyển phát nhanh",
+    "create_date": null
+  },
+  {
+    "id": 1066,
+    "sName": "fold /fould/",
+    "sExplain": "to bend something, especially paper or cloth",
+    "sType": "(v): nếp gấp, gấp lại",
+    "sExample": "Fold the letter into three parts before stuffing it into the envelope",
+    "sTranslate": "Gấp lá thư làm ba bước trước khi nhét nó vào bao thư.",
+    "create_date": null
+  },
+  {
+    "id": 1067,
+    "sName": "layout /ˈleɪaʊt/",
+    "sExplain": "the way in which the parts of something such as the page of a book, a garden or a building are arranged",
+    "sType": " (n): sự bổ trí trang giấy",
+    "sExample": "There is no single correct layout for business letters",
+    "sTranslate": "Trong thư thương mại thì không có bổ cục nào là chuẩn hoàn toàn hết cả.",
+    "create_date": null
+  },
+  {
+    "id": 1068,
+    "sName": "mention /'menʃn/",
+    "sExplain": "an act of refering to somebody / something in speech or writing",
+    "sType": "(n, v): (n) sự đề cập; (v) nói đến, đề cập đếm, đề xuất",
+    "sExample": "You should mention in the letter that we can arrange for mailing the brochures as well as printing them",
+    "sTranslate": "Anh nên đề cập trong thư rằng chúng ta có thể thu xếp gửi (thư) tờ bướm cũng như là in ấn chúng.",
+    "create_date": null
+  },
+  {
+    "id": 1069,
+    "sName": "petition /pi'tiʃn/",
+    "sExplain": "a written document signed by a large people that asks somebody to change something",
+    "sType": "(n, v): (n) ‹sự/đơn› cầu xin, đơn kiến nghị, đơn thỉnh cầu; (v) cầu xin, kiến nghị",
+    "sExample": "The petition was photocopied and distributed to workers who will collect the neccessary signatures",
+    "sTranslate": "Đơn kiến nghị được photocopy và phân phát đến những công nhân nào sẽ thu thập chữ ký cần thiết.",
+    "create_date": null
+  },
+  {
+    "id": 1070,
+    "sName": "proof /proof/",
+    "sExplain": "information, documents, etc. that show something is true",
+    "sType": "(n): bằng chứng, chứng cớ",
+    "sExample": "This letter was not proofed very carefully; it is full of typing mistakes",
+    "sTranslate": "Lá thư này không được kiểm lỗi cẩn thận; nó đầy những lỗi đánh máy.",
+    "create_date": null
+  },
+  {
+    "id": 1071,
+    "sName": "register /'redʤistə/",
+    "sExplain": "to record somebody / something name on a list",
+    "sType": "(v): đăng ký, sổ, sổ sách, công- tơ",
+    "sExample": "You can register this mail for an additional $2.2",
+    "sTranslate": "Anh ấy có thể gửi đảm bảo thư này với một khoản 2.2 đô-la phí bổ sung",
+    "create_date": null
+  },
+  {
+    "id": 1072,
+    "sName": "revise /ri'vaiz/",
+    "sExplain": " to change something, such as a book or an estimate to correct or improve it",
+    "sType": "(v): đọc lại, xem lại, duyệt lại, sửa lại (bản in thử, đạo luật...)",
+    "sExample": "The brochure was revised several times before it was sent to the printer",
+    "sTranslate": "Tờ bướm được duyệt lại vài lần trước khi nó được gửi đi in.",
+    "create_date": null
+  }
+]
