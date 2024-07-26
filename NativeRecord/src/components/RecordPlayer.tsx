@@ -36,7 +36,7 @@ const RecordPlayer = () => {
     const result = await audioRecorderPlayer.stopRecorder();
     audioRecorderPlayer.removeRecordBackListener();
     record.recordSecs = 0;
-    setRecord({...record});
+    setRecord({...record, recordSecs: 0, recordTime: 0});
     console.log(result);
   };
   const onPauseRecord = async () => {

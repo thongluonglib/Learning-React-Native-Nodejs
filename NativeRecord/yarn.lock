@@ -3016,6 +3016,7 @@ __metadata:
     react: 18.2.0
     react-native: 0.74.3
     react-native-audio-recorder-player: ^3.6.10
+    react-native-sound: ^0.11.2
     react-test-renderer: 18.2.0
     rn-fetch-blob: ^0.12.0
     typescript: 5.0.4
@@ -7970,6 +7971,15 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: f4f813d66672a8262e3fcf6756c59dd6f576605a53ce8f24fa057550a22eb26b082f2b7407aa98eef61d8287321a13db43344f206aea4bf7397d2c756986577c
+  languageName: node
+  linkType: hard
+
+"react-native-sound@npm:^0.11.2":
+  version: 0.11.2
+  resolution: "react-native-sound@npm:0.11.2"
+  peerDependencies:
+    react-native: ">=0.8.0"
+  checksum: d019de415c5f7bc8af51bc50adff7b9c307cb990aad3ea193933f89df743bbcdbfaa33c4a12bb1143a223137cea39f8b69baf5e1c29f77cf80476616bccc6f91
   languageName: node
   linkType: hard
 
