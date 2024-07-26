@@ -1,10 +1,12 @@
 import axios from 'axios'
 import { storage } from '../mmkv';
-import { useContext } from 'react';
-import { AuthContext } from '../context';
+import { Platform } from 'react-native';
 
 const AxiosInstance = axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: Platform.select({
+        ios: 'http://localhost:3000',
+        android: 'http://10.0.2.2:3000'
+    }),
     timeout: 10000
 })
 
