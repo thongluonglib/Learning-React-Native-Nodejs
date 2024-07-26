@@ -51,6 +51,26 @@ export default App;
 
 <img height="400" width="1397" alt="image" src="https://github.com/user-attachments/assets/54ad306d-e208-461e-9125-c56f5d536284">
 
+#### Trace API: utils/SentryConfig.ts 
+Add more config to defaultConfig 
+ apiTrack: ["localhost", 'http://10.0.2.2:3000'],
+shouldCreateSpanForRequest: null,
+
+<img  height="400" width="1408" alt="image" src="https://github.com/user-attachments/assets/711d7dd3-f29c-4b15-9a0e-63a21e72b845">
+
+
+***apiTrack***: add your api you want to track
+***shouldCreateSpanForRequest***: If you don't want trace specific API let add shouldCreateSpanForRequest: 
+
+```sh
+shouldCreateSpanForRequest: (url) => {
+        // Do not create spans for outgoing requests to a `/health/` endpoint
+        return !url.match(/\/get-timeout\/?$/);
+    },
+```
+the example above, the  API has endpoint get-timeout that will not track
+<img height="400" width="1419" alt="image" src="https://github.com/user-attachments/assets/82ab3d5b-dfd9-4ac0-a0c9-15580a5edf2c">
+
 
 
 
