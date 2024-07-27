@@ -109,10 +109,11 @@ android {
 ```
 <img width="957" alt="image" src="https://github.com/user-attachments/assets/31ba679d-a540-4fa3-838e-69ca232cea46">
 
-##### Android Change App name and App Icon
+#### Android Change App name and App Icon
 Just copy the android/app/main folder and rename it to the referring names placed in the flavors in our case we put it
 development and staging.
 ***Duplicate main file:***
+
 <img width="384" alt="image" src="https://github.com/user-attachments/assets/6d5849d7-d5d4-4175-a749-a7b0f37f8cb4">
 
 ***Rename file to development or staging and remove file java***
