@@ -41,9 +41,9 @@ cd ios && pod install
 
 ## Step 3: Add native config multi-environments
 
-#### For Android:
+### For Android:
 
-   1. Open ***android/app/build.gradle*** and paste the code as below.
+   #### 1. Open ***android/app/build.gradle*** and paste the code as below.
    ```sh
       apply plugin: "com.android.application"
 
@@ -58,7 +58,7 @@ cd ios && pod install
 <img width="914" alt="image" src="https://github.com/user-attachments/assets/a749fedf-5b6f-4ba3-9f69-af8a7838c55c">
 
 
-2. At ***android/app/build.gradle*** add resValue in default config as well. and change and change ***com.multienvapp*** to ***your appid***.
+#### 2. At ***android/app/build.gradle*** add resValue in default config as well. and change and change ***com.multienvapp*** to ***your appid***.
 
 ```sh
 android {
@@ -82,7 +82,7 @@ android {
 
 <img width="1300" alt="image" src="https://github.com/user-attachments/assets/4f77a573-53c5-433d-82b3-1a471ca9c581">
 
-3. Create FlavorDimensions and ProductFlavors in ***android>app>build.gradle***. after compileSdk rootProject.ext.compileSdkVersion
+#### 3. Create FlavorDimensions and ProductFlavors in ***android>app>build.gradle***. after compileSdk rootProject.ext.compileSdkVersion
 ```sh
 android {
     ndkVersion rootProject.ext.ndkVersion
@@ -136,7 +136,7 @@ To change the app icons, just add it inside the specific mipmap of the build dev
 ````
 <img width="926" alt="image" src="https://github.com/user-attachments/assets/065defc9-a954-475d-baa5-6bb344a606ff">
 
-#### For iOS: 
+### For iOS: 
 
 
 
