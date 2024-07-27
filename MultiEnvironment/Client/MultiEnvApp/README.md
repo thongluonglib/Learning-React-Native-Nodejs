@@ -28,9 +28,9 @@
    npm install --save react-native-config
 ```
 Add config:
-### Android: android/app/build.gradle add this line at the end of file
+#### Android: android/app/build.gradle add this line at the end of file
 apply from: project(':react-native-config').projectDir.getPath() + '/dotenv.gradle' // <-- Add this line
-### iOS: cd ios && pod install
+#### iOS: cd ios && pod install
 
 ## Step 3: Add native config multi-environments
 
