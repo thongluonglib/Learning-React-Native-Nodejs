@@ -34,7 +34,10 @@ apply from: project(':react-native-config').projectDir.getPath() + '/dotenv.grad
 ```
 <img width="893" alt="image" src="https://github.com/user-attachments/assets/f9e691eb-e1a8-4cd3-bebd-a9bba9a1c376">
 
-#### iOS: cd ios && pod install
+#### iOS: 
+```sh
+cd ios && pod install
+```
 
 ## Step 3: Add native config multi-environments
 
