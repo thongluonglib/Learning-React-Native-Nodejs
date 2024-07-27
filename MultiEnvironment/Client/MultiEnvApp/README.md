@@ -204,6 +204,22 @@ To change the app icons, just add it inside the specific mipmap of the build dev
 
 ### For iOS: 
 
+## Step 5: Run App
+### Android:
+```sh
+npm run android:dev
+```
+##### OR Using Android Studio #####
+
+1. Open Android Studio
+2. Select android project
+3. Click build choose Select Build Variant
+   
+   <img width="317" alt="image" src="https://github.com/user-attachments/assets/03beb322-e8af-469b-a175-d95f987c639e">
+
+5. See left panel choose Variant you want to build
+   
+ <img width="508" alt="image" src="https://github.com/user-attachments/assets/ea757bc5-b4b7-4456-9f93-5cb0bce04ddb">
 
 
 
