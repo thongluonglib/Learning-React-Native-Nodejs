@@ -1,4 +1,6 @@
-
+Reference: 
+[https://dev.to/leon_arantes/react-native-multiple-environments-setup-schemaflavors-3l7p](https://dev.to/leon_arantes/react-native-multiple-environments-setup-schemaflavors-3l7p)
+[https://medium.com/@sathishkcontact/managing-multiple-environments-in-react-native-android-ios-scripts-for-different-builds-ea4c5bff6782](https://medium.com/@sathishkcontact/managing-multiple-environments-in-react-native-android-ios-scripts-for-different-builds-ea4c5bff6782)
 # Example
 
 ## Android
