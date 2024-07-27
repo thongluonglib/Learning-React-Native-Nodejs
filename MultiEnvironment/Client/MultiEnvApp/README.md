@@ -12,7 +12,7 @@ See commit code: [https://github.com/thongluonglib/Learning-React-Native-Nodejs/
 
 # Getting Started
 Add package.json 
-## Step 4: Add script package.json
+## Step 1: Add script package.json
 ```sh
 "scripts": {
     "android": "react-native run-android",
@@ -66,7 +66,7 @@ Add package.json
   }
 ```
 
-## Step 1: Create ENV files 
+## Step 2: Create ENV files 
 
 ***.env.development***
 
@@ -87,7 +87,7 @@ Add package.json
    ENV=production
    API_URL=http://localhost:3000
 ```
-## Step 2: Install react-native-config
+## Step 3: Install react-native-config
 
 ```bash
    npm install --save react-native-config
@@ -104,7 +104,7 @@ apply from: project(':react-native-config').projectDir.getPath() + '/dotenv.grad
 cd ios && pod install
 ```
 
-## Step 3: Add native config multi-environments
+## Step 4: Add native config multi-environments
 
 ### For Android:
 
