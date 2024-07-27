@@ -29,7 +29,11 @@
 ```
 Add config:
 #### Android: android/app/build.gradle add this line at the end of file
+```sh
 apply from: project(':react-native-config').projectDir.getPath() + '/dotenv.gradle' // <-- Add this line
+```
+<img width="893" alt="image" src="https://github.com/user-attachments/assets/f9e691eb-e1a8-4cd3-bebd-a9bba9a1c376">
+
 #### iOS: cd ios && pod install
 
 ## Step 3: Add native config multi-environments
