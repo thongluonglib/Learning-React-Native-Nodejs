@@ -1,4 +1,12 @@
 
+# Example
+## Android
+<img width="339" alt="image" src="https://github.com/user-attachments/assets/0854d550-2710-4f5f-b64b-b63456906029">
+<img width="307" alt="image" src="https://github.com/user-attachments/assets/ca040475-0f41-4620-a08f-d72d3fec3fc1">
+<img width="318" alt="image" src="https://github.com/user-attachments/assets/780b7f69-6cb3-463d-8010-f16cc45aaa0c">
+<img width="338" alt="image" src="https://github.com/user-attachments/assets/7d29bbea-e8c7-40e6-9fa8-274afa50992c">
+
+
 # Getting Started
 
 ## Step 1: Create ENV files 
