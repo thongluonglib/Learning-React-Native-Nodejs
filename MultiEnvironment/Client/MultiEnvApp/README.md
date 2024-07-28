@@ -1,6 +1,9 @@
-<img width="1122" alt="image" src="https://github.com/user-attachments/assets/d5f3bf3c-d6c5-4a52-bd8d-fce3013a0c40">Reference: 
+# Reference: 
+
 [https://dev.to/leon_arantes/react-native-multiple-environments-setup-schemaflavors-3l7p](https://dev.to/leon_arantes/react-native-multiple-environments-setup-schemaflavors-3l7p)
+
 [https://medium.com/@sathishkcontact/managing-multiple-environments-in-react-native-android-ios-scripts-for-different-builds-ea4c5bff6782](https://medium.com/@sathishkcontact/managing-multiple-environments-in-react-native-android-ios-scripts-for-different-builds-ea4c5bff6782)
+
 # Example
 
 ## Android
