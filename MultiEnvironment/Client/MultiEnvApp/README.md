@@ -224,7 +224,7 @@ To change the app icons, just add it inside the specific mipmap of the build dev
 <h2>That's all done for Android ...!!!</h2>
 
 ### For IOS:
-***First Create Multi App Name***
+<h2>First Create Multi App Name</h2>
 
 #### 1. Open Info.plist add Bundle display name = $(PRODUCT_NAME)
 
@@ -246,14 +246,14 @@ Note: You can change it
 
 <img width="1133" alt="image" src="https://github.com/user-attachments/assets/a4378516-cf30-4dda-ab90-23a8607c370d">
 
-#### 5. Go to Product>Schemes>Manage Schemes edit your current scheme MultiEnvApp to development and click + to add staging, production schemes
+#### 5. Go to Product>Schemes>ManageSchemes edit your current scheme MultiEnvApp to development and click + to add staging, production schemes
 
 <img width="1304" alt="image" src="https://github.com/user-attachments/assets/48555091-74d8-48b6-91ef-6476a77ba39d">
 
 
 <img width="1218" alt="image" src="https://github.com/user-attachments/assets/5996a9cc-fbac-499b-a402-695d0182ccb4">
 
-#### 6. Then go to Product>Schemes>Edit Scheme edit and change Build Configuration for:
+#### 6. Then go to Product>Schemes>EditScheme edit and change Build Configuration for:
 **Run, Test, Profile, Analyze, Archive** like bellow:
 
 ##### Development
@@ -284,6 +284,64 @@ project 'MultiEnvApp', {
 }
 ```
 <img width="875" alt="image" src="https://github.com/user-attachments/assets/96104ad4-9087-4752-aa2d-a95def2fedc8">
+<h2>Second config .env.development, .env.staging, .env.production</h2>
+
+#### 1. Add ios/tmp.xcconfig to .gitignore file (Important)
+```sh
+ios/tmp.xcconfig
+```
+<img width="887" alt="image" src="https://github.com/user-attachments/assets/8028e7dc-4dae-4e9b-ae45-9cc861644405">
+
+#### 2. Go to PodFile and add 
+
+```sh
+pod 'react-native-config/Extension', :path => '../node_modules/react-native-config' # <-- Add this line
+```
+
+<img width="1201" alt="image" src="https://github.com/user-attachments/assets/f5538c63-8951-4008-ba62-1a4ee2269b11">
+
+### 3. Go to Product>Schemes>EditScheme choose Build>Pre-actions and click + add like bellow:
+
+<h2>development</h2>
+
+```sh
+rm "${CONFIGURATION_BUILD_DIR}/${INFOPLIST_PATH}"
+echo ".env.development" > /tmp/envfile
+```
+
+```sh
+"${SRCROOT}/../node_modules/react-native-config/ios/ReactNativeConfig/BuildXCConfig.rb" "${SRCROOT}/.." "${SRCROOT}/tmp.xcconfig"
+```
+
+<img width="919" alt="image" src="https://github.com/user-attachments/assets/e8c72fb2-9c32-46e6-a8dc-1d9b1b6c9314">
+
+<h2>staging</h2>
+
+
+```sh
+rm "${CONFIGURATION_BUILD_DIR}/${INFOPLIST_PATH}"
+echo ".env.staging" > /tmp/envfile
+```
+
+```sh
+"${SRCROOT}/../node_modules/react-native-config/ios/ReactNativeConfig/BuildXCConfig.rb" "${SRCROOT}/.." "${SRCROOT}/tmp.xcconfig"
+```
+
+<img width="929" alt="image" src="https://github.com/user-attachments/assets/2d8d3022-f802-4ea3-9c80-8c13fabca4b0">
+
+<h2>prodution</h2>
+
+
+```sh
+rm "${CONFIGURATION_BUILD_DIR}/${INFOPLIST_PATH}"
+echo ".env.production" > /tmp/envfile
+```
+
+```sh
+"${SRCROOT}/../node_modules/react-native-config/ios/ReactNativeConfig/BuildXCConfig.rb" "${SRCROOT}/.." "${SRCROOT}/tmp.xcconfig"
+```
+
+<img width="922" alt="image" src="https://github.com/user-attachments/assets/8b826581-ba10-4b2e-9b33-574d73e426c0">
 
 <h2>That's all done for IOS ...!!!</h2>
 
@@ -295,12 +353,12 @@ npm run android:dev
 ##### OR Using Android Studio #####
 
 1. Open Android Studio
-2. Select android project
+2. Select Android project
 3. Click build choose Select Build Variant
    
    <img width="317" alt="image" src="https://github.com/user-attachments/assets/03beb322-e8af-469b-a175-d95f987c639e">
 
-5. See left panel choose Variant you want to build
+5. See the left panel and choose Variant you want to build
    
  <img width="508" alt="image" src="https://github.com/user-attachments/assets/ea757bc5-b4b7-4456-9f93-5cb0bce04ddb">
 
