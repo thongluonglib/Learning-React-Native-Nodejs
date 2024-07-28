@@ -17,6 +17,10 @@ See commit code: [https://github.com/thongluonglib/Learning-React-Native-Nodejs/
 <img width="318" alt="image" src="https://github.com/user-attachments/assets/780b7f69-6cb3-463d-8010-f16cc45aaa0c">
 <img width="338" alt="image" src="https://github.com/user-attachments/assets/7d29bbea-e8c7-40e6-9fa8-274afa50992c">
 
+## IOS
+
+<img width="231" alt="image" src="https://github.com/user-attachments/assets/fea97e39-88eb-444d-8ea2-1c795c161272">
+
 
 # Getting Started
 Add package.json 
@@ -377,6 +381,8 @@ echo ".env.production" > /tmp/envfile
 
 ```sh
 npm run android:dev
+npm run android:staging
+npm run android:prod
 ```
 
 **Run Android App using Android Studio**
@@ -396,7 +402,11 @@ npm run android:dev
 **Run IOS App**
 
 ```sh
+npx pod-install
+
 npm run ios:dev
+npm run ios:staging
+npm run ios:prod
 ```
 
 **Run IOS App with specific device**
