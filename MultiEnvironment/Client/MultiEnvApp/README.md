@@ -241,7 +241,7 @@ npm run android:dev
  <img width="508" alt="image" src="https://github.com/user-attachments/assets/ea757bc5-b4b7-4456-9f93-5cb0bce04ddb">
 
 
-## Advance 
+# Advanced
 
 ### Add env versionCode, versionName
 #### Android: 
