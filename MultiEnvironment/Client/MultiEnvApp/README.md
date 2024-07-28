@@ -220,7 +220,10 @@ To change the app icons, just add it inside the specific mipmap of the build dev
 
 ### For iOS: 
 
-## Step 5: Run App
+TODO
+
+
+## Step 5: That's all, we have completed the setting for multiple environment. Now just run App
 ### Android:
 ```sh
 npm run android:dev
