@@ -37,12 +37,12 @@ Add package.json
     "ios:clean": "npm run node:clean &&  cd ios && rm -rf ~/Library/Caches/CocoaPods && rm -rf Pods && rm -rf ~/Library/Developer/Xcode/DerivedData/* && yarn ios:Pod:Reset",
     "ios:Pod:install": "cd ios && pod install && cd ..",
     "ios:bundle:assets": "react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios",
-    "ios:dev": "npm run setDevelopment && react-native run-ios --mode=Debug --scheme \"development\"",
-    "ios:dev-release": "npm run ios:clean && npm run setDevelopment && react-native run-ios --mode=Release --scheme \"development\"",
-    "ios:staging": "npm run setStaging && react-native run-ios --mode=Debug --scheme \"staging\"",
-    "ios:staging-release": "npm run ios:clean && npm run setStaging && react-native run-ios --mode=Release --scheme \"staging\"",
-    "ios:prod": "npm run setProduction && react-native run-ios --mode=Debug --scheme \"production\"",
-    "ios:prod-release": "npm run ios:clean && npm run ios:bundle:assets && npm run setProduction && react-native run-ios --mode=Release --scheme \"production\"",
+    "ios:dev": "npm run setDevelopment && react-native run-ios --mode=DebugDev --scheme \"development\"",
+    "ios:dev-release": "npm run ios:clean && npm run setDevelopment && react-native run-ios --mode=ReleaseDev --scheme \"development\"",
+    "ios:staging": "npm run setStaging && react-native run-ios --mode=DebugStaging --scheme \"staging\"",
+    "ios:staging-release": "npm run ios:clean && npm run setStaging && react-native run-ios --mode=ReleaseStaging --scheme \"staging\"",
+    "ios:prod": "npm run setProduction && react-native run-ios --mode=DebugProduction --scheme \"production\"",
+    "ios:prod-release": "npm run ios:clean && npm run ios:bundle:assets && npm run setProduction && react-native run-ios --mode=ReleaseProduction --scheme \"production\"",
     "android:clean": "npm run node:clean && cd android && ./gradlew clean",
     "android:bundle:assets": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "android:remove:assets": "rm -rf android/app/src/main/res/drawable-hdpi &&  rm -rf android/app/src/main/res/drawable-mdpi &&  rm -rf android/app/src/main/res/drawable-xhdpi && rm -rf android/app/src/main/res/drawable-xxhdpi && rm -rf android/app/src/main/res/drawable-xxxhdpi && rm -rf android/app/src/main/res/raw",
@@ -346,11 +346,16 @@ echo ".env.production" > /tmp/envfile
 <h2>That's all done for IOS ...!!!</h2>
 
 ## Step 5: That's all, we have completed the setting for multiple environment. Now just run App
-### Android:
+
+<h2>Android</h2>
+
+**Run Android App**
+
 ```sh
 npm run android:dev
 ```
-##### OR Using Android Studio #####
+
+**Run Android App using Android Studio**
 
 1. Open Android Studio
 2. Select Android project
@@ -361,6 +366,32 @@ npm run android:dev
 5. See the left panel and choose Variant you want to build
    
  <img width="508" alt="image" src="https://github.com/user-attachments/assets/ea757bc5-b4b7-4456-9f93-5cb0bce04ddb">
+
+<h2>IOS</h2>
+
+**Run IOS App**
+
+```sh
+npm run ios:dev
+```
+
+**Run IOS App with specific device**
+
+```sh
+npm run ios:dev -- --simulator="iPhone 15"
+```
+
+**Run IOS App using xcode**
+
+1. Open X code
+2. Choose your environment want to build
+
+<img width="1203" alt="image" src="https://github.com/user-attachments/assets/144df1a6-4211-49d3-8315-e24ef3bc745c">
+
+3. Click build
+
+
+<h1>Happy end we have completed set multiple environment and app name for Android and IOS</h1>
 
 
 # Advanced
