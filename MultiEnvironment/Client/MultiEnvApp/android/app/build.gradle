@@ -102,8 +102,8 @@ android {
         applicationId "com.multienvapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode project.env.get("ANROID_VERSION_CODE").toInteger()
-        versionName project.env.get("ANROID_VERSION_NAME")
+        versionCode project.env.get("ANROID_VERSION_CODE").toInteger() // <--- Add this line to add env versionCode
+        versionName project.env.get("ANROID_VERSION_NAME") // <--- Add this line to add env versionName 
         resValue 'string', 'build_config_package','com.multienvapp' // <-- Add this line
     }
     signingConfigs {
