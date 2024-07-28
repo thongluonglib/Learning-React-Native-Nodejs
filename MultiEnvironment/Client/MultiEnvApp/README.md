@@ -221,6 +221,7 @@ To change the app icons, just add it inside the specific mipmap of the build dev
 </resources>
 ````
 <img width="926" alt="image" src="https://github.com/user-attachments/assets/065defc9-a954-475d-baa5-6bb344a606ff">
+<h2>That's all done for Android ...!!!</h2>
 
 ### For IOS:
 ***First Create Multi App Name***
@@ -283,6 +284,8 @@ project 'MultiEnvApp', {
 }
 ```
 <img width="875" alt="image" src="https://github.com/user-attachments/assets/96104ad4-9087-4752-aa2d-a95def2fedc8">
+
+<h2>That's all done for IOS ...!!!</h2>
 
 ## Step 5: That's all, we have completed the setting for multiple environment. Now just run App
 ### Android:
