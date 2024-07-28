@@ -4,6 +4,9 @@
 
 [https://medium.com/@sathishkcontact/managing-multiple-environments-in-react-native-android-ios-scripts-for-different-builds-ea4c5bff6782](https://medium.com/@sathishkcontact/managing-multiple-environments-in-react-native-android-ios-scripts-for-different-builds-ea4c5bff6782)
 
+[https://viblo.asia/p/lam-viec-voi-environment-variables-trong-react-native-bWrZnWEwlxw](https://viblo.asia/p/lam-viec-voi-environment-variables-trong-react-native-bWrZnWEwlxw)
+
+
 # Example
 
 ## Android
