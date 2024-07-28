@@ -71,27 +71,48 @@ Add package.json
   }
 ```
 
-## Step 2: Create ENV files 
+## Step 2: Create ENV files
 
 ***.env.development***
 
 ```bash
-   ENV=development
-   API_URL=http://localhost:3000
+    ENV=development
+    API_URL=http://localhost:3000
+    
+    ANDROID_VERSION_CODE=1
+    ANDROID_VERSION_NAME=1.0 
+
 ```
 ***.env.staging***
 
 ```bash
-   ENV=staging
-   API_URL=http://localhost:3000
+    ENV=staging
+    API_URL=http://localhost:3000
+    
+    ANDROID_VERSION_CODE=1
+    ANDROID_VERSION_NAME=1.0 
 ```
 
 ***.env.production***
 
 ```bash
-   ENV=production
-   API_URL=http://localhost:3000
+    ENV=production
+    API_URL=http://localhost:3000
+    ANDROID_VERSION_CODE=1
+    ANDROID_VERSION_NAME=1.0
+
 ```
+
+### Add .gitignore file
+
+```sh
+.env.development
+.env.staging
+.env.production
+```
+
+<img width="662" alt="image" src="https://github.com/user-attachments/assets/b54f766f-1c2d-4586-91d2-18aeeabc7c55">
+
 
 ## Step 3: Install react-native-config
 
