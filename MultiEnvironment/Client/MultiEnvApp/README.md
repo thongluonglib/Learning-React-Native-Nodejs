@@ -103,7 +103,7 @@ Add package.json
 
 ```
 
-### Add .gitignore file
+### Add code bellow to .gitignore file
 
 ```sh
 .env.development
@@ -111,7 +111,7 @@ Add package.json
 .env.production
 ```
 
-<img width="662" alt="image" src="https://github.com/user-attachments/assets/b54f766f-1c2d-4586-91d2-18aeeabc7c55">
+<img width="781" alt="image" src="https://github.com/user-attachments/assets/fe92af50-faa6-45c0-8388-1fd4c27977fc">
 
 
 ## Step 3: Install react-native-config
