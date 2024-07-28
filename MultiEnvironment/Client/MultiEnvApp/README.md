@@ -220,7 +220,10 @@ To change the app icons, just add it inside the specific mipmap of the build dev
 
 ### For iOS: 
 
-## Step 5: Run App
+TODO
+
+
+## Step 5: That's all, we have completed the setting for multiple environment. Now just run App
 ### Android:
 ```sh
 npm run android:dev
@@ -244,11 +247,11 @@ npm run android:dev
 #### Android: 
 At .env.development, .env.staging, .env.production add 
 ```sh
-ANROID_VERSION_CODE=1
-ANROID_VERSION_NAME=1.0
+ANDROID_VERSION_CODE=1
+ANDROID_VERSION_NAME=1.0
 ```
 
-<img width="728" alt="image" src="https://github.com/user-attachments/assets/3c605b68-29b4-4574-9564-dae83dd2738c">
+<img width="780" alt="image" src="https://github.com/user-attachments/assets/7f1704c6-de27-402c-a417-46943e3fd7de">
 
 At ***android/app/build.gradle*** update versionCode, versionName in defaultConfig
 
@@ -258,8 +261,8 @@ At ***android/app/build.gradle*** update versionCode, versionName in defaultConf
         applicationId "com.multienvapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode project.env.get("ANROID_VERSION_CODE").toInteger() // <--- Add this line to add env versionCode
-        versionName project.env.get("ANROID_VERSION_NAME") // <--- Add this line to add env versionName 
+        versionCode project.env.get("ANDROID_VERSION_CODE").toInteger() // <--- Add this line to add env versionCode
+        versionName project.env.get("ANDROID_VERSION_NAME") // <--- Add this line to add env versionName 
         resValue 'string', 'build_config_package','com.multienvapp' // <-- Add this line
     }
 ```
