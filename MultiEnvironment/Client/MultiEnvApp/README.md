@@ -95,11 +95,12 @@ Add package.json
    npm install --save react-native-config
 ```
 Add config:
-#### Android: android/app/build.gradle add this line at the end of file
+#### Android: android/app/build.gradle add this line at the top of file
 ```sh
 apply from: project(':react-native-config').projectDir.getPath() + '/dotenv.gradle' // <-- Add this line
 ```
-<img width="893" alt="image" src="https://github.com/user-attachments/assets/f9e691eb-e1a8-4cd3-bebd-a9bba9a1c376">
+<img width="1363" alt="image" src="https://github.com/user-attachments/assets/6a4fc947-9eb7-4b21-85bc-436e6d211204">
+
 
 #### iOS: 
 ```sh
@@ -237,4 +238,69 @@ npm run android:dev
  <img width="508" alt="image" src="https://github.com/user-attachments/assets/ea757bc5-b4b7-4456-9f93-5cb0bce04ddb">
 
 
+## Advance 
+
+### Add env versionCode, versionName
+#### Android: 
+At .env.development, .env.staging, .env.production add 
+```sh
+ANROID_VERSION_CODE=1
+ANROID_VERSION_NAME=1.0
+```
+
+<img width="728" alt="image" src="https://github.com/user-attachments/assets/3c605b68-29b4-4574-9564-dae83dd2738c">
+
+At ***android/app/build.gradle*** update versionCode, versionName in defaultConfig
+
+```sh
+    namespace "com.multienvapp"
+    defaultConfig {
+        applicationId "com.multienvapp"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode project.env.get("ANROID_VERSION_CODE").toInteger() // <--- Add this line to add env versionCode
+        versionName project.env.get("ANROID_VERSION_NAME") // <--- Add this line to add env versionName 
+        resValue 'string', 'build_config_package','com.multienvapp' // <-- Add this line
+    }
+```
+
+#### iOS:
+    TODO
+
+## Add env app name 
+
+#### Android: 
+    
+At .env.development, .env.staging, .env.production add 
+```sh
+ANROID_APP_NAME=MultiAppDev
+```
+```sh
+ANROID_APP_NAME=MultiAppStaging
+```
+```sh
+ANROID_APP_NAME=MultiAppProduction
+```
+At ***android/app/build.gradle*** add resValue 'string', 'app_name',project.env.get("ANDROID_APP_NAME") in productFlavors
+
+```sh
+flavorDimensions 'env'
+    productFlavors {
+        development {
+            dimension 'env'
+            applicationIdSuffix ".development"
+            resValue 'string', 'app_name',project.env.get("ANDROID_APP_NAME") // <-- Add this line to change App Name
+        }
+        staging {
+            dimension 'env'
+            applicationIdSuffix ".staging"
+            resValue 'string', 'app_name',project.env.get("ANDROID_APP_NAME") // <-- Add this line to change App Name
+        }
+        production {
+            dimension 'env'
+            applicationIdSuffix ""
+            resValue 'string', 'app_name',project.env.get("ANDROID_APP_NAME") // <-- Add this line to change App Name
+        }
+    }
+```
 
