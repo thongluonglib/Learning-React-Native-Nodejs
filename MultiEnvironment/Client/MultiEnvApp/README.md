@@ -265,4 +265,42 @@ At ***android/app/build.gradle*** update versionCode, versionName in defaultConf
 ```
 
 #### iOS:
+    TODO
+
+## Add env app name 
+
+#### Android: 
+    
+At .env.development, .env.staging, .env.production add 
+```sh
+ANROID_APP_NAME=MultiAppDev
+```
+```sh
+ANROID_APP_NAME=MultiAppStaging
+```
+```sh
+ANROID_APP_NAME=MultiAppProduction
+```
+At ***android/app/build.gradle*** add resValue 'string', 'app_name',project.env.get("ANDROID_APP_NAME") in productFlavors
+
+```sh
+flavorDimensions 'env'
+    productFlavors {
+        development {
+            dimension 'env'
+            applicationIdSuffix ".development"
+            resValue 'string', 'app_name',project.env.get("ANDROID_APP_NAME") // <-- Add this line to change App Name
+        }
+        staging {
+            dimension 'env'
+            applicationIdSuffix ".staging"
+            resValue 'string', 'app_name',project.env.get("ANDROID_APP_NAME") // <-- Add this line to change App Name
+        }
+        production {
+            dimension 'env'
+            applicationIdSuffix ""
+            resValue 'string', 'app_name',project.env.get("ANDROID_APP_NAME") // <-- Add this line to change App Name
+        }
+    }
+```
 
