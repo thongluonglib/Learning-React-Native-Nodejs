@@ -307,3 +307,27 @@ flavorDimensions 'env'
     }
 ```
 
+## To Add typescript types for ENV
+Just create react-native-config.d.ts at your add declare your env types
+```sh
+declare module 'react-native-config' {
+    export interface NativeConfig {
+        ENV: string
+        API_URL: string
+
+        ANDROID_VERSION_CODE: string
+        ANDROID_VERSION_NAME: string
+
+    }
+
+    export const Config: NativeConfig
+    export default Config
+}
+```
+<img width="944" alt="image" src="https://github.com/user-attachments/assets/b5e215c6-b033-40a5-83f7-d21cdac66785">
+
+***Result:***
+
+<img width="1122" alt="image" src="https://github.com/user-attachments/assets/055f4279-6dc4-4c73-b2df-be48e44b84e7">
+
+
