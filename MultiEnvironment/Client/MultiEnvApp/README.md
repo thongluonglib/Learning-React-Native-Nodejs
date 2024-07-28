@@ -180,26 +180,14 @@ android {
 ##### Option 1. Use resValue - Add resValue resValue 'string', 'app_name', 'MultiApp...' below into productFlavors
 
 ```sh
-flavorDimensions 'env'
-    productFlavors {
-        development {
-            dimension 'env'
-            applicationIdSuffix ".development"
-            resValue 'string', 'app_name','MultiAppDev' // <-- Add this line to change App Name
-        }
-        staging {
-            dimension 'env'
-            applicationIdSuffix ".staging"
-            resValue 'string', 'app_name','MultiAppStaging' // <-- Add this line to change App Name
-        }
-        production {
-            dimension 'env'
-            applicationIdSuffix ""
-            resValue 'string', 'app_name','MultiAppProd' // <-- Add this line to change App Name
-        }
-    }
+    resValue 'string', 'app_name','MultiAppDev' // <-- Add this line to change App Name
 ```
-
+```sh
+    resValue 'string', 'app_name','MultiAppStaging' // <-- Add this line to change App Name
+```
+```sh
+    resValue 'string', 'app_name','MultiAppProd' // <-- Add this line to change App Name
+```
 <img width="778" alt="image" src="https://github.com/user-attachments/assets/f06369cb-4a3d-4b86-a087-892531a198b4">
 
 ##### Option 2. Just copy the android/app/main folder and rename it to the referring names placed in the flavors in our case we put It development and staging.
