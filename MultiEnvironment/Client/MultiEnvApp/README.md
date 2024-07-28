@@ -38,11 +38,11 @@ Add package.json
     "ios:Pod:install": "cd ios && pod install && cd ..",
     "ios:bundle:assets": "react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios",
     "ios:dev": "npm run setDevelopment && react-native run-ios --mode=Debug --scheme \"development\"",
-    "ios:dev-release": "npm run ios:clean && npm run setDevelopment  react-native run-ios --mode=Release --scheme \"development\"",
+    "ios:dev-release": "npm run ios:clean && npm run setDevelopment && react-native run-ios --mode=Release --scheme \"development\"",
     "ios:staging": "npm run setStaging && react-native run-ios --mode=Debug --scheme \"staging\"",
-    "ios:staging-release": "npm run ios:clean && npm run setStaging  react-native run-ios --mode=Release --scheme \"staging\"",
+    "ios:staging-release": "npm run ios:clean && npm run setStaging && react-native run-ios --mode=Release --scheme \"staging\"",
     "ios:prod": "npm run setProduction && react-native run-ios --mode=Debug --scheme \"production\"",
-    "ios:prod-release": "npm run ios:clean && npm run ios:bundle:assets && npm run setProduction  react-native run-ios --mode=Release --scheme \"production\"",
+    "ios:prod-release": "npm run ios:clean && npm run ios:bundle:assets && npm run setProduction && react-native run-ios --mode=Release --scheme \"production\"",
     "android:clean": "npm run node:clean && cd android && ./gradlew clean",
     "android:bundle:assets": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "android:remove:assets": "rm -rf android/app/src/main/res/drawable-hdpi &&  rm -rf android/app/src/main/res/drawable-mdpi &&  rm -rf android/app/src/main/res/drawable-xhdpi && rm -rf android/app/src/main/res/drawable-xxhdpi && rm -rf android/app/src/main/res/drawable-xxxhdpi && rm -rf android/app/src/main/res/raw",
@@ -92,6 +92,7 @@ Add package.json
    ENV=production
    API_URL=http://localhost:3000
 ```
+
 ## Step 3: Install react-native-config
 
 ```bash
@@ -221,10 +222,67 @@ To change the app icons, just add it inside the specific mipmap of the build dev
 ````
 <img width="926" alt="image" src="https://github.com/user-attachments/assets/065defc9-a954-475d-baa5-6bb344a606ff">
 
-### For iOS: 
+### For IOS:
+***First Create Multi App Name***
 
-TODO
+#### 1. Open Info.plist add Bundle display name = $(PRODUCT_NAME)
 
+<img width="883" alt="image" src="https://github.com/user-attachments/assets/a53a30e6-f635-404d-9c02-76f6ad0fefa4">
+
+#### 2. Go to the PROJECT>Your App>Info>configurations and click + add like bellow
+
+<img width="1137" alt="image" src="https://github.com/user-attachments/assets/3aacd9aa-6882-4d50-ba0b-215c90af43b6">
+
+#### 3. Go to TARGETS>Your App>Build Settings>Search "product name" and click + add like bellow
+Note: You can change it
+    **MultiEnvApp Dev** is your development app_name
+    **MultiEnvApp Staging** is your staging app_name
+    **MultiEnvApp** is your production app_name
+
+<img width="1128" alt="image" src="https://github.com/user-attachments/assets/b4e4bb06-4b78-4342-b9b4-7338be8a2213">
+
+#### 4. Then continue searching "identifier" and change your bundle like bellow has suffix .dev, .staging, and keep production as ""
+
+<img width="1133" alt="image" src="https://github.com/user-attachments/assets/a4378516-cf30-4dda-ab90-23a8607c370d">
+
+#### 5. Go to Product>Schemes>Manage Schemes edit your current scheme MultiEnvApp to development and click + to add staging, production schemes
+
+<img width="1304" alt="image" src="https://github.com/user-attachments/assets/48555091-74d8-48b6-91ef-6476a77ba39d">
+
+
+<img width="1218" alt="image" src="https://github.com/user-attachments/assets/5996a9cc-fbac-499b-a402-695d0182ccb4">
+
+#### 6. Then go to Product>Schemes>Edit Scheme edit and change Build Configuration for:
+**Run, Test, Profile, Analyze, Archive** like bellow:
+
+##### Development
+
+<img width="889" alt="image" src="https://github.com/user-attachments/assets/447b9831-f9ff-4b6b-be82-b2959953cb4a">
+
+<img width="915" alt="image" src="https://github.com/user-attachments/assets/b203f40c-83c3-4fbb-b2df-51de3401c46a">
+
+<br />
+
+##### Staging
+
+<img width="915" alt="image" src="https://github.com/user-attachments/assets/83751936-e0b7-4998-a71c-6b1009946bee">
+
+##### Production
+
+<img width="919" alt="image" src="https://github.com/user-attachments/assets/06f792db-b98e-44f7-91d7-2d61b02d852b">
+
+#### 7. Add bellow to Podfile: 
+```sh
+project 'MultiEnvApp', {
+  'DebugDev' => :debug,
+  'DebugStaging' => :debug,
+  'DebugProduction' => :debug,
+  'ReleaseDev' => :release,
+  'ReleaseStaging' => :release,
+  'ReleaseProduction' => :release,
+}
+```
+<img width="875" alt="image" src="https://github.com/user-attachments/assets/96104ad4-9087-4752-aa2d-a95def2fedc8">
 
 ## Step 5: That's all, we have completed the setting for multiple environment. Now just run App
 ### Android:
@@ -269,9 +327,6 @@ At ***android/app/build.gradle*** update versionCode, versionName in defaultConf
         resValue 'string', 'build_config_package','com.multienvapp' // <-- Add this line
     }
 ```
-
-#### iOS:
-    TODO
 
 ## To change app_name in .env.* files
 
