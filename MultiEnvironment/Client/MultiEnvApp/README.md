@@ -177,8 +177,21 @@ android {
 <img width="957" alt="image" src="https://github.com/user-attachments/assets/31ba679d-a540-4fa3-838e-69ca232cea46">
 
 #### Android Change App name and App Icon
-Just copy the android/app/main folder and rename it to the referring names placed in the flavors in our case we put it
-development and staging.
+##### Option 1. Use resValue - Add resValue resValue 'string', 'app_name', 'MultiApp...' below into productFlavors
+
+```sh
+    resValue 'string', 'app_name','MultiAppDev' // <-- Add this line to change App Name
+```
+```sh
+    resValue 'string', 'app_name','MultiAppStaging' // <-- Add this line to change App Name
+```
+```sh
+    resValue 'string', 'app_name','MultiAppProd' // <-- Add this line to change App Name
+```
+<img width="778" alt="image" src="https://github.com/user-attachments/assets/f06369cb-4a3d-4b86-a087-892531a198b4">
+
+##### Option 2. Just copy the android/app/main folder and rename it to the referring names placed in the flavors in our case we put It development and staging.
+
 ***Duplicate main file:***
 
 <img width="384" alt="image" src="https://github.com/user-attachments/assets/6d5849d7-d5d4-4175-a749-a7b0f37f8cb4">
