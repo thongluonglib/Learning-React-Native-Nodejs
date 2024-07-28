@@ -82,14 +82,17 @@ android {
         development {
             dimension 'env'
             applicationIdSuffix ".development"
+            resValue 'string', 'app_name','MultiAppDev' // <-- Add this line to change App Name
         }
         staging {
             dimension 'env'
             applicationIdSuffix ".staging"
+            resValue 'string', 'app_name','MultiAppStaging' // <-- Add this line to change App Name
         }
         production {
             dimension 'env'
             applicationIdSuffix ""
+            resValue 'string', 'app_name','MultiAppProd' // <-- Add this line to change App Name
         }
     }
     namespace "com.multienvapp"
