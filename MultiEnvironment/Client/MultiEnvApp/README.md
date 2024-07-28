@@ -1,4 +1,4 @@
-Reference: 
+<img width="1122" alt="image" src="https://github.com/user-attachments/assets/d5f3bf3c-d6c5-4a52-bd8d-fce3013a0c40">Reference: 
 [https://dev.to/leon_arantes/react-native-multiple-environments-setup-schemaflavors-3l7p](https://dev.to/leon_arantes/react-native-multiple-environments-setup-schemaflavors-3l7p)
 [https://medium.com/@sathishkcontact/managing-multiple-environments-in-react-native-android-ios-scripts-for-different-builds-ea4c5bff6782](https://medium.com/@sathishkcontact/managing-multiple-environments-in-react-native-android-ios-scripts-for-different-builds-ea4c5bff6782)
 # Example
@@ -243,7 +243,7 @@ npm run android:dev
 
 # Advanced
 
-### Add env versionCode, versionName
+### To change versionCode, versionName in .env.* files
 #### Android: 
 At .env.development, .env.staging, .env.production add 
 ```sh
@@ -270,7 +270,7 @@ At ***android/app/build.gradle*** update versionCode, versionName in defaultConf
 #### iOS:
     TODO
 
-## Add env app name 
+## To change app_name in .env.* files
 
 #### Android: 
     
@@ -307,7 +307,7 @@ flavorDimensions 'env'
     }
 ```
 
-## To Add typescript types for ENV
+## To declare typescript types for ENV
 Just create react-native-config.d.ts at your add declare your env types
 ```sh
 declare module 'react-native-config' {
