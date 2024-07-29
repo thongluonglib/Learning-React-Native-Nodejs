@@ -291,7 +291,9 @@ Note: You can change it
 <img width="1304" alt="image" src="https://github.com/user-attachments/assets/48555091-74d8-48b6-91ef-6476a77ba39d">
 
 
-<img width="1218" alt="image" src="https://github.com/user-attachments/assets/5996a9cc-fbac-499b-a402-695d0182ccb4">
+![image](https://github.com/user-attachments/assets/a734a8b6-41ec-414b-96e7-e547c81eccfa)
+
+
 
 #### 6. Then go to Product>Schemes>EditScheme edit and change Build Configuration for:
 **Run, Test, Profile, Analyze, Archive** like bellow:
