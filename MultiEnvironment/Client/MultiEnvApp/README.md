@@ -357,6 +357,10 @@ echo ".env.development" > /tmp/envfile
 
 <img width="919" alt="image" src="https://github.com/user-attachments/assets/e8c72fb2-9c32-46e6-a8dc-1d9b1b6c9314">
 
+And Choose your App in **Provide build settings from**:
+
+<img width="633" alt="image" src="https://github.com/user-attachments/assets/6153d9f3-0340-4615-8be5-a55f7949208a">
+
 <h2>staging</h2>
 
 
