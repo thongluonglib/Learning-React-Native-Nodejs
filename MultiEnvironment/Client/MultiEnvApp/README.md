@@ -294,6 +294,11 @@ Note: You can change it
 ![image](https://github.com/user-attachments/assets/a734a8b6-41ec-414b-96e7-e547c81eccfa)
 
 
+![image](https://github.com/user-attachments/assets/5b0fbc36-e779-4c6f-8399-6ef53b8cf11e)
+
+![image](https://github.com/user-attachments/assets/1acd55ba-f2f1-4bc5-ae0f-14282445ae90)
+
+
 
 #### 6. Then go to Product>Schemes>EditScheme edit and change Build Configuration for:
 **Run, Test, Profile, Analyze, Archive** like bellow:
