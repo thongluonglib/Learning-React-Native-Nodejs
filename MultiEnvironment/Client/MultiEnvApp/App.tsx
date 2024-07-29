@@ -17,7 +17,6 @@ import {
   View,
 } from 'react-native';
 import Config from 'react-native-config';
-
 import {
   Colors,
   DebugInstructions,

@@ -6,6 +6,8 @@ project.ext.envConfigFiles = [
         staging :".env.staging",
         production:'.env.production'
 ]
+apply from: project(':react-native-config').projectDir.getPath() + '/dotenv.gradle' // <-- Add this line
+
 /**
  * This is the configuration block to customize your React Native Android app.
  * By default you don't need to apply any configuration, just uncomment the lines you need.
@@ -82,14 +84,17 @@ android {
         development {
             dimension 'env'
             applicationIdSuffix ".development"
+            resValue 'string', 'app_name','MultiAppDev' // <-- Add this line to change App Name
         }
         staging {
             dimension 'env'
             applicationIdSuffix ".staging"
+            resValue 'string', 'app_name','MultiAppStaging' // <-- Add this line to change App Name
         }
         production {
             dimension 'env'
             applicationIdSuffix ""
+            resValue 'string', 'app_name','MultiAppProd' // <-- Add this line to change App Name
         }
     }
     namespace "com.multienvapp"
@@ -97,8 +102,8 @@ android {
         applicationId "com.multienvapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode project.env.get("ANROID_VERSION_CODE").toInteger() // <--- Add this line to add env versionCode
+        versionName project.env.get("ANROID_VERSION_NAME") // <--- Add this line to add env versionName 
         resValue 'string', 'build_config_package','com.multienvapp' // <-- Add this line
     }
     signingConfigs {
@@ -135,4 +140,3 @@ dependencies {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
-apply from: project(':react-native-config').projectDir.getPath() + '/dotenv.gradle' // <-- Add this line
