@@ -141,7 +141,7 @@ cd ios && pod install
 
 ## Step 4: Add native config multi-environments
 
-### For Android:
+## For Android:
 
    #### 1. Open ***android/app/build.gradle*** and paste the code as below.
    ```sh
@@ -251,14 +251,26 @@ To change the app icons, just add it inside the specific mipmap of the build dev
 <img width="926" alt="image" src="https://github.com/user-attachments/assets/065defc9-a954-475d-baa5-6bb344a606ff">
 <h2>That's all done for Android ...!!!</h2>
 
-### For IOS:
+## For IOS:
 <h2>First Create Multi App Name</h2>
 
-#### 1. Open Info.plist add Bundle display name = $(PRODUCT_NAME)
+#### 1. Open Info.plist add
+```sh
+Bundle display name = $(PRODUCT_NAME)
+```
 
 <img width="883" alt="image" src="https://github.com/user-attachments/assets/a53a30e6-f635-404d-9c02-76f6ad0fefa4">
 
 #### 2. Go to the PROJECT>Your App>Info>configurations and click + add like bellow
+
+```sh
+DebugDev
+DebugStaging
+DebugProduction
+ReleaseDev
+ReleaseStaging
+ReleaseProduction
+```
 
 <img width="1137" alt="image" src="https://github.com/user-attachments/assets/3aacd9aa-6882-4d50-ba0b-215c90af43b6">
 
