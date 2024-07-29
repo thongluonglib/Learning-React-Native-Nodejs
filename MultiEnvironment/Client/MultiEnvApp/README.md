@@ -290,13 +290,8 @@ Note: You can change it
 
 <img width="1304" alt="image" src="https://github.com/user-attachments/assets/48555091-74d8-48b6-91ef-6476a77ba39d">
 
+<img width="755" alt="image" src="https://github.com/user-attachments/assets/903fe539-75b1-4859-a17b-dfb3eb503a3a">
 
-![image](https://github.com/user-attachments/assets/a734a8b6-41ec-414b-96e7-e547c81eccfa)
-
-
-![image](https://github.com/user-attachments/assets/5b0fbc36-e779-4c6f-8399-6ef53b8cf11e)
-
-![image](https://github.com/user-attachments/assets/1acd55ba-f2f1-4bc5-ae0f-14282445ae90)
 
 
 
