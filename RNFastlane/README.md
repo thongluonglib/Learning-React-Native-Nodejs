@@ -185,7 +185,7 @@ FIREBASE_APP_ID=
 ### 4. Run 
 
 ```sh
-fastlane add_plugin fastlane-plugin-increment_version_code increment_version_name increment_version_code
+fastlane add_plugin fastlane-plugin-increment_version_code increment_version_name increment_version_code fastlane-plugin-increment_version_name 
 ```
 
 <h2>Step 2: Setup Firebase Android Distribute and get FIREBASE_TOKEN, FIREBASE_APP_ID</h2>
