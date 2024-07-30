@@ -182,11 +182,15 @@ FIREBASE_TOKEN=
 FIREBASE_APP_ID=
 ```
 
-### 4. Run 
+### 4. At RNFastlane's project run 
 
 ```sh
 fastlane add_plugin fastlane-plugin-increment_version_code increment_version_name increment_version_code fastlane-plugin-increment_version_name 
 ```
+```sh
+bundle install
+```
+<img width="989" alt="image" src="https://github.com/user-attachments/assets/6bac2539-95b4-49fc-bc68-c635c39c2de6">
 
 <h2>Step 2: Setup Firebase Android Distribute and get FIREBASE_TOKEN, FIREBASE_APP_ID</h2>
 
