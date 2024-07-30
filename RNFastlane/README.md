@@ -4,6 +4,11 @@
 
 <h2>Prepare</h2>
 
+```sh
+brew install ruby
+brew install fastlane
+```
+
 ### 1. Add package.json 
 
 ```sh
