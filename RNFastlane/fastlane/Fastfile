@@ -1,0 +1,94 @@
+fastlane_require 'dotenv'
+
+before_all do
+  Dotenv.overload('.env')
+end
+
+desc 'Android: Increment versionCode and set versionName to package.json version.'
+private_lane :inc_ver_and do
+    # package = load_json(json_path: "./package.json")
+
+    increment_version_code(
+        gradle_file_path: "./android/app/build.gradle",
+    )
+
+    increment_version_name(
+        gradle_file_path: "./android/app/build.gradle",
+        version_name: package['version']
+    )
+end
+
+# desc 'iOS: Increment build number and set the version to package.json version.'
+# private_lane :inc_ver_ios do
+#     package = load_json(json_path: "./package.json")
+
+#     increment_build_number(
+#         xcodeproj: './ios/' + package['name'] + '.xcodeproj'
+#     )
+
+#     increment_version_number(
+#         xcodeproj: './ios/' + package['name'] + '.xcodeproj',
+#         version_number: package['version']
+#     )
+# end
+
+# desc 'iOS Archive'
+# lane :ios_build do
+#     package = load_json(json_path: "./package.json") 
+#     scheme = package['name'] 
+
+#     get_certificates
+#     get_provisioning_profile( 
+#         adhoc: true,
+#         force: true,
+#         filename: "provisioning.mobileprovision"
+#     )
+#     update_project_provisioning(
+#       xcodeproj: './ios/' + scheme + '.xcodeproj',
+#       target_filter: scheme,
+#       profile: "./provisioning.mobileprovision",
+#       build_configuration: "Release"
+#     )
+#     build_app(
+#         scheme: scheme,
+#         workspace: "./ios/"+scheme+".xcworkspace",
+#         export_method: "ad-hoc"
+#     )
+# end
+
+# platform :ios do
+#   desc "Release ios app beta version"
+#   lane :distribute do
+#       inc_ver_ios
+
+#       ios_build
+
+#       release = firebase_app_distribution(
+#           app: ENV["APP_ID"],
+#           groups: {Your group name, ex: "Groups"},
+#           firebase_cli_token: ENV["FIREBASE_TOKEN"],
+#           release_notes: "Release New Feature",
+#           debug: true
+#       )
+#   end
+# end
+
+platform :android do
+  desc "Release android app beta version"
+  increment_version_code(gradle_file_path: "./android/app/build.gradle")
+  lane :distribute do
+    gradle(task: 'clean assembleRelease', project_dir: './android', print_command: false, properties: {
+      "MYAPP_UPLOAD_STORE_FILE" => ENV["MYAPP_UPLOAD_STORE_FILE"],
+      "MYAPP_UPLOAD_STORE_PASSWORD" => ENV["MYAPP_UPLOAD_STORE_PASSWORD"],
+      "MYAPP_UPLOAD_KEY_ALIAS" => ENV["MYAPP_UPLOAD_KEY_ALIAS"],
+      "MYAPP_UPLOAD_KEY_PASSWORD" => ENV["MYAPP_UPLOAD_KEY_PASSWORD"]
+    })
+
+    firebase_app_distribution(
+      app: ENV["FIREBASE_APP_ID"],
+      firebase_cli_token: ENV["FIREBASE_TOKEN"],
+      release_notes: "Release new feature",
+      debug: true
+    )
+  end
+end
