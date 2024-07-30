@@ -19,6 +19,43 @@ Go to android/app
 sudo keytool -genkey -v -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 ```
 
+### 3. Add config release
+
+Go to android/app/build.gradle
+
+```sh
+...
+android {
+    ...
+    defaultConfig { ... }
+    signingConfigs {
+        release {
+            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+                storeFile file(MYAPP_UPLOAD_STORE_FILE)
+                storePassword MYAPP_UPLOAD_STORE_PASSWORD
+                keyAlias MYAPP_UPLOAD_KEY_ALIAS
+                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+            }
+        }
+    }
+    buildTypes {
+        release {
+            ...
+            signingConfig signingConfigs.release
+        }
+    }
+}
+...
+```
+
+Go to **android/gradle.properties**
+
+MYAPP_UPLOAD_STORE_FILE=my-upload-key.keystore
+MYAPP_UPLOAD_KEY_ALIAS=my-key-alias
+MYAPP_UPLOAD_STORE_PASSWORD=*****
+MYAPP_UPLOAD_KEY_PASSWORD=*****
+
+
 <h2>Step 1: Create fastlane</h2>
 
 ### 1. Create folder fastlane
@@ -197,6 +234,26 @@ firebase login
 ```
 
 After login see FIREBASE_TOKEN is the token in **terminal**
+
+<h2>Step 3: Run fastlane</h2>
+
+### At fastlane folder level run 
+
+```sh
+gem install bundler
+```
+```sh
+bundler install
+```
+
+### Finished Now we will build android app
+
+```sh
+npm run android:release-firebase-beta
+```
+
+<img width="1353" alt="image" src="https://github.com/user-attachments/assets/6a05a78f-004d-4f27-9072-86e7989502ec">
+
 
 
 
