@@ -4,6 +4,9 @@
 
 [https://medium.com/@sathishkcontact/managing-multiple-environments-in-react-native-android-ios-scripts-for-different-builds-ea4c5bff6782](https://medium.com/@sathishkcontact/managing-multiple-environments-in-react-native-android-ios-scripts-for-different-builds-ea4c5bff6782)
 
+[https://viblo.asia/p/lam-viec-voi-environment-variables-trong-react-native-bWrZnWEwlxw](https://viblo.asia/p/lam-viec-voi-environment-variables-trong-react-native-bWrZnWEwlxw)
+
+
 # Example
 
 ## Android
@@ -13,6 +16,10 @@ See commit code: [https://github.com/thongluonglib/Learning-React-Native-Nodejs/
 <img width="307" alt="image" src="https://github.com/user-attachments/assets/ca040475-0f41-4620-a08f-d72d3fec3fc1">
 <img width="318" alt="image" src="https://github.com/user-attachments/assets/780b7f69-6cb3-463d-8010-f16cc45aaa0c">
 <img width="338" alt="image" src="https://github.com/user-attachments/assets/7d29bbea-e8c7-40e6-9fa8-274afa50992c">
+
+## IOS
+
+<img width="231" alt="image" src="https://github.com/user-attachments/assets/fea97e39-88eb-444d-8ea2-1c795c161272">
 
 
 # Getting Started
@@ -134,7 +141,7 @@ cd ios && pod install
 
 ## Step 4: Add native config multi-environments
 
-### For Android:
+## For Android:
 
    #### 1. Open ***android/app/build.gradle*** and paste the code as below.
    ```sh
@@ -244,14 +251,26 @@ To change the app icons, just add it inside the specific mipmap of the build dev
 <img width="926" alt="image" src="https://github.com/user-attachments/assets/065defc9-a954-475d-baa5-6bb344a606ff">
 <h2>That's all done for Android ...!!!</h2>
 
-### For IOS:
+## For IOS:
 <h2>First Create Multi App Name</h2>
 
-#### 1. Open Info.plist add Bundle display name = $(PRODUCT_NAME)
+#### 1. Open Info.plist add
+```sh
+Bundle display name = $(PRODUCT_NAME)
+```
 
 <img width="883" alt="image" src="https://github.com/user-attachments/assets/a53a30e6-f635-404d-9c02-76f6ad0fefa4">
 
 #### 2. Go to the PROJECT>Your App>Info>configurations and click + add like bellow
+
+```sh
+DebugDev
+DebugStaging
+DebugProduction
+ReleaseDev
+ReleaseStaging
+ReleaseProduction
+```
 
 <img width="1137" alt="image" src="https://github.com/user-attachments/assets/3aacd9aa-6882-4d50-ba0b-215c90af43b6">
 
@@ -271,8 +290,10 @@ Note: You can change it
 
 <img width="1304" alt="image" src="https://github.com/user-attachments/assets/48555091-74d8-48b6-91ef-6476a77ba39d">
 
+<img width="755" alt="image" src="https://github.com/user-attachments/assets/903fe539-75b1-4859-a17b-dfb3eb503a3a">
 
-<img width="1218" alt="image" src="https://github.com/user-attachments/assets/5996a9cc-fbac-499b-a402-695d0182ccb4">
+
+
 
 #### 6. Then go to Product>Schemes>EditScheme edit and change Build Configuration for:
 **Run, Test, Profile, Analyze, Archive** like bellow:
@@ -336,6 +357,10 @@ echo ".env.development" > /tmp/envfile
 
 <img width="919" alt="image" src="https://github.com/user-attachments/assets/e8c72fb2-9c32-46e6-a8dc-1d9b1b6c9314">
 
+And Choose your App in **Provide build settings from**:
+
+<img width="633" alt="image" src="https://github.com/user-attachments/assets/6153d9f3-0340-4615-8be5-a55f7949208a">
+
 <h2>staging</h2>
 
 
@@ -374,6 +399,8 @@ echo ".env.production" > /tmp/envfile
 
 ```sh
 npm run android:dev
+npm run android:staging
+npm run android:prod
 ```
 
 **Run Android App using Android Studio**
@@ -393,7 +420,11 @@ npm run android:dev
 **Run IOS App**
 
 ```sh
+npx pod-install
+
 npm run ios:dev
+npm run ios:staging
+npm run ios:prod
 ```
 
 **Run IOS App with specific device**
