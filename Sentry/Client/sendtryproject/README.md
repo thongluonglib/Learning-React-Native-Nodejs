@@ -43,6 +43,33 @@ const defaultConfig = {
 
 <img width="984" alt="image" src="https://github.com/user-attachments/assets/8d50bb87-2a90-4b5d-9c07-3dbbe67d48c7">
 
+### To see Performance Screen
+#### 1. Click Performance tab in left panel
+#### 2. Click screen Transaction you want to check performance API
+<img width="1342" alt="image" src="https://github.com/user-attachments/assets/ea3bec7c-4373-4049-ac66-5f14b2372c1a">
+
+#### 3. At a screen check span to see all 
+
+ui.load.initial_display: is a time  UI load (**P75 SELF TIME** is a time to load UI once, **TOTAL SELF TIME** is a total time to load UI)
+
+<img width="1342" alt="image" src="https://github.com/user-attachments/assets/ea3bec7c-4373-4049-ac66-5f14b2372c1a">
+
+#### 4. To see All events user goes to a screen 
+
+Click the **Sampled Event** tab
+
+<img width="1414" alt="image" src="https://github.com/user-attachments/assets/94c08b1c-ee67-4b85-ab24-454d4fecd32f">
+
+Click **Event** you want to see: 
+
+At event 
+ui.load.initial_display: Thời gian load UI trang HomePage mất 1.22s
+POST http://10.0.2.2:3000/get-list-channel: Thời gian gọi request api get-list-channel và nhận được response là 56.99ms
+POST http://10.0.2.2:3000/get-timeout: Thời gian gọi request api get-timeout và nhận được response là 3.04s
+
+<img width="945" alt="image" src="https://github.com/user-attachments/assets/aa7ce0b7-f714-4258-9cbc-898d1acb66c0">
+
+
 ***Result***:
 
 <img height="400" width="1416" alt="image" src="https://github.com/user-attachments/assets/4741fd8e-93ab-45e1-8c55-10fbbd82d795">
@@ -70,8 +97,6 @@ apiTrack: ["localhost", 'http://10.0.2.2:3000'], // <-- Add this line
 2. TOTAL SELF TIME: is a total time from API Request to API response ( Là tổng thời gian của tất cả các lần gọi API)
 
 <img width="1405" alt="image" src="https://github.com/user-attachments/assets/d032cfb3-488b-47e2-9287-16819ca6d206">
-
-
 
 **result**
 
