@@ -63,8 +63,11 @@ Click the **Sampled Event** tab
 Click **Event** you want to see: 
 
 At event 
+
 ui.load.initial_display: Thời gian load UI trang HomePage mất 1.22s
+
 POST http://10.0.2.2:3000/get-list-channel: Thời gian gọi request api get-list-channel và nhận được response là 56.99ms
+
 POST http://10.0.2.2:3000/get-timeout: Thời gian gọi request api get-timeout và nhận được response là 3.04s
 
 <img width="945" alt="image" src="https://github.com/user-attachments/assets/aa7ce0b7-f714-4258-9cbc-898d1acb66c0">
