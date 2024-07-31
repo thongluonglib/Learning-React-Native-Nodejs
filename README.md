@@ -4,7 +4,7 @@
 [Documentation](https://github.com/thongluonglib/Learning-React-Native-Nodejs/tree/main/MultiEnvironment/Client/MultiEnvApp#readme)
 
 # Sentry: 
-[c](https://github.com/thongluonglib/Learning-React-Native-Nodejs/tree/main/Sentry/Client/sendtryproject#readme)
+[Documentation](https://github.com/thongluonglib/Learning-React-Native-Nodejs/tree/main/Sentry/Client/sendtryproject#readme)
 
 # Fastlane with Firebase distribute
 
