@@ -9,7 +9,26 @@ SentryConfig.init();
 
 <img width="1008" alt="image" src="https://github.com/user-attachments/assets/8fa3cd27-eb57-4030-bc39-97370658799d">
 
+## To send message error to sentry
+
+```sh
+captureMessage('API Error', "error")
+```
+
+***Result:*** 
+
+<img width="1430" alt="image" src="https://github.com/user-attachments/assets/0c213fe9-e094-4549-befe-0c79ebec8e77">
+
 ## To track screen performance add 
+
+***1: Goto  utils/SentryConfig.ts set isNavigationTrack: true***
+
+```sh
+const defaultConfig = {
+    isNavigationTrack: true
+}
+```
+**2. Go to App.tsx and add SentryConfig.registerNavigationContainer(navigation)**
 
 ```sh
  <NavigationContainer
@@ -19,14 +38,28 @@ SentryConfig.init();
       }}
     >
 ```
+
 <img width="984" alt="image" src="https://github.com/user-attachments/assets/8d50bb87-2a90-4b5d-9c07-3dbbe67d48c7">
 
-## To track api at SentryConfig.ts add
+***Result***:
+
+<img height="400" width="1416" alt="image" src="https://github.com/user-attachments/assets/4741fd8e-93ab-45e1-8c55-10fbbd82d795">
+
+<img height="400" width="1425" alt="image" src="https://github.com/user-attachments/assets/d0056b75-9f5b-4cd4-9039-c0ec9bff97f3">
+
+<img height="400" width="1397" alt="image" src="https://github.com/user-attachments/assets/54ad306d-e208-461e-9125-c56f5d536284">
+
+## To track api performance and error at SentryConfig.ts add
 
 ```sh
 apiTrack: ["localhost", 'http://10.0.2.2:3000'], // <-- Add this line
 ```
+
 <img width="1156" alt="image" src="https://github.com/user-attachments/assets/09c3c357-9671-4829-8537-898f868cb698">
+
+**result**
+
+<img height="400" width="1419" alt="image" src="https://github.com/user-attachments/assets/82ab3d5b-dfd9-4ac0-a0c9-15580a5edf2c">
 
 ## To stop track API has endpoint get-timeout
 
