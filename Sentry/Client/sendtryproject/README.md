@@ -59,6 +59,20 @@ apiTrack: ["localhost", 'http://10.0.2.2:3000'], // <-- Add this line
 
 <img width="1156" alt="image" src="https://github.com/user-attachments/assets/09c3c357-9671-4829-8537-898f868cb698">
 
+### To see Performance API
+#### 1. Click Performance tab in left panel
+#### 2. Click screen Transaction you want to check performance API
+<img width="1342" alt="image" src="https://github.com/user-attachments/assets/ea3bec7c-4373-4049-ac66-5f14b2372c1a">
+
+#### 3. At a screen check span to see all 
+
+1. P75 SELF TIME: is a time from API Request to API response (Là thời gian phản hồi khi user request đến khi nhân response của API trong 1 lần gọi)
+2. TOTAL SELF TIME: is a total time from API Request to API response ( Là tổng thời gian của tất cả các lần gọi API)
+
+<img width="1405" alt="image" src="https://github.com/user-attachments/assets/d032cfb3-488b-47e2-9287-16819ca6d206">
+
+
+
 **result**
 
 <img height="400" width="1419" alt="image" src="https://github.com/user-attachments/assets/82ab3d5b-dfd9-4ac0-a0c9-15580a5edf2c">
