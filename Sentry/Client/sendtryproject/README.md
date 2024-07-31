@@ -139,7 +139,8 @@ Go to [sentry.io](sentry.io) click **Project** and **Create Project**
 
 ### 2. 
 
-After create setting of project 
+then click **setting** icon of project :
+
 <img width="692" alt="image" src="https://github.com/user-attachments/assets/ec3d05dc-b2b5-4c5a-acc6-9b5cb387b917">
 
 3. Click Client Key DNS in left panel and get DNS
