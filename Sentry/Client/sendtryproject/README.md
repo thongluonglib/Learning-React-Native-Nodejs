@@ -1,4 +1,24 @@
 
+# Getting Started
+
+## Step 1: Get sentry DNS
+
+### 1. Create a Sentry Project
+
+Go to [sentry.io](sentry.io) click **Project** and **Create Project**
+
+<img width="1430" alt="image" src="https://github.com/user-attachments/assets/3400e28c-534e-4eb8-8b45-a2b06b6e0bf0">
+
+### 2. 
+
+After create setting of project 
+<img width="692" alt="image" src="https://github.com/user-attachments/assets/ec3d05dc-b2b5-4c5a-acc6-9b5cb387b917">
+
+3. Click Client Key DNS in left panel and get DNS
+   
+   <img width="645" alt="image" src="https://github.com/user-attachments/assets/4bb291dd-b5d1-4a1f-9ac9-1ade9b8ff6a4">
+
+
 ### List features
 
 #### captureMessage: 
