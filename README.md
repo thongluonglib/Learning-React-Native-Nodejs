@@ -16,6 +16,10 @@
 
 [Documentation](https://github.com/thongluonglib/Learning-React-Native-Nodejs/tree/main/EndToEndTest/Client/RNDetoxTest#readme)
 
+# CICD Pipeline with GitHub action
+
+[Documentation](https://github.com/thongluonglib/cicdproject/tree/main)
+
 
 # Some Tips
 
