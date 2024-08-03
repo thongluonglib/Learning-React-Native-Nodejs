@@ -60,7 +60,7 @@ Add to **package.json**
 ```
 
 
-## 1. You’ll also need Node 8.3.0 or above and Apple Simulator Utilities.
+## 1. You’ll also need Node or above and Apple Simulator Utilities.
 You can use the following commands to install them:
 
 Run brew update && brew install node to update Homebrew and install Node.
