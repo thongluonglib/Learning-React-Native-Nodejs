@@ -60,7 +60,7 @@ For IOS: **xcrun simctl list devicetypes** to get the ios name
 
 <img width="1037" alt="image" src="https://github.com/user-attachments/assets/028ef65c-ea0e-4e4f-9683-9e2684363d33">
 
-
+**.detoxrc.js**
 ```sh
 /** @type {Detox.DetoxConfig} */
 module.exports = {
