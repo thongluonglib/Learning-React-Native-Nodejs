@@ -4,37 +4,6 @@
 
 [https://blog.logrocket.com/react-native-end-to-end-testing-detox/](https://blog.logrocket.com/react-native-end-to-end-testing-detox/)
 
-# How to use detox
-
-After you finished config detox below
-
-## For IOS
-
-First run **e2e:build-ios-debug** to build for debug, just **one time**
-```sh
-npm run e2e:build-ios-debug
-```
-
-Second run **e2e:test-ios-debug** to start test for debug
-
-```sh
-npm run e2e:test-ios-debug
-```
-
-## For Android
-
-First run **e2e:build-android-debug** to build for debug, just **one time**
-
-```sh
-npm run e2e:build-android-debug
-```
-
-Second run **e2e:test-android-debug** to test for debug
-
-```sh
-npm run e2e:test-android-debug
-```
-
 ### Result
 
 <img width="852" alt="image" src="https://github.com/user-attachments/assets/92776163-d2b0-4b21-8e6f-5c02f264e043">
@@ -43,22 +12,6 @@ https://github.com/user-attachments/assets/0957139e-22e0-4030-bab0-7bd9b334aec2
 
 
 # Getting Started
-## Prepare
-
-Add to **package.json**
-
-```sh
-"android:clean": "cd android && ./gradlew clean && cd ..",
-"e2e:build-ios-debug": "detox build -c ios.sim.debug",
-"e2e:build-ios-release": "detox build -c ios.sim.release",
-"e2e:test-ios-debug": "detox test -c ios.sim.debug",
-"e2e:test-ios-release": "detox test -c ios.sim.release",
-"e2e:build-android-debug": "yarn android:clean && detox build -c android.emu.debug",
-"e2e:build-android-release": "yarn android:clean && detox build -c android.emu.release",
-"e2e:test-android-debug": "detox test -c android.emu.debug",
-"e2e:test-android-release": "detox test -c android.emu.release"
-```
-
 
 ## 1. You’ll also need Node or above and Apple Simulator Utilities.
 You can use the following commands to install them:
@@ -269,5 +222,52 @@ describe('Example', () => {
   });
 });
 ````
+
+## 6. Add Package.json
+
+Add to **package.json**
+
+```sh
+"android:clean": "cd android && ./gradlew clean && cd ..",
+"e2e:build-ios-debug": "detox build -c ios.sim.debug",
+"e2e:build-ios-release": "detox build -c ios.sim.release",
+"e2e:test-ios-debug": "detox test -c ios.sim.debug",
+"e2e:test-ios-release": "detox test -c ios.sim.release",
+"e2e:build-android-debug": "yarn android:clean && detox build -c android.emu.debug",
+"e2e:build-android-release": "yarn android:clean && detox build -c android.emu.release",
+"e2e:test-android-debug": "detox test -c android.emu.debug",
+"e2e:test-android-release": "detox test -c android.emu.release"
+```
+
+## 7. How to use detox
+
+After you finished config detox below
+
+## For IOS
+
+First run **e2e:build-ios-debug** to build for debug, just **one time**
+```sh
+npm run e2e:build-ios-debug
+```
+
+Second run **e2e:test-ios-debug** to start test for debug
+
+```sh
+npm run e2e:test-ios-debug
+```
+
+## For Android
+
+First run **e2e:build-android-debug** to build for debug, just **one time**
+
+```sh
+npm run e2e:build-android-debug
+```
+
+Second run **e2e:test-android-debug** to test for debug
+
+```sh
+npm run e2e:test-android-debug
+```
 
 
