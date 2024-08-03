@@ -17,7 +17,7 @@
 [Documentation](https://github.com/thongluonglib/Learning-React-Native-Nodejs/tree/main/EndToEndTest/Client/RNDetoxTest#readme)
 
 
-# Some tip
+# Some Tips
 
 ## To skip worktree gradle.properties
 
