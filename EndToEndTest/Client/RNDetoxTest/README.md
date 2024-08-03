@@ -45,6 +45,14 @@ npm install detox –save-dev
 1. At your project add **.detoxrc.js** file 
 2. Then add code bellow to **.detoxrc.js** file  
 3. Then find **RNDetoxTest** in **.detoxrc.js** file and change become **your project name**
+4. Then change your Android and ios device to use the test
+   With config bellow I use **iPhone 15** to test ios and **Pixel_4_API_34** to test android 
+
+Click the **(... icon)** on Emulator to get the android name
+
+<img width="821" alt="image" src="https://github.com/user-attachments/assets/827805d1-14f2-4915-b2fc-ae65af88bed9">
+
+<img width="696" alt="image" src="https://github.com/user-attachments/assets/1bcc393c-34db-4a67-aa55-d77beb17e7e5">
 
 <img width="1037" alt="image" src="https://github.com/user-attachments/assets/028ef65c-ea0e-4e4f-9683-9e2684363d33">
 
@@ -90,7 +98,7 @@ module.exports = {
     simulator: {
       type: 'ios.simulator',
       device: {
-        type: 'iPhone 15'
+        type: 'iPhone 15' // <--- Change your ios device name here 
       }
     },
     attached: {
@@ -102,7 +110,7 @@ module.exports = {
     emulator: {
       type: 'android.emulator',
       device: {
-        avdName: 'Pixel_3a_API_30_x86'
+        avdName: 'Pixel_4_API_34' // <--- Change your android device name here 
       }
     }
   },
@@ -133,6 +141,7 @@ module.exports = {
     }
   }
 };
+
 
 ```
 
