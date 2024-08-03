@@ -10,6 +10,6 @@
 
 [Documentation](https://github.com/thongluonglib/Learning-React-Native-Nodejs/tree/main/RNFastlane#readme)
 
-# Sentry
+# End To End testing with Detox
 
-[Documentation](https://github.com/thongluonglib/Learning-React-Native-Nodejs/tree/main/Sentry/Client/sendtryproject#readme)
+[Documentation](https://github.com/thongluonglib/Learning-React-Native-Nodejs/tree/main/EndToEndTest/Client/RNDetoxTest#readme)
