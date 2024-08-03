@@ -4,6 +4,13 @@
 
 [https://blog.logrocket.com/react-native-end-to-end-testing-detox/](https://blog.logrocket.com/react-native-end-to-end-testing-detox/)
 
+[Official Document](https://wix.github.io/Detox/docs/19.x/introduction/getting-started)
+
+
+For Android: [https://wix.github.io/Detox/docs/19.x/introduction/android](https://wix.github.io/Detox/docs/19.x/introduction/android)
+
+For IOS: [https://wix.github.io/Detox/docs/19.x/introduction/ios](https://wix.github.io/Detox/docs/19.x/introduction/ios)
+
 ## Demo
 
 <img width="852" alt="image" src="https://github.com/user-attachments/assets/92776163-d2b0-4b21-8e6f-5c02f264e043">
