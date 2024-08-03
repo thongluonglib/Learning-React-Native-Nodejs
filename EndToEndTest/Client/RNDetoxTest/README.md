@@ -4,7 +4,7 @@
 
 [https://blog.logrocket.com/react-native-end-to-end-testing-detox/](https://blog.logrocket.com/react-native-end-to-end-testing-detox/)
 
-### Result
+## Demo
 
 <img width="852" alt="image" src="https://github.com/user-attachments/assets/92776163-d2b0-4b21-8e6f-5c02f264e043">
 
