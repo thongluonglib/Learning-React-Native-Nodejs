@@ -4,7 +4,7 @@
 
 [https://blog.logrocket.com/react-native-end-to-end-testing-detox/](https://blog.logrocket.com/react-native-end-to-end-testing-detox/)
 
-(Official Document)[https://wix.github.io/Detox/docs/introduction/environment-setup]
+[Official Document](https://wix.github.io/Detox/docs/introduction/environment-setup)
 
 ## Demo
 
