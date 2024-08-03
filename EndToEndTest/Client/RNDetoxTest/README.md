@@ -1,79 +1,286 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Reference
+
+[https://www.browserstack.com/guide/detox-testing-tutorial](https://www.browserstack.com/guide/detox-testing-tutorial)
+
+[https://blog.logrocket.com/react-native-end-to-end-testing-detox/](https://blog.logrocket.com/react-native-end-to-end-testing-detox/)
+
+[Official Document](https://wix.github.io/Detox/docs/introduction/environment-setup)
+
+## Demo
+
+<img width="852" alt="image" src="https://github.com/user-attachments/assets/92776163-d2b0-4b21-8e6f-5c02f264e043">
+
+https://github.com/user-attachments/assets/0957139e-22e0-4030-bab0-7bd9b334aec2
+
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## 1. You’ll also need Node or above and Apple Simulator Utilities.
+You can use the following commands to install them:
 
-## Step 1: Start the Metro Server
+Run brew update && brew install node to update Homebrew and install Node.
+Run brew tap wix/brew && brew install applesimutils to install Apple Simulator Utilities.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
-
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+```sh
+brew update && brew install node
 ```
 
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```sh
+brew tap wix/brew && brew install applesimutils
 ```
 
-### For iOS
+## 2. Install the Detox CLI by running the following command:
 
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+```sh
+npm install -g detox-cli
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## 3. Install Detox in your project:
+Go to your project path and run npm install detox –save-dev to install Detox as a development dependency in your project.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+```sh
+npm install detox –save-dev
+```
 
-## Step 3: Modifying your App
+## 4. Configure Detox in your project:
 
-Now that you have successfully run the app, let's modify it.
+1. At your project add **.detoxrc.js** file 
+2. Then add code bellow to **.detoxrc.js** file  
+3. Then find **RNDetoxTest** in **.detoxrc.js** file and change become **your project name**
+4. Then change your Android and ios device to use the test
+   With config bellow I use **iPhone 15** to test ios and **Pixel_4_API_34** to test android 
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+For Android: Click the **(... icon)** on Emulator or run **emulator -list-avds** to get the android name 
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+For IOS: **xcrun simctl list devicetypes** to get the ios name
 
-## Congratulations! :tada:
+<img width="821" alt="image" src="https://github.com/user-attachments/assets/827805d1-14f2-4915-b2fc-ae65af88bed9">
 
-You've successfully run and modified your React Native App. :partying_face:
+<img width="696" alt="image" src="https://github.com/user-attachments/assets/1bcc393c-34db-4a67-aa55-d77beb17e7e5">
 
-### Now what?
+<img width="1037" alt="image" src="https://github.com/user-attachments/assets/028ef65c-ea0e-4e4f-9683-9e2684363d33">
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
 
-# Troubleshooting
+```sh
+/** @type {Detox.DetoxConfig} */
+module.exports = {
+  testRunner: {
+    args: {
+      '$0': 'jest',
+      config: 'e2e/jest.config.js'
+    },
+    jest: {
+      setupTimeout: 120000
+    }
+  },
+  apps: {
+    'ios.debug': {
+      type: 'ios.app',
+      binaryPath: 'ios/build/Build/Products/Debug-iphonesimulator/RNDetoxTest.app',
+      build: 'xcodebuild -workspace ios/RNDetoxTest.xcworkspace -scheme RNDetoxTest -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build'
+    },
+    'ios.release': {
+      type: 'ios.app',
+      binaryPath: 'ios/build/Build/Products/Release-iphonesimulator/RNDetoxTest.app',
+      build: 'xcodebuild -workspace ios/RNDetoxTest.xcworkspace -scheme RNDetoxTest -configuration Release -sdk iphonesimulator -derivedDataPath ios/build'
+    },
+    'android.debug': {
+      type: 'android.apk',
+      binaryPath: 'android/app/build/outputs/apk/debug/app-debug.apk',
+      build: 'cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug',
+      reversePorts: [
+        8081
+      ]
+    },
+    'android.release': {
+      type: 'android.apk',
+      binaryPath: 'android/app/build/outputs/apk/release/app-release.apk',
+      build: 'cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release'
+    }
+  },
+  devices: {
+    simulator: {
+      type: 'ios.simulator',
+      device: {
+        type: 'iPhone 15' // <--- Change your ios device name here 
+      }
+    },
+    attached: {
+      type: 'android.attached',
+      device: {
+        adbName: '.*'
+      }
+    },
+    emulator: {
+      type: 'android.emulator',
+      device: {
+        avdName: 'Pixel_4_API_34' // <--- Change your android device name here 
+      }
+    }
+  },
+  configurations: {
+    'ios.sim.debug': {
+      device: 'simulator',
+      app: 'ios.debug'
+    },
+    'ios.sim.release': {
+      device: 'simulator',
+      app: 'ios.release'
+    },
+    'android.att.debug': {
+      device: 'attached',
+      app: 'android.debug'
+    },
+    'android.att.release': {
+      device: 'attached',
+      app: 'android.release'
+    },
+    'android.emu.debug': {
+      device: 'emulator',
+      app: 'android.debug'
+    },
+    'android.emu.release': {
+      device: 'emulator',
+      app: 'android.release'
+    }
+  }
+};
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
-# Learn More
+```
 
-To learn more about React Native, take a look at the following resources:
+## 5. Create e2e folder and add 
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+<img width="370" alt="image" src="https://github.com/user-attachments/assets/bec28ead-6112-42ba-a46d-18462dc434b5">
+
+**1. app.test.js**
+
+```sh
+describe('Example', () => {
+    // previous tests here
+    beforeAll(async () => {
+        await device.launchApp();
+    });
+
+    beforeEach(async () => {
+        await device.reloadReactNative();
+    });
+    
+    it('should enable swiping back and forth', async () => {
+        await expect(element(by.text('Step One'))).toBeVisible();
+        await element(by.id('slides')).swipe('left');
+        await element(by.id('slides')).swipe('right');
+        await expect(element(by.text('Step One'))).toBeVisible();
+    });
+
+    it('should render "Debug" and have a Button to click in the third slide', async () => {
+        await element(by.id('slides')).swipe('left');
+        await element(by.id('slides')).swipe('left');
+        await expect(element(by.text('Debug'))).toBeVisible();
+
+        await element(by.text('Click here!')).tap();
+        await expect(element(by.text('Clicked!'))).toBeVisible();
+        await element(by.text('OK')).tap();
+    });
+
+    it('should render "Learn More" and change text in the fourth slide', async () => {
+        await element(by.id('slides')).swipe('left');
+        await element(by.id('slides')).swipe('left');
+        await element(by.id('slides')).swipe('left');
+        await expect(element(by.text('Learn More'))).toBeVisible();
+
+        const docsInput = element(by.id('docsInput'));
+
+        await expect(docsInput).toBeVisible();
+
+        await docsInput.clearText();
+        await docsInput.typeText('Maybe later!');
+
+        await expect(docsInput).toHaveText('Maybe later!');
+    });
+});
+```
+
+**2. jest.config.js**
+
+```sh
+/** @type {import('@jest/types').Config.InitialOptions} */
+module.exports = {
+  rootDir: '..',
+  testMatch: ['<rootDir>/e2e/**/*.test.js'],
+  testTimeout: 120000,
+  maxWorkers: 1,
+  globalSetup: 'detox/runners/jest/globalSetup',
+  globalTeardown: 'detox/runners/jest/globalTeardown',
+  reporters: ['detox/runners/jest/reporter'],
+  testEnvironment: 'detox/runners/jest/testEnvironment',
+  verbose: true,
+};
+```
+
+**3. starter.test.js**
+
+```sh
+describe('Example', () => {
+  beforeAll(async () => {
+    await device.launchApp();
+  });
+
+  beforeEach(async () => {
+    await device.reloadReactNative();
+  });
+
+  it('should have step-one screen', async () => {
+    await expect(element(by.id('step-one'))).toBeVisible();
+  });
+});
+````
+
+## 6. Add Package.json
+
+Add to **package.json**
+
+```sh
+"android:clean": "cd android && ./gradlew clean && cd ..",
+"e2e:build-ios-debug": "detox build -c ios.sim.debug",
+"e2e:build-ios-release": "detox build -c ios.sim.release",
+"e2e:test-ios-debug": "detox test -c ios.sim.debug",
+"e2e:test-ios-release": "detox test -c ios.sim.release",
+"e2e:build-android-debug": "yarn android:clean && detox build -c android.emu.debug",
+"e2e:build-android-release": "yarn android:clean && detox build -c android.emu.release",
+"e2e:test-android-debug": "detox test -c android.emu.debug",
+"e2e:test-android-release": "detox test -c android.emu.release"
+```
+
+## 7. How to use detox
+
+After you finished config detox below
+
+## For IOS
+
+First run **e2e:build-ios-debug** to build for debug, just **one time**
+```sh
+npm run e2e:build-ios-debug
+```
+
+Second run **e2e:test-ios-debug** to start test for debug
+
+```sh
+npm run e2e:test-ios-debug
+```
+
+## For Android
+
+First run **e2e:build-android-debug** to build for debug, just **one time**
+
+```sh
+npm run e2e:build-android-debug
+```
+
+Second run **e2e:test-android-debug** to test for debug
+
+```sh
+npm run e2e:test-android-debug
+```
+
+
