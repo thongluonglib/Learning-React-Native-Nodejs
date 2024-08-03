@@ -5,3 +5,11 @@
 
 # Sentry: 
 [Documentation](https://github.com/thongluonglib/Learning-React-Native-Nodejs/tree/main/Sentry/Client/sendtryproject#readme)
+
+# Fastlane with Firebase distribute
+
+[Documentation](https://github.com/thongluonglib/Learning-React-Native-Nodejs/tree/main/RNFastlane#readme)
+
+# Sentry
+
+[Documentation](https://github.com/thongluonglib/Learning-React-Native-Nodejs/tree/main/Sentry/Client/sendtryproject#readme)
