@@ -19,9 +19,7 @@
 
 # Some tip
 
-## To Skip Update gradle.properties
-
-<img width="359" alt="image" src="https://github.com/user-attachments/assets/0dc27c65-4e41-4421-a469-9e6d43f33a42">
+## To skip worktree gradle.properties
 
 ```sh
 git update-index --skip-worktree android/gradle.properties 
