@@ -60,8 +60,8 @@ For IOS: **xcrun simctl list devicetypes** to get the ios name
 
 <img width="1037" alt="image" src="https://github.com/user-attachments/assets/028ef65c-ea0e-4e4f-9683-9e2684363d33">
 
-
-```sh
+**.detoxrc.js**
+```js
 /** @type {Detox.DetoxConfig} */
 module.exports = {
   testRunner: {
@@ -155,7 +155,7 @@ module.exports = {
 
 **1. app.test.js**
 
-```sh
+```js
 describe('Example', () => {
     // previous tests here
     beforeAll(async () => {
@@ -203,7 +203,7 @@ describe('Example', () => {
 
 **2. jest.config.js**
 
-```sh
+```js
 /** @type {import('@jest/types').Config.InitialOptions} */
 module.exports = {
   rootDir: '..',
@@ -220,7 +220,7 @@ module.exports = {
 
 **3. starter.test.js**
 
-```sh
+```js
 describe('Example', () => {
   beforeAll(async () => {
     await device.launchApp();
@@ -236,11 +236,145 @@ describe('Example', () => {
 });
 ````
 
-## 6. Add Package.json
+## 6. App.js
+
+**Remember to install**
+
+```sh
+npm install --save react-swipeable-views-native randomcolor
+```
+
+```js
+import React, {Fragment} from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  TextInput,
+  Button,
+  StatusBar,
+} from 'react-native';
+import {
+  Header,
+  LearnMoreLinks,
+  Colors,
+  DebugInstructions,
+  ReloadInstructions,
+} from 'react-native/Libraries/NewAppScreen';
+import randomColor from 'randomcolor';
+import SwipeableViews from 'react-swipeable-views-native';
+const Slide = ({children}) => (
+  <View
+    style={[
+      styles.slide,
+      {backgroundColor: randomColor({luminosity: 'light'})},
+    ]}>
+    {children}
+  </View>
+);
+const App = () => {
+  return (
+    <Fragment>
+      <StatusBar barStyle="dark-content" />
+      <SafeAreaView>
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={styles.scrollView}>
+          <Header />
+          {global.HermesInternal == null ? null : (
+            <View style={styles.engine}>
+              <Text style={styles.footer}>Engine: Hermes</Text>
+            </View>
+          )}
+          <View style={styles.body}>
+            <SwipeableViews testID="slides">
+              <Slide>
+                <Text testID='step-one' style={styles.sectionTitle}>Step One</Text>
+                <Text style={styles.sectionDescription}>
+                  Edit <Text style={styles.highlight}>App.js</Text> to change
+                  this screen and then come back to see your edits.
+                </Text>
+              </Slide>
+              <Slide>
+                <Text style={styles.sectionTitle}>See Your Changes</Text>
+                <Text style={styles.sectionDescription}>
+                  <ReloadInstructions />
+                </Text>
+              </Slide>
+              <Slide>
+                <Text style={styles.sectionTitle}>Debug</Text>
+                <Text style={styles.sectionDescription}>
+                  <DebugInstructions />
+                </Text>
+                <Button onPress={() => alert('Clicked!')} title="Click here!" />
+              </Slide>
+              <Slide>
+                <Text style={styles.sectionTitle}>Learn More</Text>
+                <TextInput
+                  testID="docsInput"
+                  multiline
+                  style={styles.sectionDescription}>
+                  Read the docs to discover what to do next:
+                </TextInput>
+              </Slide>
+            </SwipeableViews>
+            <LearnMoreLinks />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </Fragment>
+  );
+};
+const styles = StyleSheet.create({
+  scrollView: {
+    backgroundColor: Colors.lighter,
+  },
+  engine: {
+    position: 'absolute',
+    right: 0,
+  },
+  body: {
+    backgroundColor: Colors.white,
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: Colors.black,
+  },
+  sectionDescription: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '400',
+    color: Colors.dark,
+  },
+  highlight: {
+    fontWeight: '700',
+  },
+  footer: {
+    color: Colors.dark,
+    fontSize: 12,
+    fontWeight: '600',
+    padding: 4,
+    paddingRight: 12,
+    textAlign: 'right',
+  },
+  slide: {
+    padding: 24,
+    height: 200,
+    display: 'flex',
+    justifyContent: 'center',
+  },
+});
+export default App;
+```
+
+## 7. Add Package.json
 
 Add to **package.json**
 
-```sh
+```js
 "android:clean": "cd android && ./gradlew clean && cd ..",
 "e2e:build-ios-debug": "detox build -c ios.sim.debug",
 "e2e:build-ios-release": "detox build -c ios.sim.release",
@@ -252,7 +386,7 @@ Add to **package.json**
 "e2e:test-android-release": "detox test -c android.emu.release"
 ```
 
-## 7. How to use detox
+## 8. How to use detox
 
 After you finished config detox below
 

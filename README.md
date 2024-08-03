@@ -1,3 +1,5 @@
+
+
 # Learning-React-Native-Nodejs
 
 # Multiple Environment: 
@@ -13,3 +15,12 @@
 # End To End testing with Detox
 
 [Documentation](https://github.com/thongluonglib/Learning-React-Native-Nodejs/tree/main/EndToEndTest/Client/RNDetoxTest#readme)
+
+
+# Some Tips
+
+## To skip worktree gradle.properties
+
+```sh
+git update-index --skip-worktree android/gradle.properties 
+```

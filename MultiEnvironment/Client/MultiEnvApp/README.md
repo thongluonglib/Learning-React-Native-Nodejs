@@ -133,6 +133,11 @@ apply from: project(':react-native-config').projectDir.getPath() + '/dotenv.grad
 ```
 <img width="1363" alt="image" src="https://github.com/user-attachments/assets/6a4fc947-9eb7-4b21-85bc-436e6d211204">
 
+At android/app/proguard-rules.pro add: 
+
+```sh
+-keep class com.mypackage.BuildConfig { *; }
+```
 
 #### iOS: 
 ```sh
