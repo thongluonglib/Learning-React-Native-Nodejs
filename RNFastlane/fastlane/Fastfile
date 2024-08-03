@@ -75,8 +75,9 @@ end
 
 platform :android do
   desc "Release android app beta version"
-  increment_version_code(gradle_file_path: "./android/app/build.gradle")
   lane :distribute do
+    increment_version_code(gradle_file_path: "./android/app/build.gradle")
+    # increment_version_name(gradle_file_path: "./android/app/build.gradle")
     gradle(task: 'clean assembleRelease', project_dir: './android', print_command: false, properties: {
       "MYAPP_UPLOAD_STORE_FILE" => ENV["MYAPP_UPLOAD_STORE_FILE"],
       "MYAPP_UPLOAD_STORE_PASSWORD" => ENV["MYAPP_UPLOAD_STORE_PASSWORD"],
@@ -86,6 +87,7 @@ platform :android do
 
     firebase_app_distribution(
       app: ENV["FIREBASE_APP_ID"],
+      groups: "tester, backend",
       firebase_cli_token: ENV["FIREBASE_TOKEN"],
       release_notes: "Release new feature",
       debug: true
