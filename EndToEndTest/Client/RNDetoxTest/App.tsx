@@ -44,7 +44,7 @@ const App = () => {
           <View style={styles.body}>
             <SwipeableViews testID="slides">
               <Slide>
-                <Text style={styles.sectionTitle}>Step One</Text>
+                <Text testID='step-one' style={styles.sectionTitle}>Step One</Text>
                 <Text style={styles.sectionDescription}>
                   Edit <Text style={styles.highlight}>App.js</Text> to change
                   this screen and then come back to see your edits.

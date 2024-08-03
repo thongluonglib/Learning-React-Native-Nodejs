@@ -38,7 +38,7 @@ module.exports = {
     simulator: {
       type: 'ios.simulator',
       device: {
-        type: 'iPhone 15'
+        type: 'iPhone 15' // <--- Change your ios device name here 
       }
     },
     attached: {
@@ -50,7 +50,7 @@ module.exports = {
     emulator: {
       type: 'android.emulator',
       device: {
-        avdName: 'Pixel_3a_API_30_x86'
+        avdName: 'Pixel_4_API_34' // <--- Change your android device name here 
       }
     }
   },
