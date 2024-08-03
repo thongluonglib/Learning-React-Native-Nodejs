@@ -35,7 +35,7 @@ Second run **e2e:test-android-debug** to test for debug
 npm run e2e:test-android-debug
 ```
 
-**Result:**
+### Result
 
 <img width="852" alt="image" src="https://github.com/user-attachments/assets/92776163-d2b0-4b21-8e6f-5c02f264e043">
 
