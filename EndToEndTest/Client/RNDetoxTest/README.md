@@ -56,6 +56,7 @@ npm install detox –save-dev
    With config bellow I use **iPhone 15** to test ios and **Pixel_4_API_34** to test android 
 
 For Android: Click the **(... icon)** on Emulator or run **emulator -list-avds** to get the android name 
+
 For IOS: **xcrun simctl list devicetypes** to get the ios name
 
 <img width="821" alt="image" src="https://github.com/user-attachments/assets/827805d1-14f2-4915-b2fc-ae65af88bed9">
