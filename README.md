@@ -39,9 +39,10 @@ git update-index --skip-worktree android/gradle.properties
     
 ### Get all version node nvm
 
-    ```sh
+```sh
     nvm ls
-    ```
+```
+
 ### Use specific version node
 
   ```sh
