@@ -28,3 +28,28 @@
 ```sh
 git update-index --skip-worktree android/gradle.properties 
 ```
+
+## To Use nvm choose version node
+
+### Install node version
+    
+    ```sh
+    nvm install 20.16.0  // <--- install Node version 20.16.0
+    ```
+    
+### Get all version node nvm
+
+    ```sh
+    nvm ls
+    ```
+### Use specific version node
+
+  ```sh
+  nvm use x.y.z  // <--- use node version x.y.z
+  ````
+  
+### Default version
+
+  ```sh
+  nvm alias default x.y.z  //<--- use default version x.y.z 
+  ```
