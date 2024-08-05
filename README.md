@@ -43,13 +43,13 @@ git update-index --skip-worktree android/gradle.properties
     nvm ls
 ```
 
-### Use specific version node
+### Use specific node version
 
   ```sh
   nvm use x.y.z  // <--- use node version x.y.z
   ````
   
-### Default version
+### Default node version
 
   ```sh
   nvm alias default x.y.z  //<--- use default version x.y.z 
