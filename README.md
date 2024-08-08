@@ -54,3 +54,23 @@ git update-index --skip-worktree android/gradle.properties
   ```sh
   nvm alias default x.y.z  //<--- use default version x.y.z 
   ```
+
+## Docker
+If you have Docker file, docker-compose on your project
+Go to project docker-compose PATH
+### Step 1. Build Docker Image
+```sh
+docker build -t onair-image .
+```
+
+### Step 2. Run Docker Image
+
+```sh
+docker run -p 3005:3005 -td onair-image
+```
+
+### Install Redis Image & Container
+
+```sh
+docker run -d --name redis-stack-server -p 6379:6379 redis/redis-stack-server:latest
+```
