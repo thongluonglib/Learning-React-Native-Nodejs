@@ -4,7 +4,6 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  TouchableOpacityProps,
   ViewStyle,
 } from 'react-native';
 import React, {useState} from 'react';
