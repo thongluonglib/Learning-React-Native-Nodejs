@@ -4,7 +4,7 @@
 
 # Click right to open visual studio code on MacOS
 
-### 1. CMD + R and search Automator
+### 1. CMD + Space and search Automator
 ### 2. Then, click "New Document and Choose Quick Action
 
 <img width="507" alt="image" src="https://github.com/user-attachments/assets/4f404cf3-6b8a-40b8-8116-919857db45c7">
