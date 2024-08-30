@@ -21,7 +21,13 @@
 [Documentation](https://github.com/thongluonglib/cicdproject/tree/main)
 
 
+
+
 # Some Tips
+
+## Click right Open Visual Studio Code on MacOS
+
+[Tip](https://github.com/thongluonglib/Learning-React-Native-Nodejs/blob/main/Tips/click-right-open-vscode-on-mac.md)
 
 ## To skip worktree gradle.properties
 
