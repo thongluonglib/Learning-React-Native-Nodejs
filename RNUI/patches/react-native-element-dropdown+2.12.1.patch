@@ -1,0 +1,1041 @@
+diff --git a/node_modules/react-native-element-dropdown/src/components/DropdownMultiple/DropdownSingle.tsx b/node_modules/react-native-element-dropdown/src/components/DropdownMultiple/DropdownSingle.tsx
+new file mode 100644
+index 0000000..add42e6
+--- /dev/null
++++ b/node_modules/react-native-element-dropdown/src/components/DropdownMultiple/DropdownSingle.tsx
+@@ -0,0 +1,402 @@
++/* eslint-disable @typescript-eslint/no-shadow */
++import _assign from 'lodash/assign';
++import _differenceWith from 'lodash/differenceWith';
++import _findIndex from 'lodash/findIndex';
++import _get from 'lodash/get';
++import _isEqual from 'lodash/isEqual';
++
++import React, {
++  JSXElementConstructor,
++  ReactElement,
++  useCallback,
++  useEffect,
++  useRef,
++  useState,
++} from 'react';
++import {
++  FlatList,
++  StyleSheet,
++  Text,
++  TouchableHighlight,
++  TouchableWithoutFeedback,
++  View,
++} from 'react-native';
++import CInput from 'react-native-element-dropdown/src/components/TextInput';
++import { DropdownProps } from 'react-native-element-dropdown/src/components/DropdownMultiple/model';
++import { styles } from 'react-native-element-dropdown/src/components/DropdownMultiple/styles';
++
++const DropdownSingle: <T>(
++  props: DropdownProps<T>
++) => ReactElement<any, string | JSXElementConstructor<any>> | null =
++  React.forwardRef((props, currentRef) => {
++    const {
++      testID,
++      itemTestIDField,
++      onChange,
++      itemContainerStyle,
++      itemTextStyle,
++      inputSearchStyle,
++      iconStyle,
++      data = [],
++      labelField,
++      valueField,
++      searchField,
++      value,
++      activeColor = '#F6F7F8',
++      fontFamily,
++      iconColor = 'gray',
++      searchPlaceholder,
++      search = false,
++      inverted = true,
++      renderItem,
++      renderInputSearch,
++      autoScroll = true,
++      showsVerticalScrollIndicator = true,
++      flatListProps,
++      searchQuery,
++      onChangeText,
++      confirmSelectItem,
++      onConfirmSelectItem,
++      accessibilityLabel,
++      itemAccessibilityLabelField,
++      closeModalWhenSelectedItem = true,
++      excludeItems = [],
++      excludeSearchItems = [],
++      isTopPosition,
++      eventClose,
++    } = props;
++
++    const refList = useRef<FlatList>(null);
++    const [currentValue, setCurrentValue] = useState<any>(null);
++    const [listData, setListData] = useState<any[]>(data);
++    const [searchText, setSearchText] = useState('');
++
++    const excludeData = useCallback(
++      (data: any[]) => {
++        if (excludeItems.length > 0) {
++          const getData = _differenceWith(
++            data,
++            excludeItems,
++            (obj1, obj2) => _get(obj1, valueField) === _get(obj2, valueField)
++          );
++          return getData || [];
++        } else {
++          return data || [];
++        }
++      },
++      [excludeItems, valueField]
++    );
++
++    useEffect(() => {
++      const filterData = excludeData(data);
++      setListData([...filterData]);
++      if (searchText) {
++        onSearch(searchText);
++      }
++      // eslint-disable-next-line react-hooks/exhaustive-deps
++    }, [data, searchText]);
++
++    const font = useCallback(() => {
++      if (fontFamily) {
++        return {
++          fontFamily: fontFamily,
++        };
++      } else {
++        return {};
++      }
++    }, [fontFamily]);
++
++    const getValue = useCallback(() => {
++      const defaultValue =
++        typeof value === 'object' ? _get(value, valueField) : value;
++
++      const getItem = data.filter((e) =>
++        _isEqual(defaultValue, _get(e, valueField))
++      );
++
++      if (getItem.length > 0) {
++        setCurrentValue(getItem[0]);
++      } else {
++        setCurrentValue(null);
++      }
++    }, [data, value, valueField]);
++
++    useEffect(() => {
++      getValue();
++    }, [value, data, getValue]);
++
++    const scrollIndex = useCallback(() => {
++      if (autoScroll && data?.length > 0 && listData?.length === data?.length) {
++        setTimeout(() => {
++          if (refList && refList?.current) {
++            const defaultValue =
++              typeof value === 'object' ? _get(value, valueField) : value;
++
++            const index = _findIndex(listData, (e) =>
++              _isEqual(defaultValue, _get(e, valueField))
++            );
++            if (
++              listData?.length > 0 &&
++              index > -1 &&
++              index <= listData?.length - 1
++            ) {
++              try {
++                refList.current.scrollToIndex({
++                  index: index,
++                  animated: false,
++                });
++              } catch (error) {
++                console.warn(`scrollToIndex error: ${error}`);
++              }
++            }
++          }
++        }, 200);
++      }
++    }, [autoScroll, data.length, listData, value, valueField]);
++
++    const onSearch = useCallback(
++      (text: string) => {
++        if (text.length > 0) {
++          const defaultFilterFunction = (e: any) => {
++            const item = _get(e, searchField || labelField)
++              ?.toLowerCase()
++              .replace(/\s/g, '')
++              .normalize('NFD')
++              .replace(/[\u0300-\u036f]/g, '');
++            const key = text
++              .toLowerCase()
++              .replace(/\s/g, '')
++              .normalize('NFD')
++              .replace(/[\u0300-\u036f]/g, '');
++
++            return item.indexOf(key) >= 0;
++          };
++
++          const propSearchFunction = (e: any) => {
++            const labelText = _get(e, searchField || labelField);
++
++            return searchQuery?.(text, labelText);
++          };
++
++          const dataSearch = data.filter(
++            searchQuery ? propSearchFunction : defaultFilterFunction
++          );
++
++          if (excludeSearchItems.length > 0 || excludeItems.length > 0) {
++            const excludeSearchData = _differenceWith(
++              dataSearch,
++              excludeSearchItems,
++              (obj1, obj2) => _get(obj1, valueField) === _get(obj2, valueField)
++            );
++
++            const filterData = excludeData(excludeSearchData);
++            setListData(filterData);
++          } else {
++            setListData(dataSearch);
++          }
++        } else {
++          const filterData = excludeData(data);
++          setListData(filterData);
++        }
++      },
++      [
++        data,
++        searchQuery,
++        excludeSearchItems,
++        excludeItems,
++        searchField,
++        labelField,
++        valueField,
++        excludeData,
++      ]
++    );
++
++    const onSelect = useCallback(
++      (item: any) => {
++        if (confirmSelectItem && onConfirmSelectItem) {
++          return onConfirmSelectItem(item);
++        }
++
++        setCurrentValue(item);
++        onChange(item);
++
++        if (closeModalWhenSelectedItem) {
++          if (onChangeText) {
++            onChangeText('');
++          }
++          setSearchText('');
++          onSearch('');
++          eventClose?.();
++        }
++      },
++      [
++        confirmSelectItem,
++        onChange,
++        onChangeText,
++        onConfirmSelectItem,
++        onSearch,
++        closeModalWhenSelectedItem,
++      ]
++    );
++
++    const _renderItem = useCallback(
++      ({ item, index }: { item: any; index: number }) => {
++        const isSelected = currentValue && _get(currentValue, valueField);
++        console.log('isSelected', isSelected)
++        const selected = _isEqual(_get(item, valueField), isSelected);
++        _assign(item, { _index: index });
++        return (
++          <TouchableHighlight
++            key={index.toString()}
++            testID={_get(item, itemTestIDField || labelField)}
++            accessible={!!accessibilityLabel}
++            accessibilityLabel={_get(
++              item,
++              itemAccessibilityLabelField || labelField
++            )}
++            underlayColor={activeColor}
++            onPress={() => onSelect(item)}
++          >
++            <View
++              style={StyleSheet.flatten([
++                itemContainerStyle,
++                selected && {
++                  backgroundColor: activeColor,
++                },
++              ])}
++            >
++              {renderItem ? (
++                renderItem(item, selected)
++              ) : (
++                <View style={styles.item}>
++                  <Text
++                    style={StyleSheet.flatten([
++                      styles.textItem,
++                      itemTextStyle,
++                      font(),
++                    ])}
++                  >
++                    {_get(item, labelField)}
++                  </Text>
++                </View>
++              )}
++            </View>
++          </TouchableHighlight>
++        );
++      },
++      [
++        accessibilityLabel,
++        activeColor,
++        currentValue,
++        font,
++        itemAccessibilityLabelField,
++        itemContainerStyle,
++        itemTestIDField,
++        itemTextStyle,
++        labelField,
++        onSelect,
++        renderItem,
++        valueField,
++      ]
++    );
++
++    const renderSearch = useCallback(() => {
++      if (search) {
++        if (renderInputSearch) {
++          return renderInputSearch((text) => {
++            if (onChangeText) {
++              setSearchText(text);
++              onChangeText(text);
++            }
++            onSearch(text);
++          });
++        } else {
++          return (
++            <CInput
++              testID={testID + ' input'}
++              accessibilityLabel={accessibilityLabel + ' input'}
++              style={[styles.input, inputSearchStyle]}
++              inputStyle={[inputSearchStyle, font()]}
++              value={searchText}
++              autoCorrect={false}
++              placeholder={searchPlaceholder}
++              onChangeText={(e) => {
++                if (onChangeText) {
++                  setSearchText(e);
++                  onChangeText(e);
++                }
++                onSearch(e);
++              }}
++              placeholderTextColor="gray"
++              iconStyle={[{ tintColor: iconColor }, iconStyle]}
++            />
++          );
++        }
++      }
++      return null;
++    }, [
++      accessibilityLabel,
++      font,
++      iconColor,
++      iconStyle,
++      inputSearchStyle,
++      onChangeText,
++      onSearch,
++      renderInputSearch,
++      search,
++      searchPlaceholder,
++      testID,
++      searchText,
++    ]);
++
++    const _renderList = useCallback(
++      (isTopPosition: boolean) => {
++        const isInverted = !inverted ? false : isTopPosition;
++        console.log('listData', JSON.stringify(listData, null, 2));
++        const _renderListHelper = () => {
++          return (
++            <FlatList
++              testID={testID + ' flatlist'}
++              accessibilityLabel={accessibilityLabel + ' flatlist'}
++              {...flatListProps}
++              keyboardShouldPersistTaps="handled"
++              ref={refList}
++              onScrollToIndexFailed={scrollIndex}
++              data={listData}
++              inverted={isTopPosition ? inverted : false}
++              renderItem={_renderItem}
++              keyExtractor={(_item, index) => index.toString()}
++              showsVerticalScrollIndicator={showsVerticalScrollIndicator}
++            />
++          );
++        };
++
++        return (
++          <TouchableWithoutFeedback>
++            <View style={styles.flexShrink}>
++              {isInverted && _renderListHelper()}
++              {renderSearch()}
++              {!isInverted && _renderListHelper()}
++            </View>
++          </TouchableWithoutFeedback>
++        );
++      },
++      [
++        _renderItem,
++        accessibilityLabel,
++        flatListProps,
++        listData,
++        data,
++        inverted,
++        renderSearch,
++        scrollIndex,
++        showsVerticalScrollIndicator,
++        testID,
++        isTopPosition,
++      ]
++    );
++
++    return <View style={{ flex: 1 }}>{_renderList(isTopPosition)}</View>;
++  });
++
++export default DropdownSingle;
+diff --git a/node_modules/react-native-element-dropdown/src/components/DropdownMultiple/index.tsx b/node_modules/react-native-element-dropdown/src/components/DropdownMultiple/index.tsx
+new file mode 100644
+index 0000000..f59012a
+--- /dev/null
++++ b/node_modules/react-native-element-dropdown/src/components/DropdownMultiple/index.tsx
+@@ -0,0 +1,454 @@
++/* eslint-disable @typescript-eslint/no-shadow */
++import _assign from 'lodash/assign';
++import _differenceWith from 'lodash/differenceWith';
++import _findIndex from 'lodash/findIndex';
++import _get from 'lodash/get';
++import _isEqual from 'lodash/isEqual';
++
++import React, {
++  JSXElementConstructor,
++  ReactElement,
++  useCallback,
++  useEffect,
++  useImperativeHandle,
++  useMemo,
++  useRef,
++  useState,
++} from 'react';
++import {
++  Dimensions,
++  FlatList,
++  I18nManager,
++  Image,
++  Keyboard,
++  KeyboardEvent,
++  Modal,
++  StyleSheet,
++  Text,
++  TouchableWithoutFeedback,
++  View,
++  ViewStyle,
++  StatusBar,
++} from 'react-native';
++import { useDetectDevice } from 'react-native-element-dropdown/src/toolkits';
++import { useDeviceOrientation } from 'react-native-element-dropdown/src/useDeviceOrientation';
++import { DropdownProps } from 'react-native-element-dropdown/src/components/DropdownMultiple/model';
++import { styles } from 'react-native-element-dropdown/src/components/DropdownMultiple/styles';
++import DropdownSingle from 'react-native-element-dropdown/src/components/DropdownMultiple/DropdownSingle';
++
++const { isTablet } = useDetectDevice;
++const ic_down = require('../../assets/down.png');
++
++const statusBarHeight: number = StatusBar.currentHeight || 0;
++
++const DropdownMultipleComponent: <T>(
++  props: DropdownProps<T>
++) => ReactElement<any, string | JSXElementConstructor<any>> | null =
++  React.forwardRef((props, currentRef) => {
++    const orientation = useDeviceOrientation();
++    const {
++      testID,
++      itemTestIDField,
++      onChange,
++      style = {},
++      containerStyle,
++      placeholderStyle,
++      selectedTextStyle,
++      itemContainerStyle,
++      itemTextStyle,
++      inputSearchStyle,
++      iconStyle,
++      selectedTextProps = {},
++      data = [],
++      labelField,
++      valueField,
++      searchField,
++      value,
++      activeColor = '#F6F7F8',
++      fontFamily,
++      iconColor = 'gray',
++      searchPlaceholder,
++      placeholder = 'Select item',
++      search = false,
++      maxHeight = 340,
++      minHeight = 0,
++      disable = false,
++      keyboardAvoiding = true,
++      inverted = true,
++      renderLeftIcon,
++      renderRightIcon,
++      renderItem,
++      renderInputSearch,
++      onFocus,
++      onBlur,
++      autoScroll = true,
++      showsVerticalScrollIndicator = true,
++      dropdownPosition = 'auto',
++      flatListProps,
++      searchQuery,
++      backgroundColor,
++      onChangeText,
++      confirmSelectItem,
++      onConfirmSelectItem,
++      accessibilityLabel,
++      itemAccessibilityLabelField,
++      mode = 'default',
++      closeModalWhenSelectedItem = true,
++      excludeItems = [],
++      excludeSearchItems = [],
++    } = props;
++
++    const ref = useRef<View>(null);
++    const refList = useRef<FlatList>(null);
++    const [visible, setVisible] = useState<boolean>(false);
++    const [currentValue, setCurrentValue] = useState<any>(null);
++    const [listData, setListData] = useState<any[]>(data);
++    const [position, setPosition] = useState<any>();
++    const [keyboardHeight, setKeyboardHeight] = useState<number>(0);
++
++    const { width: W, height: H } = Dimensions.get('window');
++    const styleContainerVertical: ViewStyle = useMemo(() => {
++      return {
++        backgroundColor: 'rgba(0,0,0,0.1)',
++        alignItems: 'center',
++      };
++    }, []);
++    const styleHorizontal: ViewStyle = useMemo(() => {
++      return {
++        width: orientation === 'LANDSCAPE' ? W / 2 : '100%',
++        alignSelf: 'center',
++      };
++    }, [W, orientation]);
++
++    useImperativeHandle(currentRef, () => {
++      return { open: eventOpen, close: eventClose };
++    });
++
++    useEffect(() => {
++      return eventClose;
++      // eslint-disable-next-line react-hooks/exhaustive-deps
++    }, []);
++
++    const excludeData = useCallback(
++      (data: any[]) => {
++        if (excludeItems.length > 0) {
++          const getData = _differenceWith(
++            data,
++            excludeItems,
++            (obj1, obj2) => _get(obj1, valueField) === _get(obj2, valueField)
++          );
++          return getData || [];
++        } else {
++          return data || [];
++        }
++      },
++      [excludeItems, valueField]
++    );
++
++    const eventOpen = () => {
++      if (!disable) {
++        setVisible(true);
++        if (onFocus) {
++          onFocus();
++        }
++      }
++    };
++
++    const eventClose = useCallback(() => {
++      if (!disable) {
++        setVisible(false);
++        if (onBlur) {
++          onBlur();
++        }
++      }
++    }, [disable, onBlur]);
++
++    const font = useCallback(() => {
++      if (fontFamily) {
++        return {
++          fontFamily: fontFamily,
++        };
++      } else {
++        return {};
++      }
++    }, [fontFamily]);
++
++    const _measure = useCallback(() => {
++      if (ref && ref?.current) {
++        ref.current.measureInWindow((pageX, pageY, width, height) => {
++          let isFull = isTablet
++            ? false
++            : mode === 'modal' || orientation === 'LANDSCAPE';
++
++          if (mode === 'auto') {
++            isFull = false;
++          }
++
++          const top = isFull ? 20 : height + pageY + 2;
++          const bottom = H - top + height;
++          const left = I18nManager.isRTL ? W - width - pageX : pageX;
++
++          setPosition({
++            isFull,
++            width: Math.floor(width),
++            top: Math.floor(top + statusBarHeight),
++            bottom: Math.floor(bottom - statusBarHeight),
++            left: Math.floor(left),
++            height: Math.floor(height),
++          });
++        });
++      }
++    }, [H, W, orientation, mode]);
++
++    const onKeyboardDidShow = useCallback(
++      (e: KeyboardEvent) => {
++        _measure();
++        setKeyboardHeight(e.endCoordinates.height);
++      },
++      [_measure]
++    );
++
++    const onKeyboardDidHide = useCallback(() => {
++      setKeyboardHeight(0);
++      _measure();
++    }, [_measure]);
++
++    useEffect(() => {
++      const susbcriptionKeyboardDidShow = Keyboard.addListener(
++        'keyboardDidShow',
++        onKeyboardDidShow
++      );
++      const susbcriptionKeyboardDidHide = Keyboard.addListener(
++        'keyboardDidHide',
++        onKeyboardDidHide
++      );
++
++      return () => {
++        if (typeof susbcriptionKeyboardDidShow?.remove === 'function') {
++          susbcriptionKeyboardDidShow.remove();
++        }
++
++        if (typeof susbcriptionKeyboardDidHide?.remove === 'function') {
++          susbcriptionKeyboardDidHide.remove();
++        }
++      };
++    }, [onKeyboardDidHide, onKeyboardDidShow]);
++
++    const getValue = useCallback(() => {
++      const defaultValue =
++        typeof value === 'object' ? _get(value, valueField) : value;
++      data?.map((item, index) => {
++        const getItem = item.filter((e) =>
++          _isEqual(defaultValue, _get(e, valueField))
++        );
++        if (getItem.length > 0) {
++          setCurrentValue(getItem[0]);
++        } else {
++          setCurrentValue(null);
++        }
++      });
++    }, [data, value, valueField]);
++
++    useEffect(() => {
++      getValue();
++    }, [value, data, getValue]);
++
++    const showOrClose = useCallback(() => {
++      if (!disable) {
++        const visibleStatus = !visible;
++
++        if (keyboardHeight > 0 && !visibleStatus) {
++          return Keyboard.dismiss();
++        }
++
++        if (!visibleStatus) {
++          if (onChangeText) {
++            onChangeText('');
++          }
++        }
++
++        _measure();
++        setVisible(visibleStatus);
++
++        if (visibleStatus) {
++          if (onFocus) {
++            onFocus();
++          }
++        } else {
++          if (onBlur) {
++            onBlur();
++          }
++        }
++      }
++      // eslint-disable-next-line react-hooks/exhaustive-deps
++    }, [disable, keyboardHeight, visible, _measure, data, onFocus, onBlur]);
++
++    const _renderDropdown = () => {
++      return (
++        <TouchableWithoutFeedback
++          testID={testID}
++          accessible={!!accessibilityLabel}
++          accessibilityLabel={accessibilityLabel}
++          onPress={showOrClose}
++        >
++          <View style={styles.dropdown}>
++            {renderLeftIcon?.(visible)}
++            <Text
++              style={[
++                styles.textItem,
++                value !== null && value !== ''
++                  ? selectedTextStyle
++                  : placeholderStyle,
++                font(),
++              ]}
++              {...selectedTextProps}
++            >
++              {value !== null && value !== '' ? value : placeholder}
++            </Text>
++            {renderRightIcon ? (
++              renderRightIcon(visible)
++            ) : (
++              <Image
++                source={ic_down}
++                style={StyleSheet.flatten([
++                  styles.icon,
++                  { tintColor: iconColor },
++                  iconStyle,
++                ])}
++              />
++            )}
++          </View>
++        </TouchableWithoutFeedback>
++      );
++    };
++
++    const _renderModal = useCallback(() => {
++      if (visible && position) {
++        const { isFull, width, height, top, bottom, left } = position;
++
++        const onAutoPosition = () => {
++          if (keyboardHeight > 0) {
++            return bottom < keyboardHeight + height;
++          }
++
++          return bottom < (search ? 150 : 100);
++        };
++
++        if (width && top && bottom) {
++          const styleVertical: ViewStyle = {
++            left: left,
++            maxHeight: maxHeight,
++            minHeight: minHeight,
++          };
++          const isTopPosition =
++            dropdownPosition === 'auto'
++              ? onAutoPosition()
++              : dropdownPosition === 'top';
++
++          let keyboardStyle: ViewStyle = {};
++
++          let extendHeight = !isTopPosition ? top : bottom;
++          if (
++            keyboardAvoiding &&
++            keyboardHeight > 0 &&
++            isTopPosition &&
++            dropdownPosition === 'auto'
++          ) {
++            extendHeight = keyboardHeight;
++          }
++          return (
++            <Modal
++              transparent
++              statusBarTranslucent
++              visible={visible}
++              supportedOrientations={['landscape', 'portrait']}
++              onRequestClose={showOrClose}
++            >
++              <TouchableWithoutFeedback onPress={showOrClose}>
++                <View
++                  style={StyleSheet.flatten([
++                    styles.flex1,
++                    isFull && styleContainerVertical,
++                    backgroundColor && {
++                      backgroundColor: backgroundColor,
++                    },
++                    keyboardStyle,
++                  ])}
++                >
++                  <View
++                    style={StyleSheet.flatten([
++                      styles.flex1,
++                      !isTopPosition
++                        ? { paddingTop: extendHeight }
++                        : {
++                            justifyContent: 'flex-end',
++                            paddingBottom: extendHeight,
++                          },
++                      isFull && styles.fullScreen,
++                    ])}
++                  >
++                    <View
++                      style={StyleSheet.flatten([
++                        styles.container,
++                        isFull ? styleHorizontal : styleVertical,
++                        {
++                          width,
++                        },
++                        containerStyle,
++                      ])}
++                    >
++                      <View style={{ flexDirection: 'row' }}>
++                        {data?.map((item, index) => {
++                          return (
++                            <DropdownSingle
++                              inverted={inverted}
++                              {...props}
++                              value={props?.listValue?.[index]}
++                              // valueField={valueField}
++                              onChange={(e) => onChange(e, index)}
++                              data={item}
++                              eventClose={eventClose}
++                            />
++                          );
++                        })}
++                      </View>
++                    </View>
++                  </View>
++                </View>
++              </TouchableWithoutFeedback>
++            </Modal>
++          );
++        }
++        return null;
++      }
++      return null;
++    }, [
++      visible,
++      search,
++      position,
++      keyboardHeight,
++      maxHeight,
++      minHeight,
++      dropdownPosition,
++      keyboardAvoiding,
++      showOrClose,
++      styleContainerVertical,
++      backgroundColor,
++      containerStyle,
++      styleHorizontal,
++      // _renderList,
++    ]);
++
++    return (
++      <View
++        style={StyleSheet.flatten([styles.mainWrap, style])}
++        ref={ref}
++        onLayout={_measure}
++      >
++        {_renderDropdown()}
++        {_renderModal()}
++      </View>
++    );
++  });
++
++export default DropdownMultipleComponent;
+diff --git a/node_modules/react-native-element-dropdown/src/components/DropdownMultiple/model.ts b/node_modules/react-native-element-dropdown/src/components/DropdownMultiple/model.ts
+new file mode 100644
+index 0000000..0e029b2
+--- /dev/null
++++ b/node_modules/react-native-element-dropdown/src/components/DropdownMultiple/model.ts
+@@ -0,0 +1,72 @@
++import type {
++  StyleProp,
++  TextStyle,
++  ViewStyle,
++  TextProps,
++  ImageStyle,
++  FlatListProps,
++} from 'react-native';
++
++export type IDropdownRef = {
++  open: () => void;
++  close: () => void;
++};
++
++export interface DropdownProps<T> {
++  ref?:
++    | React.RefObject<IDropdownRef>
++    | React.MutableRefObject<IDropdownRef>
++    | null
++    | undefined;
++  testID?: string;
++  itemTestIDField?: string;
++  style?: StyleProp<ViewStyle>;
++  containerStyle?: StyleProp<ViewStyle>;
++  placeholderStyle?: StyleProp<TextStyle>;
++  selectedTextStyle?: StyleProp<TextStyle>;
++  selectedTextProps?: TextProps;
++  itemContainerStyle?: StyleProp<ViewStyle>;
++  itemTextStyle?: StyleProp<TextStyle>;
++  inputSearchStyle?: StyleProp<TextStyle>;
++  iconStyle?: StyleProp<ImageStyle>;
++  maxHeight?: number;
++  minHeight?: number;
++  fontFamily?: string;
++  iconColor?: string;
++  activeColor?: string;
++  data: T[];
++  value?: T | string | null | undefined;
++  placeholder?: string;
++  labelField: keyof T;
++  valueField: keyof T;
++  searchField?: keyof T;
++  search?: boolean;
++  searchPlaceholder?: string;
++  disable?: boolean;
++  autoScroll?: boolean;
++  showsVerticalScrollIndicator?: boolean;
++  dropdownPosition?: 'auto' | 'top' | 'bottom';
++  flatListProps?: Omit<FlatListProps<any>, 'renderItem' | 'data'>;
++  keyboardAvoiding?: boolean;
++  backgroundColor?: string;
++  confirmSelectItem?: boolean;
++  accessibilityLabel?: string;
++  itemAccessibilityLabelField?: string;
++  inverted?: boolean;
++  mode?: 'default' | 'modal' | 'auto';
++  closeModalWhenSelectedItem?: boolean;
++  excludeItems?: T[];
++  excludeSearchItems?: T[];
++  onChange: (item: T) => void;
++  renderLeftIcon?: (visible?: boolean) => JSX.Element | null | undefined;
++  renderRightIcon?: (visible?: boolean) => JSX.Element | null | undefined;
++  renderItem?: (item: T, selected?: boolean) => JSX.Element | null | undefined;
++  renderInputSearch?: (
++    onSearch: (text: string) => void
++  ) => JSX.Element | null | undefined;
++  onFocus?: () => void;
++  onBlur?: () => void;
++  searchQuery?: (keyword: string, labelValue: string) => boolean;
++  onChangeText?: (search: string) => void;
++  onConfirmSelectItem?: (item: T) => void;
++}
+diff --git a/node_modules/react-native-element-dropdown/src/components/DropdownMultiple/styles.ts b/node_modules/react-native-element-dropdown/src/components/DropdownMultiple/styles.ts
+new file mode 100644
+index 0000000..2c83bdd
+--- /dev/null
++++ b/node_modules/react-native-element-dropdown/src/components/DropdownMultiple/styles.ts
+@@ -0,0 +1,67 @@
++import { I18nManager, StyleSheet } from 'react-native';
++
++export const styles = StyleSheet.create({
++  mainWrap: {
++    justifyContent: 'center',
++  },
++  container: {
++    flexShrink: 1,
++    borderWidth: 0.5,
++    borderColor: '#EEEEEE',
++    backgroundColor: 'white',
++    shadowColor: '#000',
++    shadowOffset: {
++      width: 0,
++      height: 1,
++    },
++    shadowOpacity: 0.2,
++    shadowRadius: 1.41,
++    elevation: 2,
++  },
++  flex1: {
++    flex: 1,
++  },
++  flexShrink: {
++    flexShrink: 1,
++  },
++  wrapTop: {
++    justifyContent: 'flex-end',
++  },
++  dropdown: {
++    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
++    justifyContent: 'space-between',
++    alignItems: 'center',
++  },
++  title: {
++    marginVertical: 5,
++    fontSize: 16,
++    writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
++  },
++  item: {
++    padding: 17,
++    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
++    justifyContent: 'space-between',
++    alignItems: 'center',
++  },
++  textItem: {
++    flex: 1,
++    fontSize: 16,
++    writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
++  },
++  icon: {
++    width: 20,
++    height: 20,
++  },
++  input: {
++    borderWidth: 0.5,
++    borderColor: '#DDDDDD',
++    paddingHorizontal: 8,
++    marginBottom: 8,
++    margin: 6,
++    height: 45,
++  },
++  fullScreen: {
++    alignItems: 'center',
++    justifyContent: 'center',
++  },
++});
+diff --git a/node_modules/react-native-element-dropdown/src/index.tsx b/node_modules/react-native-element-dropdown/src/index.tsx
+index bc5f7fc..05d8b95 100644
+--- a/node_modules/react-native-element-dropdown/src/index.tsx
++++ b/node_modules/react-native-element-dropdown/src/index.tsx
+@@ -1,7 +1,16 @@
+ import Dropdown from './components/Dropdown';
+ import MultiSelect from './components/MultiSelect';
+ import SelectCountry from './components/SelectCountry';
++import DropdownMultiple from './components/DropdownMultiple';
++
+ import { IDropdownRef } from './components/Dropdown/model';
+ import { IMultiSelectRef } from './components/MultiSelect/model';
+ 
+-export { Dropdown, MultiSelect, SelectCountry, IDropdownRef, IMultiSelectRef };
++export {
++  Dropdown,
++  MultiSelect,
++  SelectCountry,
++  DropdownMultiple,
++  IDropdownRef,
++  IMultiSelectRef,
++};
