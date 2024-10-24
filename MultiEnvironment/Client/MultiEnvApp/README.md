@@ -538,3 +538,15 @@ declare module 'react-native-config' {
 <img width="1122" alt="image" src="https://github.com/user-attachments/assets/055f4279-6dc4-4c73-b2df-be48e44b84e7">
 
 
+## Availability in Build settings and Info.plist
+With one extra step environment values can be exposed to "Info.plist" and Build settings in the native project.
+
+Go to [this page](https://www.npmjs.com/package/react-native-config) and search "Availability in Build settings and Info.plist"
+
+Follow and do 
+
+<img width="1035" alt="image" src="https://github.com/user-attachments/assets/ea852b46-9561-410c-ab34-916697966c16">
+
+
+
+
